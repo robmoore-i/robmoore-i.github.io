@@ -80,6 +80,7 @@ tasks {
             mkdocsPublishPreflightCheck,
             mkdocsBuild,
             gitCheckoutPublicationBranch,
+            gitMergeMain,
             syncMkdocsToPublishedDirectory,
             gitAddPublication,
             gitCommitPublication,
