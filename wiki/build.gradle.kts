@@ -44,8 +44,28 @@ tasks {
         branch.set("main")
     }
 
+    val gitCurrentBranch by registering(Shell::class) {
+        cmd.set(listOf("git", "branch", "--show-current"))
+        outputFile.set(layout.buildDirectory.dir(name).map { it.file("git-branch.txt") })
+    }
+
+    val mkdocsPublishPreflightCheck by registering {
+        val currentBranch = gitCurrentBranch.flatMap { it.outputFile }.map { it.asFile.readText() }
+        doFirst {
+            if (!currentBranch.isPresent || currentBranch.get().trim() != "main") {
+                throw RuntimeException(
+                    "Refusing to publish docs due to being on incorrect branch:\n${currentBranch.get()}---"
+                )
+            }
+        }
+    }
+    mkdocsBuild.configure {
+        mustRunAfter(mkdocsPublishPreflightCheck)
+    }
+
     register("mkdocsPublish") {
         dependsOn(
+            mkdocsPublishPreflightCheck,
             mkdocsBuild,
             gitCheckoutPublicationBranch,
             syncMkdocsToPublishedDirectory,
