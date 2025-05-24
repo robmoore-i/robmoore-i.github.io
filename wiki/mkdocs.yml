@@ -1,0 +1,11 @@
+site_name: Rob's Wiki
+site_url: https://robmoore-i.github.io
+nav:
+  - Home: index.md
+theme:
+  name: material
+  features:
+    - navigation.expand
+markdown_extensions:
+  toc:
+    permalink: true
