@@ -1,10 +1,10 @@
-# Gradle and JVMs
+# JVMs
 
 This page contains tips regarding the use of Gradle and different JVM versions.
 
-## <a name="use-java-toolchains"></a>Java Toolchains
+## Java Toolchains
 
-Gradle is a Java program. When you invoke Gradle (e.g. using `./gradlew`), you are starting one or more Java processses (you can check your locally running Java processes using a command line tool suhc as `jps`).
+Gradle is a Java program. When you invoke Gradle (e.g. using `./gradlew`), you are starting one or more Java processes (you can check your locally running Java processes using a command line tool suhc as `jps`).
 
 Modern Gradle is compatible with Java 8 onwards. Running with the second most recent LTS Java release will give you the best experience, with the lowest likelihood of encountering bugs.
 

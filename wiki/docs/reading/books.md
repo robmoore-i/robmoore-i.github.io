@@ -1,75 +1,60 @@
 # Books
 
-Books I've read, liked, and would recommend.
+Books I've read, liked, and might recommend.
 
-# Software Engineering
+## Software engineering
 
-## Coding
+### Coding
 
-### Growing Object-Oriented Software, Guided by Tests - Steve Freeman and Nat Pryce
+- Growing Object-Oriented Software, Guided by Tests - Steve Freeman and Nat Pryce
+- Working Effectively with Legacy Code - Michael Feathers
+- Design Patterns: Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 
-### Working Effectively with Legacy Code - Michael Feathers
+### Organisational
 
-### Design Patterns: Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- eXtreme Programming Explained, 2nd edition - Kent Beck and Cynthia Andres
+- Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
+- Team Topologies - Matthew Skelton and Manuel Pais
+- Cognition in the Wild - Edwin Hutchins
 
-## Organisational
+### Communication
 
-### eXtreme Programming Explained, 2nd edition - Kent Beck and Cynthia Andres
+- Crucial Conversations - Kerry Patternson, Joseph Grenny, Ron McMillan, Al Switzler
+- Nonviolent Communication, 3rd edition - Marshall Rosenberg
+- Agile Conversations - Douglas Squirrel and Jeffrey Frederick
+- Bugs in Writing: A Guide to Debugging your Prose - Lyn Dupre
 
-### Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
+## Humanities
 
-### Team Topologies - Matthew Skelton and Manuel Pais
+### History
 
-### Cognition in the Wild - Edwin Hutchins
+- Black Wave - Kim Ghattas
+- From third world to first: The Singapore Story, 1965-2000 - Lee Kuan Yew
+- Truth-Telling - Henry Reynolds
+- India: A History - John Keay
+- Map of a Nation: A Biography of the Ordnance Survey - Rachel Hewitt
+- Longitude - Dava Sobel
 
-## Communication
+### Economics
 
-### Crucial Conversations - Kerry Patternson, Joseph Grenny, Ron McMillan, Al Switzler
+- Introductory Economics (5th edition) - George Frederick Stanlake
+- The bottom billion - Paul Collier
 
-### Nonviolent Communication, 3rd edition - Marshall Rosenberg
+## Health
 
-### Agile Conversations - Douglas Squirrel and Jeffrey Frederick
+- The Body Keeps the Score - Bessel Van Der Kolk
+- When the body says no - Gabor Maté
+- Gut - Giulia Enders
 
-### Bugs in Writing: A Guide to Debugging your Prose - Lyn Dupre
+## Narrative non-fiction
 
-# History
+- The Boys in the Boat - Daniel James Brown
+- Endurance - Alfred Lansing
 
-### Black Wave - Kim Ghattas
+## Fiction
 
-### From third world to first: The Singapore Story, 1965-2000 - Lee Kuan Yew
-
-### Truth-Telling - Henry Reynolds
-
-### India: A History - John Keay
-
-### Map of a Nation: A Biography of the Ordnance Survey - Rachel Hewitt
-
-### Longitude - Dava Sobel
-
-# Narrative Nonfiction
-
-### The Boys in the Boat - Daniel James Brown
-
-### Endurance - Alfred Lansing
-
-# Economics
-
-### Introductory Economics (5th edition) - George Frederick Stanlake
-
-### The bottom billion - Paul Collier
-
-# Health
-
-### The Body Keeps the Score - Bessel Van Der Kolk
-
-### When the body says no - Gabor Maté
-
-### Gut - Giulia Enders
-
-# Fiction
-
-### The Curious Incident of the Dog in the Night Time - Mark Haddon
-
-### The Hitchhikers Guide to the Galaxy - Douglas Adams
-
-### The Garbage King - Elizabeth Laird
+- The Curious Incident of the Dog in the Night Time - Mark Haddon
+- The Hitchhiker's Guide to the Galaxy - Douglas Adams
+- The daughter of time - Josephine Tey
+- And then there were none - Agatha Christie
+- The Garbage King - Elizabeth Laird

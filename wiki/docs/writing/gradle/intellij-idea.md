@@ -4,7 +4,7 @@
 
 Intellij IDEA is a big, complex, powerful tool, solving a problem that is harder than it looks from the outside. Gradle is similar in this way. Put them together, and you have a recipe for a horrible, overcomplicated experience. There are a few things you can do to have a better time.
 
-The page describes a few pitfalls that you should avoid, and virtues that you should strive towards. I update it opportunistically whenever I see something that makes me think everyone should know this. In that regard, it is similar to my page on [Insider Tips](/en/writing/gradle/insider-guidelines).
+The page describes a few pitfalls that you should avoid, and virtues that you should strive towards. I update it opportunistically whenever I see something that makes me think everyone should know this. In that regard, it is similar to my page on [Insider Tips](/writing/gradle/insider-guidelines).
 
 ### Intellij says "Unresolved reference"
 

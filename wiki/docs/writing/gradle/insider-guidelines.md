@@ -51,7 +51,7 @@ coupled references to the same thing are desirable.
 
 ### Use Java Toolchains to manage target JVM versions
 
-[Understand and use Java Toolchains](/en/writing/gradle/jvms#java-toolchains). This will spare you significant grief, as long as you understand what it is doing and what it is not doing.
+[Understand and use Java Toolchains](/writing/gradle/jvms#java-toolchains). This will spare you significant grief, as long as you understand what it is doing and what it is not doing.
 
 The version of Java used to invoke Gradle is not necessarily the same as the version of Java used to compile your Java code or run your tests. To control the version of Java used to compile your Java code, use Gradle's Java Toolchains feature. If you don't do this, Gradle will just use whatever JVM is being used to run itself when compiling and running Java code. Unless you have a good (and I imagine really quite interesting and unique) reason to preseve that behaviour, you should always be using Java Toolchains. I find the [official documentation](https://docs.gradle.org/current/userguide/toolchains.html) for this feature to be pretty useful and descriptive.
 

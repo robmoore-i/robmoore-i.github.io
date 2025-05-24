@@ -18,7 +18,7 @@ nav:
       - writing/gradle/intellij-idea.md
       - writing/gradle/kotlin-dsl.md
       - writing/gradle/gradle-monorepo-structure.md
-      - writing/gradle/gradle-and-jvms.md
+      - writing/gradle/jvms.md
       - writing/gradle/registering-gradle-tasks.md
       - writing/gradle/custom-task-types.md
       - writing/gradle/custom-repositories.md

@@ -85,4 +85,4 @@ There should exactly one method in a task class definition annotated with `@Task
 
 ## Further notes
 
-Custom task types should be declared within included-build plugins, as described in my longer article on [structuring a Gradle build](https://rob-wiki.fly.dev/en/writing/gradle/gradle-monorepo-setup).
+Custom task types should be declared within included-build plugins, as described in my longer article on [structuring a Gradle build](/writing/gradle/gradle-monorepo-setup).

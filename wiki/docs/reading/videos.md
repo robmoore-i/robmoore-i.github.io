@@ -32,4 +32,4 @@ I found this video by chance, thanks to Hemal Varambhia, who shared it on his Li
 
 ### ["The Software Crisis" and data abstraction - Barbara Liskov (~20 mins)](https://www.youtube.com/watch?v=_jTc1BTFdIo)
 
-"Those who do not learn history are doomed to repeat it".
+"Those who do not learn history are doomed to repeat it" etc.
