@@ -2,6 +2,10 @@ site_name: Rob's Wiki
 site_url: https://robmoore-i.github.io
 nav:
   - Home: index.md
+  - Work: work.md
+  - Reading:
+    - reading/log.md
+    - reading/books.md
 theme:
   name: material
   features:
