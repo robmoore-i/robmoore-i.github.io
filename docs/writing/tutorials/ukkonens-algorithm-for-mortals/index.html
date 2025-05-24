@@ -1,0 +1,2019 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://robmoore-i.github.io/writing/tutorials/ukkonens-algorithm-for-mortals/">
+      
+      
+        <link rel="prev" href="../migration-this-wiki-to-fly-io/">
+      
+      
+        <link rel="next" href="../unit-testing-for-jenkins-pipeline-libraries/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Ukkonen's Algorithm for Mortals - Rob's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ukkonens-algorithm-for-mortals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-header__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rob's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ukkonen's Algorithm for Mortals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-nav__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Rob's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reading
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/articles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Articles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Books
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/selected-snippets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selected snippets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Writing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Writing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reader-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reader Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gradle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Gradle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/insider-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insider guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/intellij-idea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intellij IDEA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/kotlin-dsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kotlin DSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/gradle-monorepo-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gradle monorepo structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/jvms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JVMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/registering-gradle-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registering Gradle tasks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/custom-task-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom task types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/custom-repositories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/secure-dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WIP: Secure Dependencies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/divio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divio's documentation system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation: Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-this-wiki-to-fly-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating this Wiki to fly.io
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ukkonen's Algorithm for Mortals
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ukkonen's Algorithm for Mortals
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ukkonens-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Ukkonen's algorithm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-ukkonens-algorithm-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why does Ukkonen's algorithm exist?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisite knowledge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-level overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-vs-canonical-suffix-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit vs canonical suffix trees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-tree-canonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix tree canonization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remainder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remainder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phases-and-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phases and Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-extension-onwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Extension onwards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant-time-traversal-using-the-active-point-and-suffix-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant-time traversal using the Active Point and Suffix Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-movement-after-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point movement after Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-link-placement-after-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Link placement after Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-non-canonical-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point non-canonical references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-reference-canonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point reference canonization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-behaviour-around-node-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point behaviour around node boundaries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-the-most-useful-sources-i-used-when-i-was-implementing-this-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix A: The most useful sources I used when I was implementing this algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-testing-your-implementation-for-correctness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix B: Testing your implementation for correctness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-c-implementation-with-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix C: Implementation with comments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-testing-for-jenkins-pipeline-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing for Jenkins Pipeline Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/chestertons-traffic-lights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chesterton's Traffic Lights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ukkonens-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Ukkonen's algorithm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-ukkonens-algorithm-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why does Ukkonen's algorithm exist?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisite knowledge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-level overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-vs-canonical-suffix-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit vs canonical suffix trees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-tree-canonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix tree canonization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remainder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remainder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phases-and-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phases and Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-extension-onwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Extension onwards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant-time-traversal-using-the-active-point-and-suffix-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant-time traversal using the Active Point and Suffix Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-movement-after-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point movement after Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suffix-link-placement-after-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suffix Link placement after Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-non-canonical-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point non-canonical references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-reference-canonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point reference canonization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-point-behaviour-around-node-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Point behaviour around node boundaries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-the-most-useful-sources-i-used-when-i-was-implementing-this-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix A: The most useful sources I used when I was implementing this algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-testing-your-implementation-for-correctness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix B: Testing your implementation for correctness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-c-implementation-with-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix C: Implementation with comments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ukkonens-algorithm-for-mortals">Ukkonen's Algorithm for Mortals<a class="headerlink" href="#ukkonens-algorithm-for-mortals" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-ukkonens-algorithm">What is Ukkonen's algorithm?<a class="headerlink" href="#what-is-ukkonens-algorithm" title="Permanent link">&para;</a></h2>
+<p>Ukkonen's algorithm is an online suffix tree construction algorithm which runs in time and space that is linear with the length of the string being indexed. Below I'll break this sentence down into parts.</p>
+<ul>
+<li>
+<p>Ukkonen's is a suffix tree construction algorithm. This means that it accepts a string input, and as an output it produces a suffix tree for that string. There is plenty written about suffix trees, and the other explanations will be better than mine, so please look for them instead.</p>
+</li>
+<li>
+<p>Ukkonen's runs in time and space that is linear with the length of the input string. This means that as the length of the input increases, the corresponding increase in storage space for the resulting data structure, and the running time for its construction, increases only proportionally, and not more than that. In practice, it means that the algorithm is effective for use on much larger inputs than super-linear algorithms, which experience prohibitive costs when running for inputs above a certain length.</p>
+</li>
+<li>
+<p>Ukkonen's is an online algorithm. This means that each iteration of the algorithm yields a result which is correct (or can be made correct in constant time) for the input that has been processed so far.</p>
+</li>
+</ul>
+<h2 id="why-does-ukkonens-algorithm-exist">Why does Ukkonen's algorithm exist?<a class="headerlink" href="#why-does-ukkonens-algorithm-exist" title="Permanent link">&para;</a></h2>
+<p>At the time of Ukkonen's algorithm, the other known linear-time algorithms for suffix tree construction were more difficult to understand, and they lacked the desirable online property. Of the existing linear-time suffix tree construction algorithms, Ukkonen's is generally recognised to be the easiest to understand. Of course, that is highly subjective. I didn't learn the other algorithms, so I can't tell you for sure. In my opinion this one is complicated enough.</p>
+<h2 id="prerequisite-knowledge">Prerequisite knowledge<a class="headerlink" href="#prerequisite-knowledge" title="Permanent link">&para;</a></h2>
+<p>I will assume that you know what a suffix tree is. The descriptions online and in YouTube are good enough to understand what a suffix tree is, even if they are insufficient for understanding Ukkonen's construction algorithm. It would also be helpful for you to feel comfortable with the much simpler, naive, cubic time construction algorithm which is often presented as an introductory algorithm on the way to Ukkonen's.</p>
+<h2 id="high-level-overview">High-level overview<a class="headerlink" href="#high-level-overview" title="Permanent link">&para;</a></h2>
+<p>In Ukkonen's algorithm, we construct the tree iteratively, considering one character at a time from the input, scanning from the start to the end. We start with just a root node. For each new character, we extend the tree we currently have, in order to express the new suffixes in it.</p>
+<h2 id="implicit-vs-canonical-suffix-trees">Implicit vs canonical suffix trees<a class="headerlink" href="#implicit-vs-canonical-suffix-trees" title="Permanent link">&para;</a></h2>
+<p>Each step in the algorithm produces an implicit suffix tree. An implicit suffix tree is different to a true suffix tree, aka a canonical suffix tree. An implicit suffix tree still contains all suffixes of the string, but not all of those end in a leaf node. That is, some suffixes are represented by paths in the tree from the root node, which terminate within edge labels in the tree. In order to utilise some suffix tree algorithms, we would really like to construct a canonical suffix tree, so the last step in Ukkonen's algorithm is tree canonization, which transforms the implicit suffix tree into a canonical suffix tree.</p>
+<p>Each implicit suffix tree produced by the algorithm in each iteration corresponds to a prefix of the input string, and every iteration's implicit suffix tree is built on top of the one from the previous iteration.</p>
+<h2 id="suffix-tree-canonization">Suffix tree canonization<a class="headerlink" href="#suffix-tree-canonization" title="Permanent link">&para;</a></h2>
+<p>To canonize an implicit suffix tree, we can add a unique character to the suffix tree at the end, after all our input has been processed and incorporated into the implicit suffix tree that we're iterating on. In almost all descriptions, a dollar symbol is used (i.e. '$'). In practice, my implementation uses a null character (i.e. '\u0000').</p>
+<h2 id="remainder">Remainder<a class="headerlink" href="#remainder" title="Permanent link">&para;</a></h2>
+<p>Throughout the algorithm, a positive integer variable stores the number of suffixes of the so-far-consumed input string, which are not explicitly expressed in the tree. Equivalently, it represents the number of suffixes that are expressed in the tree only implicitly, and not explicitly. Every phase begins by incrementing this counter, since we know that once we add a new character to the string, there is an additional implicitly represented suffix in the tree. In most descriptions of Ukkonen's algorithm, this variable is called something like "remainder". In my implementation, it is called "remainingSuffixes". Call it whatever you're comfortable with.</p>
+<h2 id="phases-and-extensions">Phases and Extensions<a class="headerlink" href="#phases-and-extensions" title="Permanent link">&para;</a></h2>
+<p>The algorithm's iteration contains Phases and Extensions. For each character we are adding, we perform a Phase. For each Phase, we perform one or more Extensions. The Phase is the outer loop, and the Extension is the inner loop.</p>
+<p>Every Phase corresponds to a character in the input string, and equivalently, a prefix of the input string. Every Extension corresponds to a suffix of the Phase's corresponding prefix of the input string.</p>
+<p>Something to note is that while a Phase corresponds to a prefix of the total input string, it corresponds to the
+entirety of the string that is incorporated into the implicit suffix tree at the end of the Phase. Another way to think
+about it is that in each Phase, every suffix of the so-far consumed input string is inserted into the tree, either
+implicitly or explicitly. The insertion of these suffixes to the tree is done using Suffix Extensions.</p>
+<h2 id="suffix-extensions">Suffix Extensions<a class="headerlink" href="#suffix-extensions" title="Permanent link">&para;</a></h2>
+<p>When we express new suffixes, we perform an action to the tree called a Suffix Extension. In a Suffix Extension, we add a new suffix of the so-far consumed input string, into the suffix tree. After the Suffix Extension, the suffix will be either implicitly or explicitly represented in the implicit suffix tree. There are a few different kinds of Suffix Extension.</p>
+<ul>
+<li>Rule 1 Extension: When the suffix we're adding can be added by extending the labels of edges leading to leaf nodes.</li>
+<li>Rule 2 Extension: When the suffix we're adding requires the addition of a new leaf node.</li>
+<li>Rule 3 Extension: When the suffix we're adding is already implicitly present in the tree, even if it is not explicitly
+  represented.</li>
+</ul>
+<p>Only Rule 2 Extensions result in new suffixes being made explicit in the tree. During the algorithm, while we're keeping track of the number of suffixes remaining from the portion of the input which has been processed, we need to remember to decrement this counter after each time that we perform a Rule 2 Extension.</p>
+<p>When we do a Rule 3 Extension, it means that the suffix we were adding to the tree is already implicitly present in the tree. This additionally means that all the suffixes of that suffix are also implicitly present in the tree, which means that none of them would result in a Rule 2 Extension. So a Rule 3 Extension ends the current Phase.</p>
+<p>In every Extension of every Phase, exactly one Suffix Extension happens. That is why the inner loop iterations of the algorithm are called Extensions.</p>
+<h2 id="first-extension">First Extension<a class="headerlink" href="#first-extension" title="Permanent link">&para;</a></h2>
+<p>The first extension of every phase is always the same. It involves extending all labels of edges to leaf nodes, so that they end in what is now the new last character in the string represented by the implicit suffix tree. The first extension of every phase is a Rule 1 Extension, and no other extensions are ever Rule 1 Extensions.</p>
+<h2 id="second-extension-onwards">Second Extension onwards<a class="headerlink" href="#second-extension-onwards" title="Permanent link">&para;</a></h2>
+<p>In order to run in linear time, Ukkonen's algorithm depends on being able to perform each Suffix Extension in constant time. In order to do this, every extension needs to avoid traversing the tree to find the right spot to perform any modifications to the tree. Instead, it needs to be able to find the right place in the tree to perform the Suffix Extension, in constant time. Solving this problem is key in Ukkonen's algorithm.</p>
+<p>The naive way to complete the Suffix Extensions in the second Extension onwards, would be to traverse the tree for each insertion, in order to find the correct place to make the Suffix Extension. This would work correctly, but traversing the tree is expensive. If we did that for all extensions, we would end up with an algorithm whose worst case running time is cubic in the length of the input string. What we're looking for is an algorithm whose worst case running time is linear in the length of the input string. Ukkonen's description of his algorithm begins with a description of this cubic-time algorithm, and presents the actual Ukkonen's algorithm as a collection of optimizations on top of it. There are two key parts of Ukkonen's optimization over the naive algorithm. They are the Active Point, and Suffix Links.</p>
+<p>The Active Point, combined with the use of Suffix Links, enables us to be able to complete each Extension in constant time. The Active Point locates the precise insertion point for the next Suffix Extension, and Suffix Links store exploitable information about the suffixes in the text.</p>
+<h2 id="active-point">Active Point<a class="headerlink" href="#active-point" title="Permanent link">&para;</a></h2>
+<p>The Active Point is a reference to a precise location in the tree with a special property, that it will be the correct location for the next Suffix Extension to proceed from.</p>
+<p>This reference is represented as a triple of "activeNode", "activeEdge" and "activeLength". These three pieces of data combined allow us to pinpoint an exact location in the tree (and therefore an exact location in the text), for example, directly on top of an internal node, or perhaps partway into an edge label.</p>
+<ul>
+<li>
+<p>The "activeNode" variable is a pointer to either the root node, or an internal node in the tree.</p>
+</li>
+<li>
+<p>The "activeEdge" variable is a reference to a character in the text, used to indicate which edge of the tree node indicated by the "activeNode" we need to move along to reach the precise position of the Active Point. At any point in time, the "activeEdge" should be pointing to a character in the text within the suffix that is being added in the current Extension.</p>
+</li>
+<li>
+<p>The "activeLength" variable indicates how far we need to travel along the edge indicated by the "activeEdge", in order to get to the precise position of the Active Point.</p>
+</li>
+</ul>
+<h2 id="suffix-links">Suffix Links<a class="headerlink" href="#suffix-links" title="Permanent link">&para;</a></h2>
+<p>A Suffix Link represents a pointer going from one internal node in the tree to another internal node, such that the path to the destination node is a suffix of the path to the source node. The destination node is said to be the Suffix Link of the source node. A node can have no more than one Suffix Link. If no Suffix Link exists for a node, then it has an implicit Suffix Link going to the root node. In a given tree, many nodes will likely have a Suffix Link. Suffix Links are essential information that we store in the tree for Ukkonen's algorithm. Even when implementing other suffix tree algorithms, we may still be able to exploit the Suffix Links that were created during the tree's construction.</p>
+<p>A given node can only have one Suffix Link. Also, there is only ever one node with a Suffix Link to a given node. Another way I would phrase this is that a node can have no more than one inbound Suffix Link pointer, and no more than one outbound Suffix Link pointer. A node may have both an inbound Suffix Link pointer and an outbound Suffix Link pointer, that is, it may both be the Suffix Link node for another node, and also have its own Suffix Link node.</p>
+<h2 id="constant-time-traversal-using-the-active-point-and-suffix-links">Constant-time traversal using the Active Point and Suffix Links<a class="headerlink" href="#constant-time-traversal-using-the-active-point-and-suffix-links" title="Permanent link">&para;</a></h2>
+<p>When we perform Suffix Extensions, rather than traversing the tree from the root to find the insertion point, we instead traverse from the Active Point. In order for the algorithm to be correct, the Active Point needs to move around the tree and at the start of each Extension, it needs to somehow be exactly where it needs to be. After every Suffix Extension, two things need to happen.</p>
+<ul>
+<li>
+<p>The Active Point moves through the tree to ensure that it is in the right place. It may follow Suffix Links when doing this movement.</p>
+</li>
+<li>
+<p>Suffix Links are lain down, so that future iterations will be able to traverse the tree correctly.</p>
+</li>
+</ul>
+<p>In both of these actions, different things will need to be done depending on the Extension Rule that was applied for the Suffix Extension.</p>
+<h2 id="active-point-movement-after-extensions">Active Point movement after Extensions<a class="headerlink" href="#active-point-movement-after-extensions" title="Permanent link">&para;</a></h2>
+<p>After performing a Suffix Extension, we need to make sure that the Active Point is in precisely the right place before starting the next Suffix Extension. The hard work to figure out how to do this was done by Ukkonen in his paper, in which he provides how to move the Active Point, and the proof for why it ensures correctness. For implementors, it suffices to</p>
+<ul>
+<li>
+<p>On Rule 3 Extension: Whenever we perform a Rule 3 Extension, our Active Point advances one position down the tree in its current direction. This is often implemented as incrementing the "activeLength" variable.</p>
+</li>
+<li>
+<p>On Rule 2 Extension from root: Whenever we perform a Rule 2 Extension where the Active Point is along an outbound edge from the root node (but not directly on the root node), then we step the Active Point one position backwards and pull the active edge forwards to the first character of the next suffix being added. This is often implemented as decrementing the "activeLength" variable, and setting the "activeEdge" variable to point to the first character of the next suffix to be added, which you can find by stepping back from the end of the currently processed input, by a number of steps equal to the number of remaining suffixes that are not explicit in the tree.</p>
+</li>
+<li>
+<p>On Rule 2 Extension from an internal node: Whenever we perform a Rule 2 Extension where the Active Point is either on an internal node, or on an outbound edge from an internal node, then the Active Point follows the Suffix Link from that internal node. As mentioned earlier, if an internal node hasn't yet been assigned a Suffix Link, it has an implicit Suffix Link which is the root node, so in that case, the Active Point would go to the root node. This is often implemented by setting the "activeNode" variable to equal the node pointed at by the Suffix Link, or if there's none, then "activeNode" gets set to the root node.</p>
+</li>
+</ul>
+<h2 id="suffix-link-placement-after-extensions">Suffix Link placement after Extensions<a class="headerlink" href="#suffix-link-placement-after-extensions" title="Permanent link">&para;</a></h2>
+<p>For the Active Point to be able to move around the suffix tree as it needs to, we need to lay down links between certain nodes in the tree. Specifically, if a node has a path from the root whose edge labels spell out a suffix of some other node's path from the root, then the former node is called the Suffix Link node of the latter. Often, the term Suffix Link is used to describe the destination node itself, and not just the link between the nodes.</p>
+<p>As mentioned earlier, every internal node has an implicit Suffix Link to the root node. Leaf nodes do not have Suffix Links.</p>
+<p>In each Phase, we create a Suffix Link chain, also called a Suffix Chain, which is a linked list of nodes that are connected by Suffix Links. Every time we create a new Suffix Link, the destination node of the link becomes the source node for the next Suffix Link. For this reason, rather than writing about adding a Suffix Link, I will write about adding a node to the Suffix Chain. This makes it clearer that every time a node is added, it enters the role of both a destination for a Suffix Link, and potentially a source, if there is another Suffix Link added before the end of the Phase.</p>
+<p>Suffix Links are created as a part of all Rule 2 and Rule 3 Suffix Extensions. This is because during any Phase, in every Extension from the second Extension onwards, the suffix of the input string being added to the tree will also be a suffix of the string added in the previous Extension (which is itself a suffix of the input string).</p>
+<p>The following description of the Suffix Link placement scenarios will assume that the reference to the Active Point is canonical (see next section to understand Active Point "canonical references") at the time when the Suffix Extension is performed on the tree.</p>
+<ul>
+<li>
+<p>On Rule 3 Extension: For the edge that the Active Point along, add the source node of that edge to the Suffix Chain. This will not result in repeatedly adding the same node to the suffix chain, because a Rule 3 Extension will also result in the end of the Phase, and so the Suffix Chain will be reset.</p>
+</li>
+<li>
+<p>On Rule 2 Extension: For the leaf node that was inserted, add its parent node to the Suffix Chain.</p>
+</li>
+</ul>
+<h2 id="active-point-non-canonical-references">Active Point non-canonical references<a class="headerlink" href="#active-point-non-canonical-references" title="Permanent link">&para;</a></h2>
+<p>As mentioned earlier, the Active Point reference is stored with three variables: "activeNode", "activeEdge", "activeLength". It is possible for the algorithm to reach a state where the "activeLength" indicates a length which is longer than the label for the edge indicated by the "activeEdge" variable. In this case, the position of the Active Point is somewhere beyond the end of that edge. A reference in this form still correctly describes a precise location for the Active Point, but we have to traverse the tree to get there. This kind of reference is called a non-canonical reference.</p>
+<h2 id="active-point-reference-canonization">Active Point reference canonization<a class="headerlink" href="#active-point-reference-canonization" title="Permanent link">&para;</a></h2>
+<p>If we find ourselves in a position where we're about to perform a Suffix Extension from a non-canonical reference, we need to stop and canonize our reference first. I don't have a rigorous argument for this, but I can confidently say that attempting to implement all the Active Point movements and Suffix Link placements from a non-canonical reference is more
+difficult to get right, or to follow as a reader of the code.</p>
+<p>Canonizing an Active Point reference is an iterative process, by which you traverse edge labels in the tree and convert your current reference into a reference which is progressively closer to the canonical one. One way to think about this, is that while you are canonizing an Active Point reference, the "activeLength" variable in your Active Point reference should always be decreasing, the "activeEdge" should point to a character closer to the end of the suffix being added (i.e. closer to the end of the input string), and the "activeNode" should move closer to the base of the tree.</p>
+<p>For me, the "activeEdge" was the trickiest to think about here. Something that really helped me was when I stopped thinking of it as a character, and instead treated it like an index into the text. For character comparisons at nodes, my implementation dereferences the "activeEdge" index of the input string to get the underlying character.</p>
+<h2 id="active-point-behaviour-around-node-boundaries">Active Point behaviour around node boundaries<a class="headerlink" href="#active-point-behaviour-around-node-boundaries" title="Permanent link">&para;</a></h2>
+<p>If your Active Point is walking down an edge label, and reaches the next internal node, it is important to understand how the next Suffix Extension behaves. There are a few different ways to handle this in implementation, but the essential crux is making sure that all the variables in your Active Point reference are consistent with each other, and that whatever they are, the rest of the implementation is expecting the way that you handle it in the reference, including the Suffix Extension implementations, and also your Active Point reference canonization.</p>
+<p>For example, in my implementation, when the Active Point reaches the next node (i.e. the "activeLength" is at least as big as the length of the edge referenced by the "activeEdge"), my implementation will initiate Active Point reference canonization. This means that all of my Suffix Extension logic is expecting the Active Point reference to be canonical.</p>
+<h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
+<p>This algorithm is not like many of the other, more trivial algorithms that I met in undergraduate computer science, such as back-propagation, spanning tree construction, or the simplex iteration. One of the most difficult aspects for me coming into this algorithm was that lack of high-quality information. No other tutorial-like resource besides this one, as far as I am aware, makes it clear exactly when Suffix Links need to be added.</p>
+<p>This title for this comes from the book "Q for Mortals" by Jeffry Borror.</p>
+<h2 id="appendix-a-the-most-useful-sources-i-used-when-i-was-implementing-this-algorithm">Appendix A: The most useful sources I used when I was implementing this algorithm<a class="headerlink" href="#appendix-a-the-most-useful-sources-i-used-when-i-was-implementing-this-algorithm" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ukkonen's in plain english: https://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english</li>
+<li>Tushar's tutorial on Ukkonen's: https://www.youtube.com/watch?v=aPRqocoBsFQ</li>
+<li>Ben Langmead's computational genomics lecture on Suffix tries and trees: https://www.youtube.com/watch?v=hLsrPsFHPcQ</li>
+<li>Ukkonen's original paper: https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf</li>
+<li>Brenden Kokoszka's visualisation tool: http://brenden.github.io/ukkonen-animation/</li>
+</ul>
+<h2 id="appendix-b-testing-your-implementation-for-correctness">Appendix B: Testing your implementation for correctness<a class="headerlink" href="#appendix-b-testing-your-implementation-for-correctness" title="Permanent link">&para;</a></h2>
+<p>By hand, it will be difficult for you to come up with all the test cases to prove that your implementation is fully correct. I did attempt this. You can get quite far with it, but I never managed to get all the way to a robustly correct implementation by going case-by-case. I used fuzz testing in order to determine correctness.</p>
+<p>For fuzz testing, I recommend these guidelines:</p>
+<ul>
+<li>Use a small alphabet of characters to produce input strings</li>
+<li>Attempt more inputs of smaller length</li>
+</ul>
+<p>Both of these mean that the pathological cases your fuzzer finds will be simpler, which will make them easier to replay for debugging.</p>
+<h2 id="appendix-c-implementation-with-comments">Appendix C: Implementation with comments<a class="headerlink" href="#appendix-c-implementation-with-comments" title="Permanent link">&para;</a></h2>
+<p>This is object-oriented Kotlin.</p>
+<pre><code>class SuffixTree {
+    private var currentlyInsertedInput = &quot;&quot;
+    private var remainingSuffixes = 0
+
+    private val rootNode = RootNode()
+    private val activePoint = ActivePoint()
+
+    companion object {
+        fun ukkonenConstruction(input: String): SuffixTree {
+            val suffixTree = SuffixTree()
+            input.forEach { suffixTree.addChar(it) }
+            suffixTree.canonize()
+            return suffixTree
+        }
+    }
+
+    fun addChar(c: Char) {
+        // Add the character to the string of characters whose suffixes are present in the tree
+        // already.
+        currentlyInsertedInput += c
+
+        // There is now an additional suffix which is not yet explicit in the tree, so we increment
+        // our counter for the number of remaining suffixes.
+        remainingSuffixes++
+
+        // We ask the active point to add the remaining suffixes, with each suffix able to be added
+        // in O(1) time because the active point is creating and exploiting knowledge about the
+        // string's suffixes through the use of suffix links.
+        activePoint.addRemainingSuffixes(c)
+    }
+
+    /**
+     * Finds the offsets of the given query string within the input string by exploiting the built
+     * tree.
+     */
+    fun offsetsOf(queryString: String): Set&lt;Int&gt; {
+        return rootNode.offsetsOf(queryString)
+    }
+
+    /**
+     * This converts the implicit suffix tree into a canonical suffix tree by adding a character
+     * that doesn't appear elsewhere in the input.
+     */
+    private fun canonize() {
+        addChar('\u0000')
+    }
+
+    override fun toString(): String {
+        return &quot;SuffixTree(rootNode={\n$rootNode\n})&quot;
+    }
+
+    inner class ActivePoint {
+        private var activeNode: Node = rootNode
+        private var activeLength = 0
+        private var activeEdge = 0
+
+        private var suffixLinkCandidate: Node? = null
+
+        /**
+         * Add the suffixes that still need to be made explicit in the tree.
+         *
+         * @param c The character we're adding to the tree in the current phase.
+         */
+        fun addRemainingSuffixes(c: Char) {
+            // We only add suffix links within a phase, so we reset it at the start of the phase.
+            suffixLinkCandidate = null
+
+            while (remainingSuffixes &gt; 0) {
+                val extensionRuleThatWasApplied = addSuffix(c)
+                if (extensionRuleThatWasApplied == SuffixExtensionRule.RULE_THREE) {
+                    // When we apply rule three extensions, it ends the current phase because the
+                    // suffix we want to add is already implicitly present in the tree.
+                    break
+                }
+
+                // Since we haven't broken out of the loop, it means we didn't do a rule three extension,
+                // which means that a new suffix has been made explicit within the tree. When this
+                // happens, we decrement the number of suffixes that still need to be added.
+                remainingSuffixes--
+
+                if (activeNode == rootNode &amp;&amp; activeLength &gt; 0) {
+                    // When we insert a node from root, we decrement our active length, and pull our
+                    // active edge forwards to point at the start of the next suffix we're adding.
+                    activeLength--
+                    activeEdge = currentlyInsertedInput.length - remainingSuffixes
+                } else {
+                    // When we insert a node from an internal node, we follow its suffix link if it has
+                    // one. The default suffix link for any node is root.
+                    activeNode = activeNode.suffixLink()
+                }
+            }
+        }
+
+        /**
+         * @param c The character we're adding to the tree in the current phase.
+         * @return Which suffix extension rule was applied in order to add the next suffix.
+         */
+        private fun addSuffix(c: Char): SuffixExtensionRule {
+            if (activeLength == 0) {
+                // If we're at a node, set our active edge at the last added character in the text.
+                activeEdge = currentlyInsertedInput.length - 1
+            }
+
+            val activeEdgeLeadingChar = currentlyInsertedInput[activeEdge]
+            val nextNode = activeNode.edges[activeEdgeLeadingChar]
+            if (nextNode == null) {
+                // If the active node doesn't yet have a child node corresponding to the next
+                // character, add one. When we perform a leaf insertion like this, we need to add a
+                // suffix link.
+                activeNode.edges[activeEdgeLeadingChar] = LeafNode()
+                addSuffixLink(activeNode)
+                return SuffixExtensionRule.RULE_TWO
+            } else {
+                // If the reference to the active point is non-canonical, then canonize it by
+                // recursively stepping through the tree, and then go to the next extension of the
+                // current phase so that we can do all our steps from the basis of a canonical
+                // reference to the active point.
+                val edgeLength = nextNode.edgeLength()
+                if (activeLength &gt;= edgeLength) {
+                    activeEdge += edgeLength
+                    activeLength -= edgeLength
+                    activeNode = nextNode
+                    return addSuffix(c)
+                }
+
+                // If the character is already present on the edge we are creating for the next
+                // node, then we perform a rule three extension. We add a suffix link to the active
+                // node, so the active point gets to the right place after our next node insertion.
+                if (currentlyInsertedInput[nextNode.start + activeLength] == c) {
+                    activeLength++
+                    addSuffixLink(activeNode)
+                    return SuffixExtensionRule.RULE_THREE
+                }
+
+                // We split the active edge by creating a new internal node and a new leaf node for
+                // the next character. We add a suffix link for the newly created internal node.
+                val internalNode = Node(nextNode.start, nextNode.start + activeLength)
+                activeNode.edges[activeEdgeLeadingChar] = internalNode
+                internalNode.edges[c] = LeafNode()
+                nextNode.start += activeLength
+                internalNode.edges[currentlyInsertedInput[nextNode.start]] = nextNode
+                addSuffixLink(internalNode)
+                return SuffixExtensionRule.RULE_TWO
+            }
+        }
+
+        private fun addSuffixLink(node: Node) {
+            suffixLinkCandidate?.linkTo(node)
+            suffixLinkCandidate = node
+        }
+    }
+
+    open inner class Node(var start: Int, private var end: Int) {
+        private var suffixLink: Node? = null
+
+        val suffix = currentlyInsertedInput.length - remainingSuffixes
+        var edges = mutableMapOf&lt;Char, Node&gt;()
+
+        fun edgeLength(): Int = minOf(end, currentlyInsertedInput.length) - start
+
+        fun suffixLink(): Node = suffixLink ?: rootNode
+
+        fun linkTo(node: Node) {
+            suffixLink = node
+        }
+
+        fun edgeLabel(): String =
+            currentlyInsertedInput.substring(start, minOf(end, currentlyInsertedInput.length))
+
+        override fun toString(): String {
+            return toString(1)
+        }
+
+        open fun toString(indentationLevel: Int): String {
+            return &quot;Node(start=$start, end=$end, suffix=$suffix, hasLink?=${suffixLink != null}, label=${edgeLabel()}, &quot; +
+                    &quot;edges:${
+                        edges.map {
+                            &quot;\n${&quot;\t&quot;.repeat(indentationLevel)}'${it.key}'=${
+                                it.value.toString(
+                                    indentationLevel + 1
+                                )
+                            }&quot;
+                        }
+                    })&quot;
+        }
+    }
+
+    inner class LeafNode : Node(currentlyInsertedInput.length - 1, Int.MAX_VALUE) {
+        override fun toString(): String {
+            return &quot;LeafNode(start=$start, end=end, suffix=$suffix, label=${edgeLabel()})&quot;
+        }
+
+        override fun toString(indentationLevel: Int): String {
+            return toString()
+        }
+    }
+
+    inner class RootNode : Node(-1, -1) {
+        fun offsetsOf(queryString: String): Set&lt;Int&gt; {
+            var i = 0
+            var node: Node = this
+            while (i &lt; queryString.length) {
+                // We try to follow the edge to the next internal node. If there is no such edge, then
+                // there are no matches and we return the empty set.
+                node = (node.edges[queryString[i]] ?: return setOf())
+
+                // If the edge we just followed is longer than the remainder of the query string, then
+                // we get matches only if the edge label starts with the remainder of the query string.
+                // Otherwise we get no matches
+                if (node.edgeLength() &gt;= (queryString.length - i)) {
+                    var j = 0
+                    while (j &lt; queryString.length - i) {
+                        if (queryString[i + j] != currentlyInsertedInput[node.start + j]) {
+                            return setOf()
+                        }
+                        j++
+                    }
+                    return suffixesUnderSubtreeRootedAt(node)
+                }
+
+                // If the edge we just followed doesn't have an edge label matching the query string,
+                // from the current character until the end of the edge label, then there are no
+                // matches.
+                var k = 0
+                while (k &lt; node.edgeLength()) {
+                    if (queryString[i + k] != currentlyInsertedInput[node.start + k]) {
+                        return setOf()
+                    }
+                    k++
+                }
+
+                // We increase i by the size of the matching edge label we just crossed.
+                i += node.edgeLength()
+            }
+
+            // If we make it out of the loop, then we have consumed the full query string by traversing
+            // edges from the root. This means that all the suffixes stored within the current subtree
+            // will be prefixed by the query string.
+            return suffixesUnderSubtreeRootedAt(node)
+        }
+
+        private fun suffixesUnderSubtreeRootedAt(node: Node): Set&lt;Int&gt; {
+            return if (node.edges.isEmpty()) {
+                setOf(node.suffix)
+            } else {
+                node.edges.flatMap { suffixesUnderSubtreeRootedAt(it.value) }.toSet()
+            }
+        }
+
+        override fun toString(): String {
+            return &quot;RootNode(edges:${edges.map { &quot;\n\t'${it.key}'=${it.value.toString(2)}&quot; }})&quot;
+        }
+    }
+}
+
+private enum class SuffixExtensionRule {
+    /**
+     * Rule one extensions happen in the first extension of every phase, when the leaf nodes are
+     * implicitly extended by the addition of the next character. I have included it here for my
+     * documentation of the algorithm.
+     */
+    @Suppress(&quot;unused&quot;)
+    RULE_ONE,
+
+    /**
+     * Rule two extensions happen when the suffix is not implicitly present in the tree, so we add
+     * it in a new leaf node.
+     */
+    RULE_TWO,
+
+    /**
+     * Rule three extensions happen when the suffix is already implicitly present in the tree, in
+     * which case we do nothing. These suffixes will be made explicit later when the tree is
+     * canonized by the addition of a unique character at the end.
+     */
+    RULE_THREE
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

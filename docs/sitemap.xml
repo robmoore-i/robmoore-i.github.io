@@ -9,11 +9,95 @@
          <lastmod>2025-05-24</lastmod>
     </url>
     <url>
+         <loc>https://robmoore-i.github.io/reading/articles/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
          <loc>https://robmoore-i.github.io/reading/books/</loc>
          <lastmod>2025-05-24</lastmod>
     </url>
     <url>
          <loc>https://robmoore-i.github.io/reading/log/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/reading/selected-snippets/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/reading/videos/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/developer-experience/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/reader-experience/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/tests/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/documentation/divio/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/documentation/values/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/custom-repositories/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/custom-task-types/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/gradle-monorepo-structure/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/insider-guidelines/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/intellij-idea/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/jvms/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/kotlin-dsl/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/registering-gradle-tasks/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/gradle/secure-dependencies/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/notes/chestertons-traffic-lights/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/tutorials/migration-this-wiki-to-fly-io/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/tutorials/ukkonens-algorithm-for-mortals/</loc>
+         <lastmod>2025-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://robmoore-i.github.io/writing/tutorials/unit-testing-for-jenkins-pipeline-libraries/</loc>
          <lastmod>2025-05-24</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,1695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://robmoore-i.github.io/writing/gradle/gradle-monorepo-structure/">
+      
+      
+        <link rel="prev" href="../kotlin-dsl/">
+      
+      
+        <link rel="next" href="../jvms/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Gradle monorepo structure - Rob's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gradle-monorepo-structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-header__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rob's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gradle monorepo structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-nav__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Rob's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reading
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/articles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Articles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Books
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/selected-snippets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selected snippets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Writing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Writing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reader-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reader Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gradle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Gradle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insider-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insider guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intellij-idea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intellij IDEA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-dsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kotlin DSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Gradle monorepo structure
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gradle monorepo structure
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start simple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-projects-with-dependencies-between-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      More projects with dependencies between each other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-build-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom build logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-plugin-that-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a plugin that does nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-plugin-that-does-something" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a plugin that does something
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns-for-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patterns for plugins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links and further reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jvms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JVMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registering-gradle-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registering Gradle tasks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-task-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom task types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-repositories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secure-dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WIP: Secure Dependencies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/divio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divio's documentation system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation: Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/migration-this-wiki-to-fly-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating this Wiki to fly.io
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ukkonens-algorithm-for-mortals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ukkonen's Algorithm for Mortals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/unit-testing-for-jenkins-pipeline-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing for Jenkins Pipeline Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/chestertons-traffic-lights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chesterton's Traffic Lights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start simple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-projects-with-dependencies-between-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      More projects with dependencies between each other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-build-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom build logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-plugin-that-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a plugin that does nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-plugin-that-does-something" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a plugin that does something
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns-for-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patterns for plugins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links and further reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gradle-monorepo-structure">Gradle monorepo structure<a class="headerlink" href="#gradle-monorepo-structure" title="Permanent link">&para;</a></h1>
+<p>This tutorial will describe how I would generally go about structuring a Gradle monorepo project as someone who works at Gradle, and so knows the insider idioms of the tool fairly well.</p>
+<h2 id="start-simple">Start simple<a class="headerlink" href="#start-simple" title="Permanent link">&para;</a></h2>
+<p>The minimum viable Gradle build consists of a settings file, a single subproject and that subproject's build script. All the build logic is in Kotlin.</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % tree .
+.
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle.kts
+├── teashop.iml
+└── teasite
+    └── build.gradle.kts
+</code></pre>
+<pre><code>/////////////////////////////
+//// settings.gradle.kts ////
+/////////////////////////////
+rootProject.name = &quot;teashop&quot;
+include(&quot;teasite&quot;)
+</code></pre>
+<pre><code>//////////////////////////////////
+//// teasite/build.gradle.kts ////
+//////////////////////////////////
+plugins {
+    base
+}
+</code></pre>
+<p>With this you can run e.g. <code>./gradlew :teasite:tasks --all</code></p>
+<blockquote>
+<p>The root project's build script is not included in my minimum viable Gradle build. You don't need it, and in fact I would avoid adding one because it encourages you and your team to do things that hurt your configuration time, in particular, using <code>allprojects</code> and <code>subprojects</code> blocks. This is called <a href="https://docs.gradle.org/current/userguide/sharing_build_logic_between_subprojects.html#sec:convention_plugins_vs_cross_configuration">cross project configuration</a>.
+{.is-info}</p>
+</blockquote>
+<p>A practical consideration when editing build logic is that you should be running IDE syncs fairly frequently, so that Intellij can keep its model of your project up to date with the changes you're making to the project's structure. If you have a large build with bad IDE sync times, then this can hurt. At the same time, it is possible to batch together several changes that affect IDE sync, and the sync them all at once. I don't advise doing this unless you're confident with what you're doing.</p>
+<h2 id="more-projects-with-dependencies-between-each-other">More projects with dependencies between each other<a class="headerlink" href="#more-projects-with-dependencies-between-each-other" title="Permanent link">&para;</a></h2>
+<p>Add more projects by creating more directories under the root project directory, giving them build scripts, and including them in the root settings script. That's all there is to that. Something worth bearing in mind is that as you reach a high number of projects, your configuration time is going to increase. It can sometimes be appropriate to add additional source sets, rather than additional projects. I can also recommend using the <a href="https://docs.gradle.org/current/userguide/jvm_test_suite_plugin.html">jvm-test-suites</a> plugin for creating multiple test source sets in a project.</p>
+<p>When you start to have many projects with dependencies on each other, there may come a point where you want to share something between projects that isn't a JAR. <a href="https://docs.gradle.org/current/samples/sample_cross_project_output_sharing.html">This sample in the docs</a> gives a minimal example (sharing a single file) of the simplest way to do that.</p>
+<blockquote>
+<p>Gradle pros may encourage you to use something called variant-aware dependency selection and constrain your dependencies using attributes, rather than using the name of configurations directly. This is not hard to do, but unfortunately the docs on it are sparse and I don't want to get into that level of detail here. Perhaps I will submit a PR at some point to add that.
+{.is-info}</p>
+</blockquote>
+<h2 id="custom-build-logic">Custom build logic<a class="headerlink" href="#custom-build-logic" title="Permanent link">&para;</a></h2>
+<p>My favourite thing about Gradle compared to other build tools is that you can program your build as though it were any other JVM-language program. Gradle provides a framework for modeling tasks, their dependencies and the artefacts they produce. The framework implements work avoidance, and provides a few common build task behaviours out-of-the-box. Since you can provide your model as code, it can benefit from flexibility and reuse in the same way as any other program you write, meaning that as your build gets larger and more complex, you can define ever more powerful abstractions for modeling your build.</p>
+<p>The documentation for this capability is unfortunately quite sparse. There are two main ways to do it, and the better way, which I will describe here, was introduced fairly recently.</p>
+<p>The best way to add custom build logic to your Gradle monorepo is to use <a href="https://docs.gradle.org/current/userguide/composite_builds.html#included_plugin_builds">included build plugins</a>. That is, you have a directory underneath the root project, which is not a normal subproject. Instead, it is <a href="https://docs.gradle.org/current/userguide/composite_builds.html#settings_defined_composite">an included build</a>. This directory contains its own settings script, to indicate that it is its own Gradle build, and like its parent, this is a <a href="https://docs.gradle.org/current/userguide/multi_project_builds.html">multi-project build</a>. The projects it contains define script Gradle plugins, which you can use to extract abstractions from project builds within its parent, in order to reuse them across many projects.</p>
+<blockquote>
+<p>The more well-known way to provide custom build logic in a Gradle build is to <a href="https://docs.gradle.org/current/userguide/custom_plugins.html#sec:packaging_a_plugin">use buildSrc</a>. This was the recommendation for a long time, but it has since become outdated. The reason for this is that any change you make to buildSrc invalidates up-to-date checks on every project in the build. As your build grows, this invalidation starts to become very expensive and makes it difficult to work productively on build logic.</p>
+<p>At even larger scale (i.e. literally thousands of subprojects), it can become economical to start publishing plugins to an internal repository and consuming them as external dependencies (i.e. using a <a href="https://docs.gradle.org/current/javadoc/org/gradle/api/initialization/dsl/ScriptHandler.html">buildscript block</a>), rather than rebuilding the sources directly from within your monorepo. May you never experience that 🙏.
+{.is-info}</p>
+</blockquote>
+<p>Let's say I have a monorepo that contains two projects which both define AWS Lambda functions, <code>teasite</code> and <code>teapayments</code>:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % tree .
+.
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle.kts
+├── teapayments
+│   ├── build.gradle.kts
+│   └── src
+│       └── ...
+├── teashop.iml
+└── teasite
+    ├── build.gradle.kts
+    └── src
+        └── ...
+</code></pre>
+<p>For both projects, we have a Gradle task that packages the code and uploads it as a zip to AWS for use in the lambda. So for both projects, the build script is defining the same AWS dependencies, and the same custom task for uploading the lambda to AWS. The two project build scripts look almost identical. Here is one of them:</p>
+<pre><code>//////////////////////////////////
+//// teasite/build.gradle.kts ////
+//////////////////////////////////
+import org.gradle.api.DefaultTask
+import org.gradle.api.file.RegularFileProperty
+import org.gradle.api.provider.Property
+import org.gradle.api.tasks.*
+import org.gradle.process.ExecOperations
+import javax.inject.Inject
+
+plugins {
+  id(&quot;java&quot;)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  ...
+}
+
+// Specify Amazon Corretto JDK 11
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+        vendor.set(JvmVendorSpec.AMAZON)
+    }
+}
+
+// Definition of a task that uploads an AWS Lambda zip
+@UntrackedTask(because = &quot;We want to run this every time it is invoked&quot;)
+abstract class UploadLambda @Inject constructor(private val execOps: ExecOperations) : DefaultTask() {
+
+    @get:Input
+    abstract val functionName: Property&lt;String&gt;
+
+    @get:InputFile
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val zip: RegularFileProperty
+
+    @TaskAction
+    fun upload() {
+        execOps.exec {
+            commandLine(
+                &quot;aws&quot;, &quot;lambda&quot;, &quot;update-function-code&quot;,
+                &quot;--function-name&quot;, functionName.get(),
+                &quot;--zip-file&quot;, &quot;fileb://${zip.get().asFile.absolutePath}&quot;
+            )
+        }
+    }
+}
+
+// Task for putting the compiled Lambda's classes and dependencies into a zip of the right structure.
+val buildZip by tasks.registering(Zip::class) {
+    archiveBaseName.set(&quot;lambda&quot;)
+    from(tasks.named&lt;JavaCompile&gt;(&quot;compileJava&quot;).flatMap { it.destinationDirectory })
+    from(tasks.named&lt;ProcessResources&gt;(&quot;processResources&quot;).map { it.destinationDir })
+    into(&quot;lib&quot;) {
+        from(configurations.getByName(&quot;runtimeClasspath&quot;))
+    }
+}
+
+// Task for uploading zip to AWS
+tasks.register&lt;UploadLambda&gt;(&quot;uploadLambda&quot;) {
+  functionName.set(&quot;teasite&quot;)
+  zip.set(buildZip.flatMap { it.archiveFile })
+}
+</code></pre>
+<p>There are a few things going on here. There a toolchain definition, a custom task definition, and the registration of a couple of tasks. All of this is duplicated between the two projects in our build for no benefit, and you're not really thrilled about this.</p>
+<p>There is a way for us to elegantly extract appropriate abstractions and make both builds differ only in the way that matters. In this case, the projects differ in two dimensions:
+- They represent different Lambda functions
+- Their dependencies might be slightly different depending on what they do.</p>
+<p>The idiomatic way to extract common build logic is to use Gradle plugins. In this case, what we'd like is for both builds to declare that they are AWS Lambda functions by applying an appropriate plugin, and then configure some DSL that lets them specify the name of the function that they are. Below shows a nice possible outcome:</p>
+<pre><code>//////////////////////////////////////////////////
+//// Possible future teasite/build.gradle.kts ////
+//////////////////////////////////////////////////
+plugins {
+    id(&quot;teashop.aws-lambda&quot;)
+}
+
+awsLambda {
+    functionName.set(&quot;teasite&quot;)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    ...
+}
+</code></pre>
+<h2 id="creating-a-plugin-that-does-nothing">Creating a plugin that does nothing<a class="headerlink" href="#creating-a-plugin-that-does-nothing" title="Permanent link">&para;</a></h2>
+<p>I think it's important to be able to take an arbitrary first step when working in unfamiliar terrain. In this section I'll show how to create a Gradle plugin in your monorepo that does pretty much nothing.</p>
+<p>First, create the included build for your monorepo's custom plugins, as described at the start of this subsection. For the teashop example, I'll make a directory under "gradle", called "plugins", which results in having this structure:</p>
+<pre><code>.
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+│   └── plugins
+│       └── settings.gradle.kts
+├── gradlew
+├── gradlew.bat
+├── settings.gradle.kts
+├── teapayments
+│   ├── build.gradle.kts
+│   └── src
+│       └── ...
+├── teashop.iml
+└── teasite
+    ├── build.gradle.kts
+    └── src
+        └── ...
+</code></pre>
+<pre><code>/////////////////////////////
+//// settings.gradle.kts ////
+/////////////////////////////
+rootProject.name = &quot;teashop&quot;
+
+pluginManagement {
+    // Specifies an included build for defining custom plugins in the multi-project build.
+    includeBuild(&quot;gradle/plugins&quot;)
+}
+
+include(&quot;teasite&quot;)
+include(&quot;teapayments&quot;)
+</code></pre>
+<pre><code>/////////////////////////////////////
+//// plugins/settings.gradle.kts ////
+/////////////////////////////////////
+rootProject.name = &quot;plugins&quot;
+</code></pre>
+<p>At this point, the teashop build specifies an included build called "plugins" from which to draw custom Gradle plugins. However, it currently doesn't contain any plugins. We will now add the "no-op" plugin: A plugin that does nothing.</p>
+<p>I'll first create an empty subproject in the included build for Gradle plugins:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % tree plugins
+plugins
+├── no-op
+│   └── build.gradle.kts
+└── settings.gradle.kts
+</code></pre>
+<pre><code>/////////////////////////////////////
+//// plugins/settings.gradle.kts ////
+/////////////////////////////////////
+rootProject.name = &quot;plugins&quot;
+include(&quot;:no-op&quot;)
+</code></pre>
+<p>The next step is to turn the empty <code>no-op</code> project into a project that defines a Gradle plugin in Kotlin. This is not trivial, especially if you have never done it before. The first step is to apply the built-in <code>kotlin-dsl</code> Gradle plugin to the <code>no-op</code> project build:</p>
+<pre><code>////////////////////////////////////////
+//// gradle/plugins/no-op/build.gradle.kts ////
+////////////////////////////////////////
+plugins {
+    `kotlin-dsl`
+}
+
+repositories {
+    mavenCentral()
+}
+</code></pre>
+<p>Next, I run an Intellij sync, wait for it to complete, and then use Intellij to generate the main Kotlin source root by hovering over the project in Intellij's Project panel, using 'New' via CMD-N (or CTRL-N on Linux/Windows), selecting 'Directory' and then 'src/main/kotlin'. Whether by this method or another, the resuting directory structure of the plugins included build should be this:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % tree gradle/plugins 
+plugins
+├── no-op
+│   ├── build.gradle.kts
+│   └── src
+│       └── main
+│           └── kotlin
+└── settings.gradle.kts
+</code></pre>
+<p>The last step towards making an included build Gradle plugin is making a Gradle script under the newly created src/main/kotlin directory. The file's name needs to end with <code>.gradle.kts</code>. I have seen, and myself use the format: <code>&lt;org&gt;.&lt;plugin-name&gt;.gradle.kts</code>. In this example, I will create the file <code>teashop.no-op.gradle.kts</code>. Inside it, I'm going to put some unimportant build logic that proves that the plugin is being applied.</p>
+<pre><code>////////////////////////////////////////////////////////////////
+//// gradle/plugins/no-op/src/main/kotlin/teashop.no-op.gradle.kts ////
+////////////////////////////////////////////////////////////////
+tasks.register(&quot;sayHello&quot;) {
+    doFirst {
+        logger.lifecycle(&quot;Hello!&quot;)
+    }
+}
+</code></pre>
+<p>Without doing anything else, this plugin can now be applied by the projects of the build. For example:</p>
+<pre><code>//////////////////////////////////////
+//// teapayments/build.gradle.kts ////
+//////////////////////////////////////
+plugins {
+  id(&quot;teashop.no-op&quot;)
+}
+</code></pre>
+<p>Which allows me to do this:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % ./gradlew :teapay:sayHello
+
+&gt; Task :teapayments:sayHello
+Hello!
+
+BUILD SUCCESSFUL in 731ms
+11 actionable tasks: 1 executed, 10 up-to-date
+</code></pre>
+<h2 id="creating-a-plugin-that-does-something">Creating a plugin that does something<a class="headerlink" href="#creating-a-plugin-that-does-something" title="Permanent link">&para;</a></h2>
+<p>As is sometimes the case when going from an arbitrary first step to a meaningful follow-up step, the hard work is already done. From where we are with the <code>no-op</code> plugin, we need only to rename it and add some useful Gradle build configuration to the plugin, which is presently defined in <code>gradle/plugins/no-op/src/main/kotlin/teashop.no-op.gradle.kts</code>. Whatever Gradle code we add to that script will be ran for any project which applies the plugin. This includes any plugins that are specified for inclusion in the plugin. A plugin can even simply proxy other plugin(s), by containing only a <code>plugins { ... }</code> block.</p>
+<p>In the AWS Lambda example above, there was a class definition inlined into the project build. When pulling that code into a plugin, I would not leave the class definition in the script, I'd move it to its own file. To do that, create a package underneath the Kotlin source root of the plugin, and define classes in it. You'll need to import those classes into the plugin script in order to use them. I'll show an example by refactoring the <code>teashop.no-op</code> plugin:</p>
+<pre><code>///////////////////////////////////////////////////////////////////
+//// gradle/plugins/no-op/src/main/kotlin/com/teashop/SayHelloTask.kt ////
+///////////////////////////////////////////////////////////////////
+package com.teashop
+
+import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.TaskAction
+import org.gradle.work.DisableCachingByDefault
+
+@DisableCachingByDefault(because = &quot;By default you should say hello.&quot;)
+abstract class SayHelloTask : DefaultTask() {
+
+    @TaskAction
+    fun sayHello() {
+        logger.lifecycle(&quot;Hello!&quot;)
+    }
+}
+</code></pre>
+<pre><code>////////////////////////////////////////////////////////////////
+//// gradle/plugins/no-op/src/main/kotlin/teashop.no-op.gradle.kts ////
+////////////////////////////////////////////////////////////////
+import com.teashop.SayHelloTask
+
+tasks.register&lt;SayHelloTask&gt;(&quot;sayHello&quot;)
+</code></pre>
+<p>As before:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % ./gradlew :teapay:sayHello
+
+&gt; Task :teapayments:sayHello
+Hello!
+
+BUILD SUCCESSFUL in 1s
+11 actionable tasks: 4 executed, 7 up-to-date
+</code></pre>
+<p>The final project layout is this:</p>
+<pre><code>rob@Robs-MacBook-Pro-2 teashop % tree .                    
+.
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+│   └── plugins
+│       ├── no-op
+│       │   ├── build.gradle.kts
+│       │   └── src
+│       │       └── main
+│       │           └── kotlin
+│       │               ├── com
+│       │               │   └── teashop
+│       │               │       └── SayHelloTask.kt
+│       │               └── teashop.no-op.gradle.kts
+│       └── settings.gradle.kts
+├── gradlew
+├── gradlew.bat
+│   └── settings.gradle.kts
+├── settings.gradle.kts
+├── teapayments
+│   ├── build.gradle.kts
+│   └── src
+│       └── ...
+├── teashop.iml
+└── teasite
+    ├── build.gradle.kts
+    └── src
+        └── ...
+</code></pre>
+<h2 id="patterns-for-plugins">Patterns for plugins<a class="headerlink" href="#patterns-for-plugins" title="Permanent link">&para;</a></h2>
+<p>Sometimes, a plugin is highly reusable and flexible. Other times, a plugin may be quite specific to one particular project build. Sometimes, a plugin registers tasks itself and the applying project doesn't need to do anything. Other times, it may be more appropriate for the plugin to instead add custom types onto the classpath of the applying project, so that the applying project can register and configure tasks for itself. Do whatever works in your context.</p>
+<p>One of the idiomatic ways to organise Gradle plugins is to describe what a project <em>is</em>. For example, when applying the <code>teashop.aws-lambda</code> plugin to the <code>teasite</code> project, you might read that as "The teasite project is an AWS Lambda project". Of course, many built-in plugins don't conform to that idiom, so I don't feel at all constrained by it.</p>
+<p>A pattern I often use is to define a script plugin that is completely empty, but defines useful classes and Kotlin functions that are added to the classpath of a applying project's build script. For example, if my <code>teashop.no-op</code> plugin was totally empty, I would still have been able to register tasks of type <code>SayHelloTask</code> within the teasite project, since it applies the no-op plugin.</p>
+<p>Similarly, you can define a completely empty script plugin which brings along extension methods for existing Gradle types and puts them on your project builds' classpath. With this pattern it becomes possible to extend the Gradle DSL to provide abstractions of your choosing.</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>So here are the elements that I think are important for the ideal, idiomatic layout of a monorepo whose build tool is Gradle:</p>
+<ul>
+<li>A multi-project build with no root build script.</li>
+<li>Shared build logic provided by plugins defined in an included build.</li>
+</ul>
+<h2 id="links-and-further-reading">Links and further reading<a class="headerlink" href="#links-and-further-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A worked example of this structure, made by my dad by following this tutorial: https://github.com/ivanmoore/gradle-monorepo-setup</li>
+<li>Gradle source: https://github.com/gradle/gradle</li>
+<li>Gradle docs: https://docs.gradle.org</li>
+<li>Gradle site: https://gradle.org</li>
+<li>Part 1 of a 2-part series on Square's build woes: https://developer.squareup.com/blog/herding-elephants/</li>
+<li>Part 2 of a 2-part series on Square's build woes: https://developer.squareup.com/blog/stampeding-elephants</li>
+<li>A cute little trick you can do with Gradle (although it would be better if supplied by a plugin, and with tests): https://jonnyzzz.com/blog/2016/03/06/gradle-all-maven-runner/</li>
+<li>What I'm working on at Gradle: https://gradle.com</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
