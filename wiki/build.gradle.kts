@@ -34,9 +34,14 @@ tasks {
         into(rootProject.layout.projectDirectory.dir("published"))
     }
 
-    val gitCommitPublication by registering(UntrackedShell::class) {
+    val gitAddPublication by registering(UntrackedShell::class) {
         mustRunAfter(syncMkdocsToPublishedDirectory)
-        cmd.set(listOf("git", "commit", "-am", "Published at ${now()}"))
+        cmd.set(listOf("git", "add", "../published"))
+    }
+
+    val gitCommitPublication by registering(UntrackedShell::class) {
+        mustRunAfter(gitAddPublication)
+        cmd.set(listOf("git", "commit", "-m", "Published at ${now()}"))
     }
 
     val gitPush by registering(UntrackedShell::class) {
@@ -76,6 +81,7 @@ tasks {
             mkdocsBuild,
             gitCheckoutPublicationBranch,
             syncMkdocsToPublishedDirectory,
+            gitAddPublication,
             gitCommitPublication,
             gitPush
         )
