@@ -1,6 +1,6 @@
 import docbuild.mkdocs.MkdocsBuild
 import docbuild.shell.GitCheckoutBranch
-import docbuild.shell.Shell
+import docbuild.shell.UntrackedShell
 import java.time.LocalDateTime.now
 
 plugins {
@@ -11,18 +11,19 @@ plugins {
 tasks {
     val mkdocsBuild by existing(MkdocsBuild::class)
 
-    val gitStatusTask by registering(Shell::class) {
+    val gitStatusTask by registering(UntrackedShell::class) {
         cmd.set(listOf("git", "status", "--short"))
         outputFile.set(layout.buildDirectory.dir(name).map { it.file("git-status.txt") })
     }
 
     val gitCheckoutPublicationBranch by registering(GitCheckoutBranch::class) {
         mustRunAfter(mkdocsBuild)
+
         gitStatus.set(gitStatusTask.flatMap { it.outputFile }.map { it.asFile.readText() })
         branch.set("publication")
     }
 
-    val gitMergeMain by registering(Shell::class) {
+    val gitMergeMain by registering(UntrackedShell::class) {
         mustRunAfter(gitCheckoutPublicationBranch)
         cmd.set(listOf("git", "merge", "main"))
     }
@@ -33,12 +34,12 @@ tasks {
         into(rootProject.layout.projectDirectory.dir("published"))
     }
 
-    val gitCommitPublication by registering(Shell::class) {
+    val gitCommitPublication by registering(UntrackedShell::class) {
         mustRunAfter(syncMkdocsToPublishedDirectory)
         cmd.set(listOf("git", "commit", "-am", "Published at ${now()}"))
     }
 
-    val gitPush by registering(Shell::class) {
+    val gitPush by registering(UntrackedShell::class) {
         mustRunAfter(gitCommitPublication)
         cmd.set(listOf("git", "push"))
     }
@@ -49,7 +50,7 @@ tasks {
         branch.set("main")
     }
 
-    val gitCurrentBranch by registering(Shell::class) {
+    val gitCurrentBranch by registering(UntrackedShell::class) {
         cmd.set(listOf("git", "branch", "--show-current"))
         outputFile.set(layout.buildDirectory.dir(name).map { it.file("git-branch.txt") })
     }

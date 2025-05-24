@@ -23,6 +23,7 @@ abstract class Shell @Inject constructor(private val exec: ExecOperations) : Def
 
     @TaskAction
     fun run() {
+        before()
         if (outputFile.isPresent) {
             outputFile.get().asFile.delete()
         }
@@ -33,5 +34,8 @@ abstract class Shell @Inject constructor(private val exec: ExecOperations) : Def
                 standardOutput = FileOutputStream(outputFile.get().asFile, false)
             }
         }.assertNormalExitValue()
+    }
+
+    open fun before() {
     }
 }

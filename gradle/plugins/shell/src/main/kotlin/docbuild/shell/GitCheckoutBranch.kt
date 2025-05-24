@@ -3,13 +3,12 @@ package docbuild.shell
 import javax.inject.Inject
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.TaskAction
+import org.gradle.api.tasks.UntrackedTask
 import org.gradle.process.ExecOperations
-import org.gradle.work.DisableCachingByDefault
 
 @Suppress("LeakingThis")
-@DisableCachingByDefault
-abstract class GitCheckoutBranch @Inject constructor(exec: ExecOperations) : Shell(exec) {
+@UntrackedTask(because = "never cache")
+abstract class GitCheckoutBranch @Inject constructor(exec: ExecOperations) : UntrackedShell(exec) {
 
     @get:Input
     abstract val branch: Property<String>
@@ -22,8 +21,7 @@ abstract class GitCheckoutBranch @Inject constructor(exec: ExecOperations) : She
         cmd.add(branch)
     }
 
-    @TaskAction
-    fun gitCheckout() {
+    override fun before() {
         if (gitStatus.isPresent && gitStatus.get().isNotBlank()) {
             throw RuntimeException(
                 "Refusing to switch branch due to outstanding changes:\n${gitStatus.get()}---"
