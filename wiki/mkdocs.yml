@@ -4,8 +4,34 @@ nav:
   - Home: index.md
   - Work: work.md
   - Reading:
-    - reading/log.md
+    - reading/articles.md
     - reading/books.md
+    - reading/log.md
+    - reading/selected-snippets.md
+    - reading/videos.md
+  - Writing:
+    - writing/developer-experience.md
+    - writing/reader-experience.md
+    - writing/tests.md
+    - Gradle:
+      - writing/gradle/insider-guidelines.md
+      - writing/gradle/intellij-idea.md
+      - writing/gradle/kotlin-dsl.md
+      - writing/gradle/gradle-monorepo-structure.md
+      - writing/gradle/jvms.md
+      - writing/gradle/registering-gradle-tasks.md
+      - writing/gradle/custom-task-types.md
+      - writing/gradle/custom-repositories.md
+      - writing/gradle/secure-dependencies.md
+    - Documentation:
+      - writing/documentation/divio.md
+      - writing/documentation/values.md
+    - Tutorials:
+      - writing/tutorials/migration-this-wiki-to-fly-io.md
+      - writing/tutorials/ukkonens-algorithm-for-mortals.md
+      - writing/tutorials/unit-testing-for-jenkins-pipeline-libraries.md
+    - Notes:
+      - writing/notes/chestertons-traffic-lights.md
 theme:
   name: material
   features:
