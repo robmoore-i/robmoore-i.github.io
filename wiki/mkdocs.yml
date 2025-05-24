@@ -4,8 +4,15 @@ nav:
   - Home: index.md
   - Work: work.md
   - Reading:
-    - reading/log.md
+    - reading/articles.md
     - reading/books.md
+    - reading/log.md
+    - reading/selected-snippets.md
+    - reading/videos.md
+  - Writing:
+    - writing/developer-experience.md
+    - writing/reader-experience.md
+    - writing/tests.md
 theme:
   name: material
   features:
