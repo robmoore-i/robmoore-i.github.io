@@ -28,19 +28,21 @@ tasks {
         cmd.set(listOf("git", "merge", "main"))
     }
 
-    val syncMkdocsToPublishedDirectory by registering(Sync::class) {
+    val githubPagesPublicationDirectory = "docs"
+
+    val syncMkdocsToPublicationDirectory by registering(Sync::class) {
         mustRunAfter(gitMergeMain)
         from(mkdocsBuild)
-        into(rootProject.layout.projectDirectory.dir("published"))
+        into(rootProject.layout.projectDirectory.dir(githubPagesPublicationDirectory))
     }
 
-    val gitAddPublication by registering(UntrackedShell::class) {
-        mustRunAfter(syncMkdocsToPublishedDirectory)
-        cmd.set(listOf("git", "add", "../published"))
+    val gitAddPublicationDirectory by registering(UntrackedShell::class) {
+        mustRunAfter(syncMkdocsToPublicationDirectory)
+        cmd.set(listOf("git", "add", "../$githubPagesPublicationDirectory"))
     }
 
     val gitCommitPublication by registering(UntrackedShell::class) {
-        mustRunAfter(gitAddPublication)
+        mustRunAfter(gitAddPublicationDirectory)
         cmd.set(listOf("git", "commit", "-m", "Published at ${now()}"))
     }
 
@@ -81,8 +83,8 @@ tasks {
             mkdocsBuild,
             gitCheckoutPublicationBranch,
             gitMergeMain,
-            syncMkdocsToPublishedDirectory,
-            gitAddPublication,
+            syncMkdocsToPublicationDirectory,
+            gitAddPublicationDirectory,
             gitCommitPublication,
             gitPush
         )
