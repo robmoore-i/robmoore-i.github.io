@@ -22,8 +22,13 @@ tasks {
         branch.set("publication")
     }
 
-    val syncMkdocsToPublishedDirectory by registering(Sync::class) {
+    val gitMergeMain by registering(Shell::class) {
         mustRunAfter(gitCheckoutPublicationBranch)
+        cmd.set(listOf("git", "merge", "main"))
+    }
+
+    val syncMkdocsToPublishedDirectory by registering(Sync::class) {
+        mustRunAfter(gitMergeMain)
         from(mkdocsBuild)
         into(rootProject.layout.projectDirectory.dir("published"))
     }
@@ -70,8 +75,8 @@ tasks {
             gitCheckoutPublicationBranch,
             syncMkdocsToPublishedDirectory,
             gitCommitPublication,
-            gitPush,
-            gitCheckoutMainBranch
+            gitPush
         )
+        finalizedBy(gitCheckoutMainBranch)
     }
 }

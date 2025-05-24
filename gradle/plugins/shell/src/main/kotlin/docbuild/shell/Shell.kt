@@ -32,6 +32,6 @@ abstract class Shell @Inject constructor(private val exec: ExecOperations) : Def
                 outputFile.get().asFile.delete()
                 standardOutput = FileOutputStream(outputFile.get().asFile, false)
             }
-        }
+        }.assertNormalExitValue()
     }
 }
