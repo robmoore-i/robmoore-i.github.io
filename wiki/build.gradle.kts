@@ -56,6 +56,7 @@ tasks {
 
     val mkdocsPublishPreflightCheck by registering {
         val currentBranch = gitCurrentBranch.flatMap { it.outputFile }.map { it.asFile.readText() }
+        inputs.property("currentBranch", currentBranch)
         doFirst {
             if (!currentBranch.isPresent || currentBranch.get().trim() != "main") {
                 throw RuntimeException(
