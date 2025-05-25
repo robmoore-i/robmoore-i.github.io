@@ -1326,6 +1326,7 @@
 
 <h1 id="migrating-this-wiki-to-flyio">Migrating this Wiki to fly.io<a class="headerlink" href="#migrating-this-wiki-to-flyio" title="Permanent link">&para;</a></h1>
 <p><strong>Note</strong>: My wiki now runs on GitHub pages, which is a better fit. I no longer have the power to edit my website inline, but that wasn't really an important feature. GitHub pages is just as free, and unlike running a wiki docker container on fly.io, I don't have to think about resources, like memory.</p>
+<p>This wiki used to run as a standalone Docker container on an EC2 box. I have since become more tech-savvy.</p>
 <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
 <p>AWS is expensive. I have been paying 15 SGD/month to run a small EC2 instance. I had installed Docker on this EC2 instance, and was running this Wiki as a container, with appropriate exposed ports and environment variables. I was using the Wiki's integration with Letsencrypt to maintain the SSL certificate for the domain I was using for it: wiki.rrmoore.com.</p>
 <p>It's not breaking the bank, but it's more than necessary. If I were ever in a pinch, I would be cross with myself for not having saved these dollars earlier.</p>
