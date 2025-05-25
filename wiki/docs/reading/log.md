@@ -41,3 +41,7 @@ The month in each entry refers to when I finished reading a book. Generally I st
 
 - Nov: India: A history - John Keay
 
+---
+Created on 2023-01-14
+
+Updated regularly

@@ -93,3 +93,8 @@ I don't like this article, but I like this cherry-picked excerpt, because it des
 >  In Haskell or even in Perl you are always worrying about whether you are doing something in the cleanest and the best way. In Java, you can forget about doing it in the cleanest or the best way, because that is impossible. Whatever you do, however hard you try ... the only thing you can do is relax and keep turning the crank until the necessary amount of code has come out of the spout.
 
 ### [Minsky moments in Venture Capital](https://pivotal.substack.com/p/minsky-moments-in-venture-capital?utm_source=url)
+
+---
+Created on 2022-05-28
+
+Updated regularly

@@ -35,3 +35,8 @@ Sometimes, the type will be more convoluted. For example, it could also have bee
 ```
 val dockerApplications = the<NamedDomainObjectContainer<DockerApplication>>()
 ```
+
+---
+Created on 2024-05-24
+
+Updated on 2024-05-24

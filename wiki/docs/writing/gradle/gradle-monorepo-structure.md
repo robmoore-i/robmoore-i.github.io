@@ -435,3 +435,8 @@ So here are the elements that I think are important for the ideal, idiomatic lay
 - Part 2 of a 2-part series on Square's build woes: https://developer.squareup.com/blog/stampeding-elephants
 - A cute little trick you can do with Gradle (although it would be better if supplied by a plugin, and with tests): https://jonnyzzz.com/blog/2016/03/06/gradle-all-maven-runner/
 - What I'm working on at Gradle: https://gradle.com
+
+---
+Created on 2023-05-07
+
+Updated on 2025-02-23

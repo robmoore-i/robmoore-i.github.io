@@ -15,3 +15,8 @@ Gradle will run using whatever version of Java is specified in the `JAVA_HOME` e
 The version of Java used to invoke Gradle is not necessarily the same as the version of Java used to compile your Java code or run your tests.
 
 If you don't use the Java Toolchains feature to specify the version of the JVM to use when compiling code or running tests, then Gradle will just use whatever JVM is being used to run itself. Unless you have a good (and I imagine really quite interesting and unique) reason to preseve that behaviour, you should always be using Java Toolchains to explicitly specify the version of the JVM to use for compiling code and running tests. I find the [official documentation](https://docs.gradle.org/current/userguide/toolchains.html) for this feature to be pretty useful and descriptive.
+
+---
+Created on 2024-06-06
+
+Updated on 2024-06-06

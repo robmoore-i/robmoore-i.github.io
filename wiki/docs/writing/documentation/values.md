@@ -34,3 +34,8 @@ Use links, liberally, in order to connect concepts.  This makes it easier for yo
 **Summary**: The best documentation not only conveys new information, but it also enhances the reader's understanding of topics that they have already grasped. Don't be afraid to use verbose, precise language to provide readers with different perspectives on systems or tools with which they may already be familiar.
 
 It's a delightful experience to learn something new and exciting when you didn't expect to, or as a side effect of learning something else. To foster these experiences, provide tangential educational material inline in your documentation, to allow users to learn more about the ecosystem around the technical topic you are writing about. Inevitably, this will give them a deeper appreciation and understanding of your content.
+
+---
+Created on 2022-08-05
+
+Updated on 2023-05-25

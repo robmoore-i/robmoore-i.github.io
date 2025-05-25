@@ -86,3 +86,8 @@ There should exactly one method in a task class definition annotated with `@Task
 ## Further notes
 
 Custom task types should be declared within included-build plugins, as described in my longer article on [structuring a Gradle build](/writing/gradle/gradle-monorepo-structure).
+
+---
+Created on 2024-05-15
+
+Updated on 2024-08-30

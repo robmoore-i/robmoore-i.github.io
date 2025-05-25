@@ -36,3 +36,8 @@ When I read this it reminded me immediately of one of principles of Sydney Dekke
 - Sydney Dekker, In a slide of a 'Safety Differently' lecture
 
 This slide has significantly impacted my understanding of safety in software. In theory, precisely prescribed processes promise protection against safety incidents. Yet in practice, such prescription breaks down in the face of the world's complexity, and we are forced to deal with the lived realities of people working on the ground in order to make progress on safety. I believe software development has so much to gain from this outlook on safety, if only it were adopted more widely.
+
+---
+Created on 2022-08-19
+
+Updated regularly

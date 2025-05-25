@@ -90,3 +90,8 @@ In general, I avoid defining new task types (i.e. new classes which extend Defau
 If I'm defining a task that is specific to the project, then I register the task in the project build script. If the task is generic, or I know or anticipate that abstracting it into a plugin would be useful, then I would define the new task in a plugin that is applied. The task is then registered by the application of the plugin. If the task needs to be configured for each project that applies it, then the project build script can do that.
 
 To use an analogy of application programming in an object-oriented language, if I'm writing behaviour that is truly specific to the implementation of a specific class, it makes sense to capture that behaviour in a private method of that class. If however the implementation is a special case of a more generic behaviour that should be abstracted for re-use, I would at least consider extracting it into another class. To return from the analogy of application programming back to Gradle build development, if I want to add a task that is truly specific to a particular project's role in the build, then it makes sense to register it within the project build script. On the other hand if the task I want to add is actually a special case of something more generic that exists in other projects (and perhaps considering Kent Beck's [Rule of Three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming))), then I might prefer to define the task in a plugin which is applied to the project instead, and have the project configure the task in a special way if necessary.
+
+---
+Created on 2023-12-24
+
+Updated on 2024-05-15
