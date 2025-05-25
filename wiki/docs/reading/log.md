@@ -1,6 +1,6 @@
 # Log
 
-The month in each entry refers to when I finished reading a book. Generally I start a new book right after finishing a previous one. I only read one book at a time.
+The month in each entry refers to when I finished reading a book. I almost always start a new book right after finishing a previous one. I only read one book at a time.
 
 ## 2025
 

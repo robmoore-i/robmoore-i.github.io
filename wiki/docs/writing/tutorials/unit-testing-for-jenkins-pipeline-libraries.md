@@ -1,5 +1,7 @@
 # Unit Testing for Jenkins Pipeline Libraries
 
+This is my guide to writing unit testable Jenkins shared pipeline libraries, which allows you to support greater complexity and agility in your CI system. I first developed this practice in 2020 with the help of my friend Adrian Bärtschi.
+
 ## Motivation
 
 Almost everyone now uses automated CI pipelines. Originally they just ran the build, but in contemporary development ecosystems, pipelines have a diverse range of responsibilities, such as:

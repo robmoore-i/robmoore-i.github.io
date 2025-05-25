@@ -1,5 +1,7 @@
 # Videos
 
+(There's certainly a sense in which you _read_ a video i.e. read and process the interesting visual and audio data from a video, using your eyes, ears and brain.)
+
 Here are some talks I like:
 
 ### [Postcards from the peak of complexiy - Brian Goetz](https://www.youtube.com/watch?v=Yiye8lqh0Ig)
