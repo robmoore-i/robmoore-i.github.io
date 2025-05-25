@@ -225,3 +225,8 @@ public class CloneStageTest {
     - Wrap 3rd party interfaces using an Adaptor class
     - Only write tests that give you confidence
     - Invest in really understanding the CI runtime
+
+---
+Created on 2022-05-28
+
+Updated on 2023-03-09

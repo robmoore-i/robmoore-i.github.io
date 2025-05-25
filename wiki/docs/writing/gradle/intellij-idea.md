@@ -28,3 +28,8 @@ Once you have made a change to the build definition that you think might fix you
 2. Trigger "Repair IDE". Again, I have this on a custom shortcut. I use Cmd-Ctrl-I (I as in IKEA).
 
 I like the "Repair IDE" flow because it offers you escalations after each attempt. If you run it initially and it doesn't fix your problem, when you think it should, then it will offer to "Rescan Project Indexes" as a next step. As the next step after that, I think it asks you to restart IDEA. I rarely have to go further than the first step, which I think just reloads all build files and project files from disk, although I don't actually know.
+
+---
+Created on 2024-06-06
+
+Updated on 2024-06-06

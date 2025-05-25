@@ -14,3 +14,8 @@ Here is a rough checklist I made related to writing a great test suite in an obj
 8. Tests can be executed locally by developers on their machine, using their own, possibly modified, copy of the code. Use of secret credentials and custom configurations for tests is discouraged, especially if they are present only on CI, and therefore more difficult for new or inexperienced team members to discover.
 9. The name of a test should describe a general behaviour that your unit exhibits e.g. "checks that file exists" rather than "throws exception if argument to --file is non-existing file". Don't put the body of the test in the name of the test.
 10. Source code is written with testability in mind. Testability is an essential feature of high-quality production code. Code should be deliberately written in a way that makes it easy for you and other authors to write fast-running automated tests which verify that your program behaves correctly.
+
+---
+Created on 2022-06-07
+
+Updated on 2024-01-28

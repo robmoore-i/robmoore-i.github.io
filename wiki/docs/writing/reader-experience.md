@@ -17,3 +17,8 @@ Part of thinking about your reader's experience, is thinking about what readers 
 When thinking about experiences related to changing the code, as opposed to just reading it, I use the term "author experience".
 
 I think the absolute best way to achieve a high quality reader and author experience, is to [write great tests](/writing/tests).
+
+---
+Created on 2022-06-06
+
+Updated on 2022-08-28

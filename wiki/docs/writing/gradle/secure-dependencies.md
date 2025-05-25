@@ -136,3 +136,10 @@ TODO
 In the last two cases, we are modifying third-party software after it has been released. This means the quality control that they may have done prior to shipping the software no longer applies to what we are running, due to the shelleyan JAR transformations we've done. This is where I think a different and more expansive kind of testing can help.
 
 So often, developers say "Don't test third-party dependencies", by which they mean the database, the container runtime etc. I see this slightly more subtely. If you can write fast, deterministic, easily maintainable tests that give you great confidence by incorporating your third-party dependencies, I think you should do it. However, if those tests would be flaky, slow and burdensome, then you should not do it. With modern hardware and software, I find that it is often possible to write nice tests that incorporate certain elements of your software's runtime that traditionally have been excluded from the scope of "unit tests" by puritans. These include the database or the container runtime. My suggestion is that you experiment and do what is most delightful for you and your team.
+
+---
+This page is not yet finished.
+
+Created on 2023-10-30
+
+Updated on 2025-02-23

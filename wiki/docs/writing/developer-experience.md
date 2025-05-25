@@ -75,3 +75,8 @@ Such businesses struggle to produce good software products, and it is really no 
 3. It should be intuitively clear that DX is important for the success of a company that builds and depends on its software products for revenue, but if not, there is also compelling data.
 4. DX is not only about tools. Codebase habitability, abstraction and team structure are also important.
 5. In my experience, companies with the worst DX often have a few other curious traits in common.
+
+---
+Created on 2022-08-28
+
+Updated on 2024-08-30
