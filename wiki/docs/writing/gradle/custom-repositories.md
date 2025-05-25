@@ -1,5 +1,7 @@
 # Custom repositories
 
+This page describes how you can download any files using Gradle dependency management.
+
 Downloading files using Gradle should be really easy, it shouldn't require any third party shit, and it should be compatible with all stable optimization features of the build tool. There is a technique that conforms to these basic constraints. It is pretty convoluted, and I have never seen official documentation for it. We use it in our build in several places, and I have applied it myself. It's satisfying once it works. This page will explain how to download arbitrary files from the internet using Gradle in a way that doesn't require you to apply any plugins, register any tasks and isn't a performance footgun.
 
 ## Terminology

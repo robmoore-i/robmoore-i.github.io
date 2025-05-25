@@ -1,5 +1,7 @@
 # Intellij IDEA
 
+This page is about using Gradle from Intellij IDEA.
+
 **Introduction: Using Gradle from Intellij IDEA**
 
 Intellij IDEA is a big, complex, powerful tool, solving a problem that is harder than it looks from the outside. Gradle is similar in this way. Put them together, and you have a recipe for a horrible, overcomplicated experience. There are a few things you can do to have a better time.

@@ -1,5 +1,7 @@
 # Documentation: Values
 
+Values I think are important for producing the best documentation.
+
 ## My values for technical documentation
 
 ### Respect

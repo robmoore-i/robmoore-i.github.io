@@ -1,5 +1,7 @@
 # Articles
 
+Articles I've read and liked.
+
 ### [Lockhart's Lament](https://worrydream.com/refs/Lockhart_2002_-_A_Mathematician's_Lament.pdf)
 
 ### [Barrels and Ammunition](https://www.conordewey.com/blog/barrels-and-ammunition/)

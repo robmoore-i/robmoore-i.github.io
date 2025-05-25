@@ -1,5 +1,7 @@
 # Ukkonen's Algorithm for Mortals
 
+This is a guide to Ukkonen's online suffix-tree construction algorithm with enough detail about edge cases to allow you to write a correct implementation of it.
+
 ## What is Ukkonen's algorithm?
 
 Ukkonen's algorithm is an online suffix tree construction algorithm which runs in time and space that is linear with the length of the string being indexed. Below I'll break this sentence down into parts.
