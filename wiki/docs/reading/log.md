@@ -4,7 +4,7 @@ The month in each entry refers to when I finished reading a book. Generally I st
 
 ## 2025
 
-- Wip: Understanding Cancer - Robin Hesketh
+- Wip: Understanding cancer - Robin Hesketh
 - Apr: The palace of illusions - Chitra Banarjee Divakaruni
 - Apr: The fault in our stars - John Green
 - Apr: And then there were none - Agatha Christie
