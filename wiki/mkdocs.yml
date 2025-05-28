@@ -20,6 +20,7 @@ nav:
     - writing/developer-experience.md
     - writing/reader-experience.md
     - writing/tests.md
+    - writing/notes/chestertons-traffic-lights.md
     - Gradle:
       - writing/gradle/insider-guidelines.md
       - writing/gradle/intellij-idea.md
@@ -37,5 +38,3 @@ nav:
       - writing/tutorials/migration-this-wiki-to-fly-io.md
       - writing/tutorials/ukkonens-algorithm-for-mortals.md
       - writing/tutorials/unit-testing-for-jenkins-pipeline-libraries.md
-    - Notes:
-      - writing/notes/chestertons-traffic-lights.md
