@@ -45,11 +45,13 @@ Books I've read, liked, and might recommend.
 - The body keeps the score - Bessel Van Der Kolk
 - When the body says no - Gabor Maté
 - Gut - Giulia Enders
+- Understanding cancer - Robin Hesketh
 
 ## Narrative non-fiction
 
 - The boys in the boat - Daniel James Brown
 - Endurance - Alfred Lansing
+- The emperor of all maladies: A biography of cancer - Siddhartha Mukherjee
 
 ## Fiction
 
