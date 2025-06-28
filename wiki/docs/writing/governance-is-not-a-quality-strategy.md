@@ -12,13 +12,13 @@ We are having problems producing work that is of as high quality as the work we'
 
 There are varying degrees to which different engineering organisations get this wrong.
 
-Extremely wrong: Introduction of a manual testing / approval step.
+- Very wrong: Introduction of a manual testing / approval step.
+- Less, but still very wrong: Code coverage must be X%.
+- Wrong, but starting to think in the right direction: All changes must include automated tests.
 
-Less, but still very wrong: Code coverage must be X%.
+Below I discuss the approaches I think are more likely to be effective.
 
-Wrong, but starting to think in the right direction: All changes must include automated tests.
-
-## Real solutions all revolve around producing higher quality work
+## Real solutions require engineers to produce higher quality work
 
 I've listed these in order, ranked by my opinion, starting with the 'best', as in most likely to have a positive impact.
 
@@ -28,7 +28,7 @@ I hope you saw this coming. If you want better work to happen in your engineerin
 
 #### Introducing tools that help engineers do better work
 
-Shameless promotion: Develocity is good.
+Introducing good tools can help engineers to focus on solving problems that add value (and avoid incomplete/broken re-implementations for functionality that you can get using existing tools). 
 
 #### Streamlining processes to reduce interruptions and distractions
 
@@ -36,7 +36,7 @@ Hour-long standups are actually very bad.
 
 #### Removing and mitigating high-friction developer experiences
 
-It should be somebody's job to make everybody more productive and keep them productive.
+It should be somebody's job to make everybody more productive and keep them productive by solving problems that distract them for value-adding work.
 
 ### Helping your existing engineers to become more skilled
 
