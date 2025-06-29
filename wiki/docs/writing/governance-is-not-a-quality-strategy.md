@@ -32,7 +32,7 @@ I hope you saw this coming. If you want better work to happen in your engineerin
 
 #### Allowing engineers to improve product quality when they know it's needed
 
-A significant own-goal that organisations frequently score is that when they know about a quality problem, and they also have the skills available to fix it, and they have time to do so, they often simply choose to not fix the problem. This isn't the decision of one individual (a key part of the problem), but rather the decision of the amorphous "organisation". To frustrated, paying customers, this is inexplicable and infuriating, yet it happens in many industries, from tech to finance.
+A significant own-goal that organisations often score is that when they know about a quality problem, and they also have the skills available to fix it, and they have time to do so, they often simply choose to not fix the problem. This isn't the decision of one individual (a key part of the problem), but rather the decision of the amorphous "organisation". To frustrated, paying customers, this is inexplicable and infuriating, yet it happens in many industries, from tech to finance.
 
 It's this simple: When quality problems are identified in your software, you need to fix them! If you don't fix the quality problems you know about, how can you possibly hope to improve the quality of your organisation's software? This should be obvious, and yet, amazingly, it is hugely differentiating amongst software engineering organisations. The reason for this is that you can't easily imitate this culture by adopting some acronym or "framework", and you can't buy it via any tool or certification. If you're familiar with the original Agile manifesto, you'll know this as valuing "individuals and interactions over processes and tools".
 
@@ -42,11 +42,13 @@ I think the underlying principle here is that if you want to improve quality, yo
 
 To solve a problem at the edge of my abilities, I need to be able to focus on it, and I would venture to say that most people are basically the same in that regard. We need to be able to focus and concentrate in order to solve the hardest problems that we're capable of solving.
 
-In my experience, bringing engineers into frequent synchronous meetings is bad for productivity. So much can be communicated asynchronously, and for me, it has been a game-changer to come into a team where that is the norm, and meetings are not the default.
+Giving engineers the gift of focus also gives them the ability to solve problems that otherwise might prove too difficult for them. 
 
 #### Removing and mitigating high-friction developer experiences
 
-It should be somebody's job to make everybody more productive and keep them productive by solving problems that distract them for value-adding work.
+Shortening feedback loops to allow developers to iterate more, which gives them (a) more chances to understand the problem they're solving (b) more chances to perfect their solution. In this way, an engineer working on a problem where they can iterate freely, seems to be smarter, faster and completely better than the same engineer working on a problem where iteration is painful, difficult, slow or flaky. In this way, you can improve the skills of engineers just by speeding up their feedback loops.
+
+The ideal feedback loop is of course an automated test. Knowing to use automated tests is a skill that requires practice, but if you create the right culture, you should be able to drop an engineer into a culture of testing and have them adopt it as their own fairly quickly.
 
 #### Introducing tools that help engineers do better work
 
