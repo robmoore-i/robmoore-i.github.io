@@ -32,21 +32,27 @@ I hope you saw this coming. If you want better work to happen in your engineerin
 
 #### Allowing engineers to improve product quality when they know it's needed
 
-A significant own-goal that organisations frequently score is that when they know about a quality problem, and they also have the skills available to fix it, and time to do so, they simply do not make the fix. To frustrated, paying customers, this is inexplicable and infuriating.
+A significant own-goal that organisations frequently score is that when they know about a quality problem, and they also have the skills available to fix it, and they have time to do so, they often simply choose to not fix the problem. This isn't the decision of one individual (a key part of the problem), but rather the decision of the amorphous "organisation". To frustrated, paying customers, this is inexplicable and infuriating, yet it happens in many industries, from tech to finance.
 
-Step zero to improving quality is to not make this mistake. When quality problems are identified in your product, people on the ground need to be empowered to fix them, and trust that they will be supported in advocating for the good of customers and the business! This should be obvious, and yet it is hugely differentiating amongst software engineering teams. The reason is that you can't easily imitate this, and you can't buy it. It's a strategic difference between high performers and low performs, and it comes from having leaders and engineers that trust each other and work together.
+It's this simple: When quality problems are identified in your software, you need to fix them! If you don't fix the quality problems you know about, how can you possibly hope to improve the quality of your organisation's software? This should be obvious, and yet, amazingly, it is hugely differentiating amongst software engineering organisations. The reason for this is that you can't easily imitate this culture by adopting some acronym or "framework", and you can't buy it via any tool or certification. If you're familiar with the original Agile manifesto, you'll know this as valuing "individuals and interactions over processes and tools".
 
-#### Introducing tools that help engineers do better work
-
-Introducing good tools can help engineers to focus on solving problems that add value (and avoid incomplete/broken re-implementations for functionality that you can get using existing tools). 
+I think the underlying principle here is that if you want to improve quality, you have to care about quality. If you don't care about quality when it comes to your decisions, don't expect to produce quality by serendipity!
 
 #### Streamlining processes to reduce interruptions and distractions
 
-Hour-long standups are actually very bad.
+To solve a problem at the edge of my abilities, I need to be able to focus on it, and I would venture to say that most people are basically the same in that regard. We need to be able to focus and concentrate in order to solve the hardest problems that we're capable of solving.
+
+In my experience, bringing engineers into frequent synchronous meetings is bad for productivity. So much can be communicated asynchronously, and for me, it has been a game-changer to come into a team where that is the norm, and meetings are not the default.
 
 #### Removing and mitigating high-friction developer experiences
 
 It should be somebody's job to make everybody more productive and keep them productive by solving problems that distract them for value-adding work.
+
+#### Introducing tools that help engineers do better work
+
+This is an approach known and used by all engineering organisations, simply because it is the easiest to adopt. It's a good and necessary part of a holistic approach to producing high quality software.
+
+Where organisations get this wrong is in expecting too much from tools. Tools are important, but their effectiveness relies on a strong foundation built by other drivers of quality that I mention elsewhere here: Having a team of skilled engineers, unencumbered by inefficient bureaucracy, and trusted enough to actually implement the quality improvements they identify. Adding the best and most advanced developer tooling to a team of coasting lifers who don't care about customers will do precisely nothing for your software's quality.
 
 ### Helping your existing engineers to become more skilled
 
@@ -60,8 +66,8 @@ As above.
 
 ### Hiring more skilled engineers
 
-No matter what you do, a team of offshore developers from <budget-friendly developing nation> might not be able to acquire the skills you need them to, to deliver the quality of work you need delivered, in the time frame that you need it delivered in. You might need to hire new, local people, who are experienced, skilled, and yes, more expensive!
+No matter what you do, a team of offshore developers from <budget-friendly developing nation> might not be able to acquire the skills you need them to, to deliver the quality of work you need delivered, in the time frame that you need it delivered in. You might need to hire new, local people, who are experienced, skilled, and unfortunately, perhaps more expensive.
 
 #### Probation periods are useful
 
-I think it's a good sign when an engineering organisation isn't afraid to let people go when it clearly isn't a good fit. Sometimes, a person has great credentials, super relevant experience, they aced the interview, but somehow they never manage to take off on the job. This is what probation periods are for, and when a company never uses it, I think it's a bad sign. The organisation will just go on accumulating median performers forever until the organisation itself is a median performer (a fate you don't want in this economy).
+I think it's a good sign when an engineering organisation isn't afraid to let people go when it clearly isn't a good fit. Sometimes, a person has great credentials, super relevant experience, they aced the interview, but somehow they never manage to take off on the job. This is what probation periods are for, and when a company never uses it, I think it's a bad sign. Such a company will just go on accumulating median performers forever until the organisation itself is a median performer (a fate you don't want in this economy).
