@@ -6,17 +6,21 @@ In this page, I rehash Deming's truism:
 
 ## Problem: Low quality work
 
-We are having problems producing work that is of as high quality as the work we've produced in the past. We're catching bugs late in development and some embarrassing bugs that we should have caught are going all the way to customers, harming our business and our reputation. We need to improve quality, and fast!
+There's a lot of rubbish software out there at the moment. Large, well-funded organisations are often guilty of producing low quality software, which huge numbers of people have to suffer from. In the recent past low quality software has been fatal and ruined many lives. Much thought and money has been injected into coming up with a reproducible process for building high quality software, yet the vast majority of efforts in organisations of all sizes have yielded paltry benefits, if any at all. This is because most organisations rely on false intuition, from which they arrive at the below non-solution.
 
 ## Not a solution: Quality gates
 
-There are varying degrees to which different engineering organisations get this wrong.
+Leaders facing quality problems, who are not aware of Deming's truism, use their intuition to tackle the problem. They reason that by adding quality checks and inspections during the process of building software, they will be able to ensure that only high quality software gets deployed and impacts their customers. In my experience, this line of thinking is incredible attractive to people at all levels of experience. It all seems so simple.
+
+There are varying degrees to which different engineering organisations get this wrong, all around the same theme:
 
 - Very wrong: Introduction of a manual testing / approval step.
-- Less, but still very wrong: Code coverage must be X%.
-- Wrong, but starting to think in the right direction: All changes must include automated tests.
+- Another effort pursuing the same incorrect idea: Mandatory code review for all changes.
+- Another effort pursuing the same incorrect idea: All changes must include automated tests and code coverage must be 95%.
 
-Below I discuss the approaches I think are more likely to be effective.
+The incorrect idea is that adding quality checks improves quality. To paraphrase Deming, Inspection is too late! Whatever level of quality the work is, _it's already done_. Nothing you do after the work has happened can increase its quality. To improve quality, you must improve the work done.
+
+Maybe you believe, quite plausibly I think, that the quality of work every engineer does lies on a normal distribution. Your misstep is in believing that you can eliminate all the work on the lower end the distribution, retaining only the work on the upper end. Unfortunately, software engineering work doesn't slice like that. Producing code is not like producing uniform iron screws, where you can throw out the bad and keep the rest. It's more like producing essays, or music compositions - the work integrates with itself. I won't be able to compose music like Hans Zimmer just by applying the right set of quality gates.
 
 ## Real solutions require engineers to produce higher quality work
 
@@ -24,7 +28,11 @@ I've listed these in order, ranked by my opinion, starting with the 'best', as i
 
 ### Making it easier for your engineers to do better work
 
-I hope you saw this coming. If you want better work to happen in your engineering organisation, and you don't believe in miracles, then you need to create an environment in which people are capable of simply doing better work. This is absolutely doable, and I think a sizable amount of it comes down to getting out of the way, and removing busywork.
+I hope you saw this coming. If you want better work to happen in your engineering organisation, and you don't believe in miracles, then you need to create an environment in which people are capable of doing better work.
+
+#### Allowing engineers to improve product quality when they know it's needed
+
+A significant own-goal that organisations frequently score is that when they know about a quality problem, and they also have the skills available to fix it, and time to do so, they simply do not make the fix. To frustrated, paying customers, this is inexplicable and infuriating. Step zero to improving quality is to not make this mistake. When quality problems are identified in your product, people on the ground need to be empowered to fix them, and trust that they will be supported in advocating for the good of customers and the business! This is extremely obvious, and yet hugely differentiating amongst software engineering teams. The reason is that you can't easily imitate this, and you can't buy it. It's a strategic difference between high performers and low performs, and it comes from having leaders and engineers that trust each other and work together.
 
 #### Introducing tools that help engineers do better work
 
