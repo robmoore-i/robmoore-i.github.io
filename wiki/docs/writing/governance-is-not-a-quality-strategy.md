@@ -34,7 +34,7 @@ I hope you saw this coming. If you want better work to happen in your engineerin
 
 A significant own-goal that organisations frequently score is that when they know about a quality problem, and they also have the skills available to fix it, and time to do so, they simply do not make the fix. To frustrated, paying customers, this is inexplicable and infuriating.
 
-Step zero to improving quality is to not make this mistake. When quality problems are identified in your product, people on the ground need to be empowered to fix them, and trust that they will be supported in advocating for the good of customers and the business! This is extremely obvious, and yet hugely differentiating amongst software engineering teams. The reason is that you can't easily imitate this, and you can't buy it. It's a strategic difference between high performers and low performs, and it comes from having leaders and engineers that trust each other and work together.
+Step zero to improving quality is to not make this mistake. When quality problems are identified in your product, people on the ground need to be empowered to fix them, and trust that they will be supported in advocating for the good of customers and the business! This should be obvious, and yet it is hugely differentiating amongst software engineering teams. The reason is that you can't easily imitate this, and you can't buy it. It's a strategic difference between high performers and low performs, and it comes from having leaders and engineers that trust each other and work together.
 
 #### Introducing tools that help engineers do better work
 
