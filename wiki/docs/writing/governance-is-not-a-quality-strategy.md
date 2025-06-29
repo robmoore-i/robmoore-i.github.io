@@ -73,3 +73,8 @@ No matter what you do, a team of offshore developers from <budget-friendly devel
 #### Probation periods are useful
 
 I think it's a good sign when an engineering organisation isn't afraid to let people go when it clearly isn't a good fit. Sometimes, a person has great credentials, super relevant experience, they aced the interview, but somehow they never manage to take off on the job. This is what probation periods are for, and when a company never uses it, I think it's a bad sign. Such a company will just go on accumulating median performers forever until the organisation itself is a median performer (a fate you don't want in this economy).
+
+---
+Created on WIP
+
+Updated on WIP
