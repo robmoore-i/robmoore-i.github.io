@@ -4,7 +4,8 @@ The month in each entry refers to when I finished reading a book. I almost alway
 
 ## 2025
 
-- Wip: Understanding cancer - Robin Hesketh
+- Jun: The emperor of all maladies: A biography of cancer - Siddhartha Mukherjee
+- May: Understanding cancer - Robin Hesketh
 - Apr: The palace of illusions - Chitra Banarjee Divakaruni
 - Apr: The fault in our stars - John Green
 - Apr: And then there were none - Agatha Christie

@@ -5,3 +5,10 @@
 ```
 ./gradlew :wiki:mkdocsPublish
 ```
+
+### View
+
+```
+cd wiki
+mkdocs serve
+```

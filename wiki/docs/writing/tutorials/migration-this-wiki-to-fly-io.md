@@ -1,6 +1,6 @@
 # Migrating this Wiki to fly.io
 
-**Note**: My wiki now runs on GitHub pages, which is a better fit. I no longer have the power to edit my website inline, but that wasn't really an important feature. GitHub pages is just as free, and unlike running a wiki docker container on fly.io, I don't have to think about resources, like memory.
+**Note**: My wiki now runs on GitHub pages, which is a better fit. I no longer have the power to edit my website inline, but that wasn't really an important feature. GitHub pages is just as free, and unlike running a wiki docker container on fly.io, I don't have to think about resources, like memory (it went OOM a few times, which is what prompted me to go fully static on GitHub pages).
 
 This wiki used to run as a standalone Docker container on an EC2 box. I have since become more tech-savvy.
 

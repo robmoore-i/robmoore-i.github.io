@@ -1,6 +1,6 @@
 # Chesterton's Traffic Lights
 
-> This is about an instance of [Chesterton's Fence](https://fs.blog/chestertons-fence/) from my life, that I finally solved today (23/02/2025).
+> This is about an instance of [Chesterton's Fence](https://fs.blog/chestertons-fence/) from my life, that I finally solved today (2025/02/23).
 
 I like the parable of Chesterton's Fence. It requires humility and respect to look at something in the world that inconveniences you and say "I don't understand, but I think somebody else does or did, and they might know or have known better than I do".
 
