@@ -20,7 +20,8 @@ nav:
     - writing/developer-experience.md
     - writing/reader-experience.md
     - writing/tests.md
-    - writing/notes/chestertons-traffic-lights.md
+    - writing/chestertons-traffic-lights.md
+    - writing/governance-is-not-a-quality-strategy.md
     - Gradle:
       - writing/gradle/insider-guidelines.md
       - writing/gradle/intellij-idea.md
