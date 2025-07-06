@@ -1,6 +1,6 @@
 # Tests
 
-Writing great tests is an important part of providing a wonderful [reader experience and author experience](/writing/reader-experience) to your colleagues.
+Writing great tests is an important part of providing a wonderful [reader experience and author experience](/writing/software_development/reader-experience) to your colleagues.
 
 Here is a rough checklist I made related to writing a great test suite in an object-oriented programming language. I find these principles easy to interpret from the perspective of a non-object-oriented programming language (like Rust or Q) as well.
 
