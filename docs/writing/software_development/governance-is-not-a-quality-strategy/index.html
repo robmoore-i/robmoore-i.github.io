@@ -1,0 +1,1538 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://robmoore-i.github.io/writing/software_development/governance-is-not-a-quality-strategy/">
+      
+      
+        <link rel="prev" href="../chestertons-traffic-lights/">
+      
+      
+        <link rel="next" href="../../documentation/divio/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Governance is not a quality strategy - Rob's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#governance-is-not-a-quality-strategy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-header__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rob's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Governance is not a quality strategy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Rob&#39;s Wiki" class="md-nav__button md-logo" aria-label="Rob's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Rob's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reading
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/articles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Articles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Books
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/selected-snippets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selected snippets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reading/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Writing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Writing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gradle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Gradle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/insider-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insider guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/intellij-idea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intellij IDEA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/kotlin-dsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kotlin DSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/gradle-monorepo-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gradle monorepo structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/jvms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JVMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/registering-gradle-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registering Gradle tasks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/custom-task-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom task types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/custom-repositories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gradle/secure-dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secure Dependencies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Software development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Software development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reader-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reader Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chestertons-traffic-lights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chesterton's Traffic Lights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Governance is not a quality strategy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance is not a quality strategy
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-low-quality-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Low quality work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-a-solution-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not a solution: Quality gates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-solutions-require-engineers-to-produce-higher-quality-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real solutions require engineers to produce higher quality work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real solutions require engineers to produce higher quality work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-it-easier-for-your-engineers-to-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making it easier for your engineers to do better work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making it easier for your engineers to do better work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowing-engineers-to-improve-product-quality-when-they-know-its-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allowing engineers to improve product quality when they know it's needed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlining-processes-to-reduce-interruptions-and-distractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streamlining processes to reduce interruptions and distractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-and-mitigating-high-friction-developer-experiences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing and mitigating high-friction developer experiences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-tools-that-help-engineers-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing tools that help engineers do better work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-processes-that-help-engineers-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing processes that help engineers do better work
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helping-your-existing-engineers-to-become-more-skilled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helping your existing engineers to become more skilled
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helping your existing engineers to become more skilled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pair-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pair programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiring-more-skilled-engineers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hiring more skilled engineers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/divio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divio's documentation system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation: Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/migration-this-wiki-to-fly-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating this Wiki to fly.io
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ukkonens-algorithm-for-mortals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ukkonen's Algorithm for Mortals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/unit-testing-for-jenkins-pipeline-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing for Jenkins Pipeline Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-low-quality-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Low quality work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-a-solution-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not a solution: Quality gates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-solutions-require-engineers-to-produce-higher-quality-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real solutions require engineers to produce higher quality work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real solutions require engineers to produce higher quality work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-it-easier-for-your-engineers-to-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making it easier for your engineers to do better work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making it easier for your engineers to do better work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowing-engineers-to-improve-product-quality-when-they-know-its-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allowing engineers to improve product quality when they know it's needed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlining-processes-to-reduce-interruptions-and-distractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streamlining processes to reduce interruptions and distractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-and-mitigating-high-friction-developer-experiences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing and mitigating high-friction developer experiences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-tools-that-help-engineers-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing tools that help engineers do better work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-processes-that-help-engineers-do-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing processes that help engineers do better work
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helping-your-existing-engineers-to-become-more-skilled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helping your existing engineers to become more skilled
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helping your existing engineers to become more skilled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pair-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pair programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiring-more-skilled-engineers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hiring more skilled engineers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="governance-is-not-a-quality-strategy">Governance is not a quality strategy<a class="headerlink" href="#governance-is-not-a-quality-strategy" title="Permanent link">&para;</a></h1>
+<p>In this page, I rehash Deming's truism:</p>
+<blockquote>
+<p>Inspection does not improve the quality, nor guarantee quality. Inspection is too late. The quality, good or bad, is already in the product. As Harold F. Dodge said, “You can not inspect quality into a product.”</p>
+</blockquote>
+<h2 id="problem-low-quality-work">Problem: Low quality work<a class="headerlink" href="#problem-low-quality-work" title="Permanent link">&para;</a></h2>
+<p>While working in a couple of unnamed global retail banks, and later in other contexts, I witnessed and took part in efforts to improve and control quality by applying what is arguably the most primitive and fundamental tool available to leaders - governance. By governance, I mean the introduction of constraints in the form of rules and guidelines. Sometimes the impacts of these efforts looked like success at first glance, but the result never seemed to be better software, faster feedback loops, or happier customers. Such efforts reliably resulted in <em>less</em> software development, but of roughly the same quality.</p>
+<p>In this page, when I talk about quality with respect to software, I am talking primarily about bugs, but also design, usability, and utility. Low quality refers to buggy, ugly or unusable software. Bugs in this context includes any behaviours that customers unexpectedly interpret as bugs, due to their uselessness or inconvenience.</p>
+<p>Much thought and money has been injected into coming up with a reproducible process for building high quality software, yet most efforts seem to have yielded paltry benefits, if any at all. This is because we are prone to relying on false intuition, using which we risk arriving at the following non-solution.</p>
+<h2 id="not-a-solution-quality-gates">Not a solution: Quality gates<a class="headerlink" href="#not-a-solution-quality-gates" title="Permanent link">&para;</a></h2>
+<p>It's straightforward to reason that by adding quality checks and inspections during the process of building software, you will be able to ensure that only high quality software gets deployed and impacts customers. In my experience, this line of thinking is attractive to people at all levels of experience.</p>
+<p>I think it's quite plausible to think that the quality of work every engineer does lies on a normal distribution. However, it would be an error to believe that you can eliminate all the work on the lower end the distribution, retaining only the work on the upper end. Software development work doesn't slice like that. Producing code is not like producing uniform iron screws, where you can throw out the bad and keep the rest. It's more like producing essays, or music compositions - the work is deeply integrated with itself, and it is impossible to untangle the moments of acuity from the moments of dimness. To make an analogy, I wouldn't be able to compose music like Hans Zimmer just by applying the right set of quality gates.</p>
+<p>There are varying degrees to which different engineering organisations get this wrong:</p>
+<ul>
+<li>Painful and wrong: Manual testers check and approve all changes.</li>
+<li>Less painful, but still pursuing the same incorrect idea: Mandatory code review for all changes.</li>
+<li>A cool and well-intentioned effort, but still pursuing the same incorrect idea: All changes must include automated tests and code coverage must be 95%.</li>
+</ul>
+<p>I'm not saying that these are necessarily bad ideas in any context, only that they are not solutions to the problem of producing better software. The incorrect idea common to these ideas is that adding quality checks improves quality.</p>
+<p>To paraphrase Deming again, inspection is too late! Whatever level of quality the work is, <em>it's already done</em>. Nothing you do after the work has happened can increase its quality. To improve quality, you must improve the work done.</p>
+<h2 id="real-solutions-require-engineers-to-produce-higher-quality-work">Real solutions require engineers to produce higher quality work<a class="headerlink" href="#real-solutions-require-engineers-to-produce-higher-quality-work" title="Permanent link">&para;</a></h2>
+<p>This is the core of my opinion on this problem: <strong>Real solutions require engineers to produce higher quality work.</strong></p>
+<p>I've listed below some ideas that I consider to be real solutions. The list is in order, ranked by my opinion of them, starting with the 'best', as in most likely to have a positive impact.</p>
+<h3 id="making-it-easier-for-your-engineers-to-do-better-work">Making it easier for your engineers to do better work<a class="headerlink" href="#making-it-easier-for-your-engineers-to-do-better-work" title="Permanent link">&para;</a></h3>
+<p>One well-documented way to make better work to happen is to create an environment in which people are capable of simply doing better work. A person's output is not only about them individually, it's also about their surroundings and what they see others' around them doing.</p>
+<h4 id="allowing-engineers-to-improve-product-quality-when-they-know-its-needed">Allowing engineers to improve product quality when they know it's needed<a class="headerlink" href="#allowing-engineers-to-improve-product-quality-when-they-know-its-needed" title="Permanent link">&para;</a></h4>
+<p>A significant own-goal that I've seen a few organisations score is that when they know about a quality problem, and they also have the skills available to fix it, and they have time to do so, they often simply choose to not fix the problem. This isn't the decision of one individual (a key part of the problem), but rather the decision of the amorphous "organisation". To frustrated, paying customers, this is inexplicable and infuriating, yet it seems to happen quite often.</p>
+<p>It's this simple: When quality problems are identified in your software, you need to fix them! If you don't fix the quality problems you know about, how can you possibly hope to improve the quality of your organisation's software? This should be obvious, and yet, I think it's hugely differentiating amongst software engineering organisations. I believe the reason for this is that you can't easily imitate this culture by adopting some acronym or "framework", and you can't buy it via any tool or certification. It is cultural and it comes from the leadership. </p>
+<p>This kind of culture requires a team to value individuals and interactions over processes and tools. I can empathise with teams that struggle with this. I find it easy to imagine finding it hard to justify a people-centred approach to dispassionate number-crunchers, especially in an age where the available tools are so powerful and accessible, as they are now.</p>
+<p>I think the underlying principle here is that if you want to improve quality, you have to care about quality. If you don't care about quality when it comes to your decisions, don't expect to produce quality by serendipity!</p>
+<h4 id="streamlining-processes-to-reduce-interruptions-and-distractions">Streamlining processes to reduce interruptions and distractions<a class="headerlink" href="#streamlining-processes-to-reduce-interruptions-and-distractions" title="Permanent link">&para;</a></h4>
+<p>To solve a problem at the edge of my abilities, I need to be able to focus on it, and I would venture to say that most people are basically the same in that regard. We need to be able to focus and concentrate in order to solve the hardest problems that we're capable of solving.</p>
+<p>Giving engineers the gift of focus also gives them the ability to solve problems that otherwise might prove too difficult for them. </p>
+<h4 id="removing-and-mitigating-high-friction-developer-experiences">Removing and mitigating high-friction developer experiences<a class="headerlink" href="#removing-and-mitigating-high-friction-developer-experiences" title="Permanent link">&para;</a></h4>
+<p>Shortening feedback loops allows developers to iterate more, which gives them (a) more chances to understand the problem they're solving (b) more chances to perfect their solution. In this way, an engineer working on a problem where they can iterate freely, seems to be smarter, faster and completely better than the same engineer working on a problem where iteration is painful, difficult, slow or flaky. In this way, you can improve the skills of engineers just by speeding up their feedback loops.</p>
+<p>The ideal feedback loop is of course an automated test. Knowing to use automated tests is a skill that requires practice, but if you create the right culture, you should be able to drop an engineer into a culture of testing and have them adopt it as their own with a bit of practice and some help from the more established team members.</p>
+<h4 id="introducing-tools-that-help-engineers-do-better-work">Introducing tools that help engineers do better work<a class="headerlink" href="#introducing-tools-that-help-engineers-do-better-work" title="Permanent link">&para;</a></h4>
+<p>This is an approach known and used by all engineering organisations, simply because it is the easiest to adopt. It's a good and necessary part of a holistic approach.</p>
+<p>Where I think organisations get this wrong is in expecting too much from tools. Tools are important, but their effectiveness relies on a strong foundation built by other drivers of quality that I mention elsewhere here: Having a team of skilled engineers, unencumbered by inefficient bureaucracy, and trusted enough to actually implement the quality improvements they identify. Adding the best and most advanced developer tooling to a team of coasters who don't care about customers will not do much for your software's quality.</p>
+<h4 id="introducing-processes-that-help-engineers-do-better-work">Introducing processes that help engineers do better work<a class="headerlink" href="#introducing-processes-that-help-engineers-do-better-work" title="Permanent link">&para;</a></h4>
+<p>The most common processes adopted in the world of software engineering, at least as far as I've seen, are various incarnations of the Scrum framework. In my opinion, this is usually executed quite poorly and to most teams is more of a hindrance than a help. I know from experience though, that there are processes you can introduce which genuinely to result in better work being done by engineers, and I'm sure there must be others I don't know about, don't know how to use well, or have never been introduced to.</p>
+<p>One process I've been introduced to at my current team (Gradle's Develocity team) surprised me by its high value. I found that writing highly detailed specification documents regarding a complex piece of work, has often paid for itself many times over. It does this by inducing focused, end-to-end consideration of the work in various relevant contexts. Introducing the scrutiny of other team members to a specification you've written also improves its quality, and the end result is that you understand the work to be done much more thoroughly than if you were to charge right into it. I'd love to go into more detail on this topic in another article at some point, but I digress.</p>
+<h3 id="helping-your-existing-engineers-to-become-more-skilled">Helping your existing engineers to become more skilled<a class="headerlink" href="#helping-your-existing-engineers-to-become-more-skilled" title="Permanent link">&para;</a></h3>
+<h4 id="pair-programming">Pair programming<a class="headerlink" href="#pair-programming" title="Permanent link">&para;</a></h4>
+<p>Pair programming is a technique with fairly little overall adoption in the industry. It gets a certain amount of hype from its proponents, and I think that is somewhat justified! Having a good experience creating software with a team when you're pairing regularly is truly a great feeling, and the sensation of productivity is awesome. I can highly recommend giving it a go. Of course, it is a difficult technique and I have no doubt that many have tried it with good intentions and an open mind, but still not had success with it. It's not for everyone, but I do think it's worth trying in earnest if you haven't already.</p>
+<h4 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h4>
+<p>As with software engineering processes as I mention above, there is plenty of junk training out there. There are gems though. One of the very memorable times I had in my first year out of university was taking a Udemy course by James Richardson on writing Test-driven Java in Intellij IDEA. It covered a number of topics in just a small course. The IDE fluency I picked up from that course and the attitude I learned to take towards IDE fluency, has stayed with me and benefited me for my whole career so far.</p>
+<p>What I mean to say is that there do exist training courses and conferences that are worth sending engineers to. <a href="https://citconf.com/">Citcon</a> is a conference among them, and I'd love to go every year if I lived in Europe. No doubt there are many others, too numerous for me to possibly list them all.</p>
+<h3 id="hiring-more-skilled-engineers">Hiring more skilled engineers<a class="headerlink" href="#hiring-more-skilled-engineers" title="Permanent link">&para;</a></h3>
+<p>No matter what you do, a team entirely staffed by budget-friendly, middle-of-the-pack developers might not have or be able to acquire the skills you need them to, to deliver the quality of work you need delivered, in the time frame that you need it delivered in. You might need to hire new people, who are experienced, skilled, and unfortunately, perhaps more expensive.</p>
+<p>The good news is that once you have a culture of quality, excellence and care, you can hire all sorts of people and, like <a href="https://rs.io/herbert-simons-ant/">Herbert's ants on a beach</a>, they will likely adopt the practices and culture they are immersed in.</p>
+<p>On this note, I think it's worth acknowledging that probation periods are useful. I think it's a good sign when an engineering organisation isn't afraid to let people go when it clearly isn't a good fit. Sometimes, a person has great credentials, super relevant experience, they aced the interview, but somehow they never manage to take off on the job. This is what probation periods are for, and when a company never uses it, I think it's a worrying signal about the software they produce. Such a company will go on accumulating median performers forever until the organisation itself is a median performer (an undesirable fate in this economy).</p>
+<hr />
+<p>Created on 2025-07-06</p>
+<p>Updated on 2025-07-06</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
