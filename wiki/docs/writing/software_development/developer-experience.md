@@ -46,7 +46,7 @@ Those engineering organisations that are waiting to be spoon-fed the crunched da
 
 I think the tooling aspect of developer experience is over-represented in the available writings about DX online. This subsection is about a few other aspects.
 
-An important aspect of DX that I don't see much written about is the habitability of the codebase. Those few who have been so blessed to work with [wonderfully well-tested](/writing/tests) and thoughtfully designed systems know how much difference to your experience and your productivity it makes, to work on a piece of code with great automated tests, that are cleanly refactored, such that useful abstractions are readily available to set up and write the next automated test. This is helpful when trying to reproduce and fix bugs, when extending an existing feature, and when adding new features.
+An important aspect of DX that I don't see much written about is the habitability of the codebase. Those few who have been so blessed to work with [wonderfully well-tested](/writing/software_development/tests) and thoughtfully designed systems know how much difference to your experience and your productivity it makes, to work on a piece of code with great automated tests, that are cleanly refactored, such that useful abstractions are readily available to set up and write the next automated test. This is helpful when trying to reproduce and fix bugs, when extending an existing feature, and when adding new features.
 
 The presence of abstractions in the codebase, independent of tools, is another contributor to DX that I think most companies don't take explicit care of. I don't foresee this entering the cultural mainstream of the industry for while though.
 
