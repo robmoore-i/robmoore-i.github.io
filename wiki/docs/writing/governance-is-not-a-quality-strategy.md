@@ -66,19 +66,21 @@ Where organisations get this wrong is in expecting too much from tools. Tools ar
 
 #### Introducing processes that help engineers do better work
 
-In my experience, most processes given to engineers are overheads without much value, but I've no doubt that there are processes you can introduce which genuinely to result in better work. 
+The most common processes adopted in the world of software engineering, at least as far as I've seen, are various incarnations of the Scrum framework. In my opinion, this is usually executed quite poorly and to most teams is more of a hindrance than a help. I know from experience though, that there are processes you can introduce which genuinely to result in better work being done by engineers, and I'm sure there must be others I don't know about, don't know how to use well, or have never been introduced to.
 
-One process I've been introduced to at my current team (Gradle's Develocity team) surprised me by its high value. If you're already familiar with it, maybe this is cringey to you, but I found that writing detailed specification documents has often paid for itself in catching problems early and resulting in well-thought-out solutions and excellent implementations for complicated features. At some point I'd like to write an article about the specification documents written by my colleague who is best at it - the level of detail, the length, and the format. But I digress.
+One process I've been introduced to at my current team (Gradle's Develocity team) surprised me by its high value. I found that writing highly detailed specification documents regarding a complex piece of work, has often paid for itself many times over. It does this by inducing focused, end-to-end consideration of the work in various relevant contexts. Introducing the scrutiny of other team members to a specification you've written also improves its quality, and the end result is that you understand the work to be done much more thoroughly than if you were to charge right into it. I'd love to go into more detail on this topic in another article at some point, but I digress. 
 
 ### Helping your existing engineers to become more skilled
 
 #### Pair programming
 
-A great way to transfer skills and create an organisation full of your best few people.
+Pairing programming is an old technique with fairly little overall adoption in the industry. It gets a certain amount of hype from its proponents, and I think that is partially justified! Having a good experience creating software with a team when you're pairing regularly is truly a great feeling, and the sensation of productivity is awesome. I can highly recommend that. Of course, it is a difficult technique and I have no doubt that many have tried it with good intentions and an open mind, but still not had particular success with it. It's not for everyone, but I do think it's worth trying, because if it goes well, your best engineers will be passing their knowledge and way of working directly and quickly to other team members, resulting in a general upskilling of the team - something that will surely have a positive impact on the quality of the software they build.
 
-#### Empowering your known best engineers to set the engineering culture
+#### Training
 
-As above.
+As with software engineering processes, there is plenty of junk training out there. There are gems though. One of the very memorable times I had in my first year out of university was taking a Udemy course by James Richardson on writing Test-driven Java in Intellij IDEA. It covered a lot in a small course, and the learning felt almost osmotic. The IDE fluency I picked up from that course in particular, and the attitude it takes towards IDE fluency, has stayed with me and benefited me for my whole career so far.
+
+All that to say that there do exist training courses and conferences that are worth sending engineers to. Citcon is a conference among them, and no doubt there are many others, too numerous for me to possibly name them all.
 
 ### Hiring more skilled engineers
 
