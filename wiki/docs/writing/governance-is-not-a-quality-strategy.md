@@ -1,4 +1,4 @@
-# WIP: Governance is not a quality strategy
+# Governance is not a quality strategy
 
 In this page, I rehash Deming's truism:
 
@@ -30,9 +30,9 @@ To paraphrase Deming again, inspection is too late! Whatever level of quality th
 
 ## Real solutions require engineers to produce higher quality work
 
-I'd like to repeat this here because it's the core of my opinion on this matter, and of this page: **Real solutions require engineers to produce higher quality work.**
+This is the core of my opinion on this problem: **Real solutions require engineers to produce higher quality work.**
 
-I've listed below some ideas that I consider to be real solutions. The list is in order, ranked by my opinion of them, starting with the 'best', as in most likely to have a positive impact, and proceeding down to 'least best, but still good'.
+I've listed below some ideas that I consider to be real solutions. The list is in order, ranked by my opinion of them, starting with the 'best', as in most likely to have a positive impact.
 
 ### Making it easier for your engineers to do better work
 
@@ -93,6 +93,6 @@ The good news is that once you have a culture of quality, excellence and care, y
 On this note, I think it's worth acknowledging that probation periods are useful. I think it's a good sign when an engineering organisation isn't afraid to let people go when it clearly isn't a good fit. Sometimes, a person has great credentials, super relevant experience, they aced the interview, but somehow they never manage to take off on the job. This is what probation periods are for, and when a company never uses it, I think it's a worrying signal about the software they produce. Such a company will go on accumulating median performers forever until the organisation itself is a median performer (an undesirable fate in this economy).
 
 ---
-Created on WIP
+Created on 2025-07-06
 
-Updated on WIP
+Updated on 2025-07-06
