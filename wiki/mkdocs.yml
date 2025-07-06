@@ -17,11 +17,6 @@ nav:
     - reading/selected-snippets.md
     - reading/videos.md
   - Writing:
-    - writing/developer-experience.md
-    - writing/reader-experience.md
-    - writing/tests.md
-    - writing/chestertons-traffic-lights.md
-    - writing/governance-is-not-a-quality-strategy.md
     - Gradle:
       - writing/gradle/insider-guidelines.md
       - writing/gradle/intellij-idea.md
@@ -32,6 +27,12 @@ nav:
       - writing/gradle/custom-task-types.md
       - writing/gradle/custom-repositories.md
       - writing/gradle/secure-dependencies.md
+    - "Software development":
+      - writing/software_development/developer-experience.md
+      - writing/software_development/reader-experience.md
+      - writing/software_development/tests.md
+      - writing/software_development/chestertons-traffic-lights.md
+      - writing/software_development/governance-is-not-a-quality-strategy.md
     - Documentation:
       - writing/documentation/divio.md
       - writing/documentation/values.md
