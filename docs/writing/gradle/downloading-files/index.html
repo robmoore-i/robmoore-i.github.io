@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://robmoore-i.github.io/writing/gradle/registering-gradle-tasks/">
+        <link rel="canonical" href="https://robmoore-i.github.io/writing/gradle/downloading-files/">
       
       
-        <link rel="prev" href="../jvms/">
+        <link rel="prev" href="../secure-dependencies/">
       
       
-        <link rel="next" href="../custom-task-types/">
+        <link rel="next" href="../../software_development/developer-experience/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Registering Gradle tasks - Rob's Wiki</title>
+        <title>Downloading files - Rob's Wiki</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#registering-gradle-tasks" class="md-skip">
+        <a href="#downloading-files" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Registering Gradle tasks
+              Downloading files
             
           </span>
         </div>
@@ -594,32 +594,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Registering Gradle tasks
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../registering-gradle-tasks/" class="md-nav__link">
         
   
   
@@ -630,86 +608,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#simple-project-builds-dont-need-to-register-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple project builds don't need to register tasks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-might-you-need-to-register-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      When might you need to register tasks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="When might you need to register tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#you-are-writing-a-one-off-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      You are writing a one-off task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#you-are-writing-a-plugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      You are writing a plugin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#library-plugins" class="md-nav__link">
-    <span class="md-ellipsis">
-      Library plugins
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-to-define-new-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Where to define new tasks
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -788,10 +686,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../downloading-files/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Downloading files
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -802,6 +722,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-file-as-a-dependency-using-a-custom-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the file as a dependency using a custom repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-file-using-resourcestextfromuriuri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the file using resources.text.fromUri(uri)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-your-own-custom-task-type-for-downloading-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write your own custom task type for downloading files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-deundercouchdownload-gradle-plugin-and-register-download-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the 'de.undercouch.download' Gradle plugin and register Download tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-plain-old-kotlingroovy-with-or-without-3rd-party-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using plain old Kotlin/Groovy, with or without 3rd party libraries
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1223,60 +1208,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple-project-builds-dont-need-to-register-tasks" class="md-nav__link">
+  <a href="#download-the-file-as-a-dependency-using-a-custom-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Simple project builds don't need to register tasks
+      Download the file as a dependency using a custom repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-might-you-need-to-register-tasks" class="md-nav__link">
+  <a href="#download-the-file-using-resourcestextfromuriuri" class="md-nav__link">
     <span class="md-ellipsis">
-      When might you need to register tasks
+      Download the file using resources.text.fromUri(uri)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="When might you need to register tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#you-are-writing-a-one-off-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      You are writing a one-off task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#you-are-writing-a-plugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      You are writing a plugin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#library-plugins" class="md-nav__link">
-    <span class="md-ellipsis">
-      Library plugins
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-to-define-new-tasks" class="md-nav__link">
+  <a href="#write-your-own-custom-task-type-for-downloading-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Where to define new tasks
+      Write your own custom task type for downloading files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-deundercouchdownload-gradle-plugin-and-register-download-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the 'de.undercouch.download' Gradle plugin and register Download tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-plain-old-kotlingroovy-with-or-without-3rd-party-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using plain old Kotlin/Groovy, with or without 3rd party libraries
     </span>
   </a>
   
@@ -1298,68 +1268,49 @@
 
 
 
-<h1 id="registering-gradle-tasks">Registering Gradle tasks<a class="headerlink" href="#registering-gradle-tasks" title="Permanent link">&para;</a></h1>
-<p>The official documentation on authoring tasks starts here: https://docs.gradle.org/current/userguide/more_about_tasks.html.</p>
-<h2 id="simple-project-builds-dont-need-to-register-tasks">Simple project builds don't need to register tasks<a class="headerlink" href="#simple-project-builds-dont-need-to-register-tasks" title="Permanent link">&para;</a></h2>
-<p>If you're like most Gradle users, you are probably writing some Java application, and using Gradle to create artifacts and run tests.</p>
-<p>These most common journeys are supported by tasks which are added by Gradle plugins you have applied e.g. the <code>java</code> plugin adds the <code>compileJava</code> task.</p>
-<p>Using these built-in tasks from plugins is good, because it means that you can benefit from improvements to the implementation of these tasks without putting in any effort yourself.</p>
-<p>You may have to configure these built-in tasks slightly, for example, you may have your source code in an unusual, different place, in which case you need to configure the <code>compileJava</code> task to compile the sources in that directory.</p>
-<p>Configuring tasks in this way is also good. You still take advantage of improvements to the task implementation which happen over time, and you don't need to do anything, which is ideal. If you are configuring a task in an unusual way though, you run the risk of having difficulty in upgrading your plugin version later, if the plugin's public interface changes in an incompatible way.</p>
-<h2 id="when-might-you-need-to-register-tasks">When might you need to register tasks<a class="headerlink" href="#when-might-you-need-to-register-tasks" title="Permanent link">&para;</a></h2>
-<h4 id="you-are-writing-a-one-off-task">You are writing a one-off task<a class="headerlink" href="#you-are-writing-a-one-off-task" title="Permanent link">&para;</a></h4>
-<p>In your build, you might need to do one little thing e.g. run some shell script. You can do this easily in Gradle by writing an <code>Exec</code> task, or even a <code>DefaultTask</code> that uses <code>project.exec</code>.</p>
-<p>For example:</p>
-<pre><code># my-app/build.gradle.kts
-plugins {
-  java
-}
-
-# Runs the script my-app/foo.sh using bash.
-tasks.register&lt;Exec&gt;(&quot;runFoo&quot;) {
-  commandLine(listOf(&quot;bash&quot;, &quot;foo.sh&quot;))
+<h1 id="downloading-files">Downloading files<a class="headerlink" href="#downloading-files" title="Permanent link">&para;</a></h1>
+<p>This article is about how to download arbitrary files for use in your Gradle build.</p>
+<p>What I want you to take away is that you don't need to mess about with any third-party plugins to download files in Gradle. There are perfectly good ways of downloading files using mechanisms that are built into Gradle.</p>
+<p>The ways I mention are:</p>
+<ul>
+<li>Use a custom repository</li>
+<li>Use <code>resources.text.fromUri</code></li>
+<li>Use a custom task definition</li>
+<li>Use the <code>de.undercouch.download</code> plugin</li>
+<li>Use Kotlin/Groovy code directly</li>
+</ul>
+<h3 id="download-the-file-as-a-dependency-using-a-custom-repository">Download the file as a dependency using a custom repository<a class="headerlink" href="#download-the-file-as-a-dependency-using-a-custom-repository" title="Permanent link">&para;</a></h3>
+<p>This is the method I would recommend using by default if you have the patience for the syntax, because it is the most idiomatic, provides the best configurability, and is fully compatible with Gradle's various build acceleration features.</p>
+<p>I describe in detail how to use it in <a href="/writing/gradle/custom-repositories">my page on custom repositories</a>.</p>
+<h3 id="download-the-file-using-resourcestextfromuriuri">Download the file using <code>resources.text.fromUri(uri)</code><a class="headerlink" href="#download-the-file-using-resourcestextfromuriuri" title="Permanent link">&para;</a></h3>
+<p>This method is attractive because it doesn't require a third-party plugin, executes lazily in the configuration phase if required by the build, and most notably, it is succinct.</p>
+<p>Unlike using repositories though, I don't know if/how it's possible to configure this to provide authentication, dedicated HTTP proxies or other sorts of things.</p>
+<p>Another way in which this approach differs from using repositories in that it creates a <em>detached configuration</em>, which essentially means that it populates a <em>configuration</em> (<a href="https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html">Gradlespeak for 'a collection of files'</a>) with the downloaded file but without associating the configuration with a <em>dependency</em> of the project. My explanation of this is woolly because my understanding is woolly.</p>
+<p>Here's how you can use this in a project build script:</p>
+<pre><code>val textResource = resources.text.fromUri(&quot;https://getsamplefiles.com/download/txt/sample-1.txt&quot;)
+</code></pre>
+<p>You can then use it in tasks, for example:</p>
+<pre><code>tasks.register(&quot;printText&quot;) {
+    // Note: We need to redeclare project build script variables as 
+    //       local variables within a task definition in order for 
+    //       the the task to be configuration-cache compatible.
+    //       This is the case for any top-level variable you define 
+    //       in a project build script.
+    val resource = textResource
+    doLast {
+        val text = resource.asFile().readText()
+        logger.lifecycle(text)
+    }
 }
 </code></pre>
-<p>Alternatively, you may need to do a custom thing. You might be tempted to do this:</p>
-<pre><code># my-app/build.gradle.kts
-plugins {
-  java
-}
-
-tasks.register&lt;MyCustomTaskType&gt;(&quot;doThing&quot;)
-
-open class MyCustomTaskType : DefaultTask() {
-  @TaskAction
-  fun doThing() {
-    ...
-  }
-}
-</code></pre>
-<p>I have come to dislike this and pretty much never do it. I don't place any overhead cost on defining a custom plugin even if just to to hold a custom task type and nothing else. It improves the declarativity of the project build script, making it easier for me to read and understand at a glance, and also puts the task type in its own source set in the project, where I can, for example, write tests for it, or factor it into multiple different objects, perhaps some completely separated from Gradle. It also opens the door more clearly for re-use in other projects.</p>
-<h4 id="you-are-writing-a-plugin">You are writing a plugin<a class="headerlink" href="#you-are-writing-a-plugin" title="Permanent link">&para;</a></h4>
-<p>Sometimes you want your build to do something that is not provided by any plugin you can find, or the plugins that are available are rubbish, or you can't use them for whatever reason.</p>
-<p>In this scenario, you have reached the point where you may need to author your own plugin, and therefore author the corresponding tasks.</p>
-<pre><code># my-app/build.gradle.kts
-plugins {
-  java
-
-  # My custom Docker plugin
-  id(&quot;com.mycompany.docker&quot;)
-}
-</code></pre>
-<p>For example, there are many publicly available Gradle plugins for Docker out there, but as of this writing (early 2024) none of them are sufficiently good or general purpose enough that I would choose them when I want to work with Docker images in my Gradle build, which I often do.</p>
-<h3 id="library-plugins">Library plugins<a class="headerlink" href="#library-plugins" title="Permanent link">&para;</a></h3>
-<p>A library plugin is a plugin created specifically to hold custom task definitions. This is a fairly uncommon pattern in the community of Gradle users, but it's one a really like and would like to proselytize among all Gradle users.</p>
-<p>Traditional Gradle plugins work like frameworks. The plugin defines everything and whrn a project build applies that plugin, they pick up everything as defined already by the plugin. The project build might configure a few things, but in general the plugin is quite rigid in the interface that it offers.</p>
-<p>The kind of plugins I like to write, which I refer to as 'library plugins' are different. The plugin configures little-to-no build logic, but the application of the plugin is expected to bring in a sweeping cast of helpful Gradle constructs, especially task definitions.</p>
-<h2 id="where-to-define-new-tasks">Where to define new tasks<a class="headerlink" href="#where-to-define-new-tasks" title="Permanent link">&para;</a></h2>
-<p>When you author your own tasks, you can choose to write them within project build scripts (i.e. in my-app/build.gradle.kts), or within custom plugins. The most accessible approach is to write all your build logic in your project build, because you don't need to know anything about build logic organisation to do that - you just dump your code into the project build script. Sometimes this is fine. It's a matter of taste and judgement, which you can pick up with a small amount of practice of using both locations for custom task definitions.</p>
-<p>In general, I avoid defining new task types (i.e. new classes which extend DefaultTask) within a project build, because doing so is ugly and unidiomatic. I mentioned this above too. A project build script should ideally contain only the application of plugins, configuration of build objects they define, and perhaps the creation of a handful of small bespoke tasks.</p>
-<p>If I'm defining a task that is specific to the project, then I register the task in the project build script. If the task is generic, or I know or anticipate that abstracting it into a plugin would be useful, then I would define the new task in a plugin that is applied. The task is then registered by the application of the plugin. If the task needs to be configured for each project that applies it, then the project build script can do that.</p>
-<p>To use an analogy of application programming in an object-oriented language, if I'm writing behaviour that is truly specific to the implementation of a specific class, it makes sense to capture that behaviour in a private method of that class. If however the implementation is a special case of a more generic behaviour that should be abstracted for re-use, I would at least consider extracting it into another class. To return from the analogy of application programming back to Gradle build development, if I want to add a task that is truly specific to a particular project's role in the build, then it makes sense to register it within the project build script. On the other hand if the task I want to add is actually a special case of something more generic that exists in other projects (and perhaps considering Kent Beck's <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">Rule of Three</a>), then I might prefer to define the task in a plugin which is applied to the project instead, and have the project configure the task in a special way if necessary.</p>
-<hr />
-<p>Created on 2023-12-24</p>
-<p>Updated on 2024-05-15</p>
+<h3 id="write-your-own-custom-task-type-for-downloading-files">Write your own custom task type for downloading files<a class="headerlink" href="#write-your-own-custom-task-type-for-downloading-files" title="Permanent link">&para;</a></h3>
+<p>For example, you might define a task for downloading files from S3 using specific credentials using the AWS Java SDK. I think this approach can make sense for cases like that. Indeed, this example comes from one of the builds I work on. I'm sure there are other cases where a similar approach can make sense. This is an adequate escape hatch when configuring a custom repository for a specific file download proves to be too difficult or complicated.</p>
+<p>To do this, you need to write your own plugin and <a href="/writing/gradle/custom-task-types">define a custom task type within it</a>. In <a href="/writing/gradle/gradle-monorepo-structure">my page on Gradle monorepo structure</a> I describe how to set up a custom plugin.</p>
+<h3 id="use-the-deundercouchdownload-gradle-plugin-and-register-download-tasks">Use the 'de.undercouch.download' Gradle plugin and register Download tasks<a class="headerlink" href="#use-the-deundercouchdownload-gradle-plugin-and-register-download-tasks" title="Permanent link">&para;</a></h3>
+<p>This approach is by far the most common. I encourage you to consider the above two approaches before jumping straight to this. Before I joined Gradle and had some time to accumulate tribal knowledge about the build tool, this is the only approach I was aware of, because it's the only approach that is easily findable using a search engine.</p>
+<p>A number of online tutorials already exist for this plugin. To summarise, you need to apply a plugin, and then register tasks of type Download. You can create your own custom task type to wrap the plugin-provided type if you wish, which I have seen work before too, although fundamentally this is the same approach.</p>
+<h3 id="using-plain-old-kotlingroovy-with-or-without-3rd-party-libraries">Using plain old Kotlin/Groovy, with or without 3rd party libraries<a class="headerlink" href="#using-plain-old-kotlingroovy-with-or-without-3rd-party-libraries" title="Permanent link">&para;</a></h3>
+<p>This is fairly unhinged - almost certainly don't do this. You can control whether your code runs either in the configuration or execution phase by placing your code either within the action of a task you define (execution phase), or just dumping it into a project build script so that it will be run whenever Gradle evaluates that project (configuration phase). In either case, there are more idiomatic options than trying to roll your own file download code.</p>
 
 
 

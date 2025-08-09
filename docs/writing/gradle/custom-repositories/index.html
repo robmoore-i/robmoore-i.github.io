@@ -832,6 +832,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../downloading-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Downloading files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1385,7 +1408,7 @@
 <p>The "consumable" in "consumable configuration" refers to dependency consumption. A consumable configuration can be exported from one project to another as a project dependency (i.e. <code>implementation(project(":foo"))</code>). It can't be resolved, so it isn't useful to the project that produces it. You use consumable configurations when you want to export the output of a task to other projects in your multi-project build.</p>
 <h3 id="artifact-transform">Artifact Transform<a class="headerlink" href="#artifact-transform" title="Permanent link">&para;</a></h3>
 <p>To be honest I still don't quite understand what a Gradle artifact transform is, but I will present the inevitably incorrect mental model I use (in the spirit of "all models are wrong, some are useful"). There is <a href="https://docs.gradle.org/current/userguide/artifact_transforms.html">official documentation</a> covering this, which I think explains the concept to some degree.</p>
-<p>An artifact transform is a Gradle object that knows how to perform an operation on a dependency, and in doing so, alters a piece of its associated metadata. When Gradle resolves a requested dependency, it requests it with certain metadata, and this metadata is used by Gradle to determine whether or not it can satisfy a dependency consumer's request by transforming an available dependency using a registered artifact transform.</p>
+<p>An artifact transform is a Gradle object that knows how to perform an operation on a dependency, and in doing so, alters a piece of its associated metadata. When Gradle resolves a requested dependency, it requests it with certain metadata, and this metadata is used by Gradle to determine whether it can satisfy a dependency consumer's request by transforming an available dependency using a registered artifact transform.</p>
 <h2 id="custom-repository-declaration">Custom repository declaration<a class="headerlink" href="#custom-repository-declaration" title="Permanent link">&para;</a></h2>
 <p>This custom repository declaration tells Gradle that it can find artifacts with the group "trinodb" in this specified Ivy repository. It has a base URL and a path pattern, based on the coordinates provided in the dependency block.</p>
 <p>The URL to download one of the files that this repository declaration downloads is: <code>https://github.com/trinodb/grafana-trino/releases/download/v1.0.6/trino-datasource-1.0.6.zip</code>.</p>
@@ -1472,7 +1495,7 @@ Found file: /Users/rob/.gradle/caches/transforms-4/6494f3751f7959da86816b0d7720b
 </code></pre>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <h3 id="the-artifact-transform-aspect-of-this-was-entirely-optional">The artifact transform aspect of this was entirely optional<a class="headerlink" href="#the-artifact-transform-aspect-of-this-was-entirely-optional" title="Permanent link">&para;</a></h3>
-<p>The artifact transform is not an integral part of downloading dependencies in this way. It so happened that the example I chose from my work used it. Setting up a custom repository is simpler if you don't use any transforms. Of course, this example was also achievable without transforms. I could have registered a task of type <code>Sync</code> and configured it to decompress the downloaded zip file, rather than doing it using a transform. You say potato, I say potato.</p>
+<p>The artifact transform is not an integral part of downloading dependencies in this way. It so happened that the example I chose from my work used it. Setting up a custom repository is simpler if you don't use any transforms. Of course, this example was also achievable without transforms. I could have registered a task of type <code>Sync</code> and configured it to decompress the downloaded zip file, rather than doing it using a transform.</p>
 <h3 id="you-should-put-custom-repository-declarations-into-plugins-not-into-project-build-scripts">You should put custom repository declarations into plugins, not into project build scripts<a class="headerlink" href="#you-should-put-custom-repository-declarations-into-plugins-not-into-project-build-scripts" title="Permanent link">&para;</a></h3>
 <p>This code comes from a plugin I extracted which I called <code>grafana-trino-datasource-plugin</code>. All it does is create and populate this configuration. I didn't want this in the project build script because it's so noisy and verbose and distracts you as a reader from what matters: This project build knows how to download this directory from GitHub and use it.</p>
 <h2 id="appendix-the-complete-example">Appendix - The complete example<a class="headerlink" href="#appendix-the-complete-example" title="Permanent link">&para;</a></h2>
