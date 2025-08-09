@@ -64,3 +64,8 @@ A number of online tutorials already exist for this plugin. To summarise, you ne
 ### Using plain old Kotlin/Groovy, with or without 3rd party libraries
 
 This is fairly unhinged - almost certainly don't do this. You can control whether your code runs either in the configuration or execution phase by placing your code either within the action of a task you define (execution phase), or just dumping it into a project build script so that it will be run whenever Gradle evaluates that project (configuration phase). In either case, there are more idiomatic options than trying to roll your own file download code.
+
+---
+Created on 2025-08-09
+
+Updated on 2025-08-09
