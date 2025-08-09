@@ -26,7 +26,7 @@ The "consumable" in "consumable configuration" refers to dependency consumption.
 
 To be honest I still don't quite understand what a Gradle artifact transform is, but I will present the inevitably incorrect mental model I use (in the spirit of "all models are wrong, some are useful"). There is [official documentation](https://docs.gradle.org/current/userguide/artifact_transforms.html) covering this, which I think explains the concept to some degree.
 
-An artifact transform is a Gradle object that knows how to perform an operation on a dependency, and in doing so, alters a piece of its associated metadata. When Gradle resolves a requested dependency, it requests it with certain metadata, and this metadata is used by Gradle to determine whether or not it can satisfy a dependency consumer's request by transforming an available dependency using a registered artifact transform.
+An artifact transform is a Gradle object that knows how to perform an operation on a dependency, and in doing so, alters a piece of its associated metadata. When Gradle resolves a requested dependency, it requests it with certain metadata, and this metadata is used by Gradle to determine whether it can satisfy a dependency consumer's request by transforming an available dependency using a registered artifact transform.
 
 ## Custom repository declaration
 
@@ -138,7 +138,7 @@ rob@Robs-MacBook-Pro-2 custom-gradle-repositories-demo % tree /Users/rob/.gradle
 
 ### The artifact transform aspect of this was entirely optional
 
-The artifact transform is not an integral part of downloading dependencies in this way. It so happened that the example I chose from my work used it. Setting up a custom repository is simpler if you don't use any transforms. Of course, this example was also achievable without transforms. I could have registered a task of type `Sync` and configured it to decompress the downloaded zip file, rather than doing it using a transform. You say potato, I say potato.
+The artifact transform is not an integral part of downloading dependencies in this way. It so happened that the example I chose from my work used it. Setting up a custom repository is simpler if you don't use any transforms. Of course, this example was also achievable without transforms. I could have registered a task of type `Sync` and configured it to decompress the downloaded zip file, rather than doing it using a transform.
 
 ### You should put custom repository declarations into plugins, not into project build scripts
 
