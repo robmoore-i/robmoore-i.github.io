@@ -27,6 +27,7 @@ nav:
       - writing/gradle/custom-task-types.md
       - writing/gradle/custom-repositories.md
       - writing/gradle/secure-dependencies.md
+      - writing/gradle/downloading-files.md
     - "Software development":
       - writing/software_development/developer-experience.md
       - writing/software_development/reader-experience.md
