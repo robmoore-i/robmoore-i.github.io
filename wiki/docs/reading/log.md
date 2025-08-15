@@ -1,10 +1,10 @@
 # Log
 
-The month in each entry refers to when I finished reading a book. I almost always start a new book right after finishing a previous one. I only read one book at a time.
+The month in each entry refers to when I finished reading a book. I almost always start a new book right after finishing a previous one. I read only one book at a time.
 
 ## 2025
 
-- WIP: The forever dog - Rodney Habib & Karen Shaw Becker
+- Aug: The forever dog - Rodney Habib & Karen Shaw Becker
 - Jun: The emperor of all maladies: A biography of cancer - Siddhartha Mukherjee
 - May: Understanding cancer - Robin Hesketh
 - Apr: The palace of illusions - Chitra Banarjee Divakaruni
