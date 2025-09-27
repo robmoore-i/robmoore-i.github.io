@@ -561,9 +561,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Intellij says &#34;Unresolved reference&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#avoid-using-api-dependencies-in-gradle" class="md-nav__link">
     <span class="md-ellipsis">
       Avoid using "api" dependencies in Gradle.
@@ -571,22 +572,27 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#do-not-use-the-intellij-tooltip-action-add-foo-to-classpath" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-use-the-intellij-tooltip-action-add-to-classpath" class="md-nav__link">
     <span class="md-ellipsis">
-      Do not use the Intellij tooltip action "Add 'foo' to classpath"
+      Do not use the Intellij tooltip action "Add to classpath"
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide-to-refresh-any-generated-sources" class="md-nav__link">
     <span class="md-ellipsis">
-      Triggering an IDE sync is often insufficient, you must also run "Repair IDE"
+      Triggering an IDE sync is often insufficient, you must also run "Repair IDE" to refresh any generated sources
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1205,9 +1211,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Intellij says &#34;Unresolved reference&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#avoid-using-api-dependencies-in-gradle" class="md-nav__link">
     <span class="md-ellipsis">
       Avoid using "api" dependencies in Gradle.
@@ -1215,22 +1222,27 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#do-not-use-the-intellij-tooltip-action-add-foo-to-classpath" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-use-the-intellij-tooltip-action-add-to-classpath" class="md-nav__link">
     <span class="md-ellipsis">
-      Do not use the Intellij tooltip action "Add 'foo' to classpath"
+      Do not use the Intellij tooltip action "Add to classpath"
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide-to-refresh-any-generated-sources" class="md-nav__link">
     <span class="md-ellipsis">
-      Triggering an IDE sync is often insufficient, you must also run "Repair IDE"
+      Triggering an IDE sync is often insufficient, you must also run "Repair IDE" to refresh any generated sources
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1258,11 +1270,11 @@
 <h3 id="intellij-says-unresolved-reference">Intellij says "Unresolved reference"<a class="headerlink" href="#intellij-says-unresolved-reference" title="Permanent link">&para;</a></h3>
 <p>In a Gradle project, this problem should be solved by a combination of adjusting the build, and synchronizing Intellij. The instructions you need to issue to Intellij may be different in different cases.</p>
 <p>Here are some items in the knowledge toolbox I use to solve this problem:</p>
-<h3 id="avoid-using-api-dependencies-in-gradle">Avoid using "api" dependencies in Gradle.<a class="headerlink" href="#avoid-using-api-dependencies-in-gradle" title="Permanent link">&para;</a></h3>
+<h4 id="avoid-using-api-dependencies-in-gradle">Avoid using "api" dependencies in Gradle.<a class="headerlink" href="#avoid-using-api-dependencies-in-gradle" title="Permanent link">&para;</a></h4>
 <p>These can be replaced with "implementation" dependencies, which lack the pitfalls and carry less risk of introducing wasteful, unused dependencies between projects, which slow down your build.</p>
-<h3 id="do-not-use-the-intellij-tooltip-action-add-foo-to-classpath">Do not use the Intellij tooltip action "Add 'foo' to classpath"<a class="headerlink" href="#do-not-use-the-intellij-tooltip-action-add-foo-to-classpath" title="Permanent link">&para;</a></h3>
+<h4 id="do-not-use-the-intellij-tooltip-action-add-to-classpath">Do not use the Intellij tooltip action "Add <dependency> to classpath"<a class="headerlink" href="#do-not-use-the-intellij-tooltip-action-add-to-classpath" title="Permanent link">&para;</a></h4>
 <p>This is nonsense, unless Intellij is going to edit your Gradle build files. When Intellij takes this option, what it is really doing is modifying its own module dependency representation and ignoring the one that it ordinarily recieves from Gradle. You should aim to update the Gradle build so that it supplies the desired dependency information to the IDE, rather than tricking the IDE into believing that the build is defining dependencies in the way you want, when in truth it isn't.</p>
-<h3 id="triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide">Triggering an IDE sync is often insufficient, you must also run "Repair IDE"<a class="headerlink" href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide" title="Permanent link">&para;</a></h3>
+<h4 id="triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide-to-refresh-any-generated-sources">Triggering an IDE sync is often insufficient, you must also run "Repair IDE" to refresh any generated sources<a class="headerlink" href="#triggering-an-ide-sync-is-often-insufficient-you-must-also-run-repair-ide-to-refresh-any-generated-sources" title="Permanent link">&para;</a></h4>
 <p>Once you have made a change to the build definition that you think might fix your dependency situation, you need to then:</p>
 <ol>
 <li>Trigger an IDE sync. I do this so often that I have it bound to a custom shortcut. I use Cmd-Shift-7.</li>
@@ -1271,7 +1283,7 @@
 <p>I like the "Repair IDE" flow because it offers you escalations after each attempt. If you run it initially and it doesn't fix your problem, when you think it should, then it will offer to "Rescan Project Indexes" as a next step. As the next step after that, I think it asks you to restart IDEA. I rarely have to go further than the first step, which I think just reloads all build files and project files from disk, although I don't actually know.</p>
 <hr />
 <p>Created on 2024-06-06</p>
-<p>Updated on 2024-06-06</p>
+<p>Updated on 2025-09-27</p>
 
 
 
