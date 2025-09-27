@@ -12,7 +12,7 @@ Books I've read, liked, and might recommend.
 
 ### Organisational
 
-- eXtreme Programming explained, 2nd edition - Kent Beck and Cynthia Andres
+- eXtreme Programming explained (2nd edition) - Kent Beck and Cynthia Andres
 - Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
 - Team Topologies - Matthew Skelton and Manuel Pais
 - Cognition in the wild - Edwin Hutchins
@@ -20,7 +20,7 @@ Books I've read, liked, and might recommend.
 ### Communication
 
 - Crucial Conversations - Kerry Patternson, Joseph Grenny, Ron McMillan, Al Switzler
-- Nonviolent Communication, 3rd edition - Marshall Rosenberg
+- Nonviolent Communication (3rd edition) - Marshall Rosenberg
 - Agile conversations - Douglas Squirrel and Jeffrey Frederick
 - Bugs in writing: A Guide to Debugging your Prose - Lyn Dupre
 
@@ -49,6 +49,7 @@ Books I've read, liked, and might recommend.
 
 ## Narrative non-fiction
 
+- The Shetland bus - David Howarth
 - The boys in the boat - Daniel James Brown
 - Endurance - Alfred Lansing
 - The emperor of all maladies: A biography of cancer - Siddhartha Mukherjee
