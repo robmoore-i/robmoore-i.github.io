@@ -14,15 +14,15 @@ In a Gradle project, this problem should be solved by a combination of adjusting
 
 Here are some items in the knowledge toolbox I use to solve this problem:
 
-### Avoid using "api" dependencies in Gradle.
+#### Avoid using "api" dependencies in Gradle.
 
 These can be replaced with "implementation" dependencies, which lack the pitfalls and carry less risk of introducing wasteful, unused dependencies between projects, which slow down your build.
 
-### Do not use the Intellij tooltip action "Add 'foo' to classpath"
+#### Do not use the Intellij tooltip action "Add <dependency> to classpath"
 
 This is nonsense, unless Intellij is going to edit your Gradle build files. When Intellij takes this option, what it is really doing is modifying its own module dependency representation and ignoring the one that it ordinarily recieves from Gradle. You should aim to update the Gradle build so that it supplies the desired dependency information to the IDE, rather than tricking the IDE into believing that the build is defining dependencies in the way you want, when in truth it isn't.
 
-### Triggering an IDE sync is often insufficient, you must also run "Repair IDE"
+#### Triggering an IDE sync is often insufficient, you must also run "Repair IDE" to refresh any generated sources
 
 Once you have made a change to the build definition that you think might fix your dependency situation, you need to then:
 
@@ -34,4 +34,4 @@ I like the "Repair IDE" flow because it offers you escalations after each attemp
 ---
 Created on 2024-06-06
 
-Updated on 2024-06-06
+Updated on 2025-09-27
