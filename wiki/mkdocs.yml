@@ -34,6 +34,7 @@ nav:
       - writing/software_development/tests.md
       - writing/software_development/chestertons-traffic-lights.md
       - writing/software_development/governance-is-not-a-quality-strategy.md
+      - writing/software_development/complex-domain-models-vs-complex-black-boxes.md
     - Documentation:
       - writing/documentation/divio.md
       - writing/documentation/values.md
