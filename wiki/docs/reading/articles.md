@@ -2,6 +2,8 @@
 
 Articles I've read and liked.
 
+### [In  the economy of user effort, be a bargain, not a scam](https://lea.verou.me/blog/2025/user-effort/)
+
 ### [10,000 mistakes](http://www.thecodelesscode.com/case/100)
 
 ### [Lockhart's Lament](https://worrydream.com/refs/Lockhart_2002_-_A_Mathematician's_Lament.pdf)
