@@ -4,7 +4,7 @@ The month in each entry refers to when I finished reading a book. I almost alway
 
 ## 2025
 
-- WIP: Snow Crash, Neal Stephenson
+- WIP: Snow crash, Neal Stephenson
 - Nov: The clearing tide - John Curry
 - Sep: The Shetland bus - David Howarth 
 - Aug: The forever dog - Rodney Habib & Karen Shaw Becker
