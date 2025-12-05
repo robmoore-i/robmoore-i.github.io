@@ -4,18 +4,18 @@ Books I've read, liked, and might recommend.
 
 ## Software engineering
 
+### Strategy
+
+- The mom test - Rob Fitzpatrick
+- eXtreme Programming explained (2nd edition) - Kent Beck and Cynthia Andres
+- Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
+- Team Topologies - Matthew Skelton and Manuel Pais
+
 ### Coding
 
 - Growing object-oriented software, guided by tests - Steve Freeman and Nat Pryce
 - Working effectively with legacy code - Michael Feathers
 - Design Patterns: Elements of reusable object-oriented software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
-
-### Organisational
-
-- eXtreme Programming explained (2nd edition) - Kent Beck and Cynthia Andres
-- Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
-- Team Topologies - Matthew Skelton and Manuel Pais
-- Cognition in the wild - Edwin Hutchins
 
 ### Communication
 
@@ -23,6 +23,10 @@ Books I've read, liked, and might recommend.
 - Nonviolent Communication (3rd edition) - Marshall Rosenberg
 - Agile conversations - Douglas Squirrel and Jeffrey Frederick
 - Bugs in writing: A Guide to Debugging your Prose - Lyn Dupre
+
+### Organisational
+
+- Cognition in the wild - Edwin Hutchins
 
 ## Humanities
 
