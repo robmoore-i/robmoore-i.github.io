@@ -62,6 +62,10 @@ Books I've read, liked, and might recommend.
 - And then there were none - Agatha Christie
 - The garbage king - Elizabeth Laird
 
+## Just for fun
+
+- This is going to hurt, Adam Kay
+
 ---
 Created on 2022-05-28
 
