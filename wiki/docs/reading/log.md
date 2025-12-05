@@ -18,6 +18,7 @@ The month in each entry refers to when I finished reading a book. I almost alway
 - Apr: And then there were none - Agatha Christie
 - Apr: Why we sleep - Matthew Walker
 - Mar: When the body says no: The cost of hidden stress - Gabor Maté
+- Jan: The mom test - Rob Fitzpatrick
 - Jan: Gut - Giulia Enders
 
 ## 2024
