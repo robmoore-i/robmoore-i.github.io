@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://robmoore-i.github.io/writing/gradle/custom-task-types/">
+        <link rel="canonical" href="https://robmoore-i.github.io/writing/software_development/let-your-code-tell-the-truth/">
       
       
-        <link rel="prev" href="../registering-gradle-tasks/">
+        <link rel="prev" href="../thoughts-on-spring-dependency-injection/">
       
       
-        <link rel="next" href="../custom-repositories/">
+        <link rel="next" href="../../documentation/divio/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Custom task types - Rob's Wiki</title>
+        <title>Let your code tell the truth - Rob's Wiki</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custom-task-types" class="md-skip">
+        <a href="#let-your-code-tell-the-truth" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Custom task types
+              Let your code tell the truth
             
           </span>
         </div>
@@ -439,20 +439,20 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -468,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Gradle
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../insider-guidelines/" class="md-nav__link">
+      <a href="../../gradle/insider-guidelines/" class="md-nav__link">
         
   
   
@@ -505,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intellij-idea/" class="md-nav__link">
+      <a href="../../gradle/intellij-idea/" class="md-nav__link">
         
   
   
@@ -528,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kotlin-dsl/" class="md-nav__link">
+      <a href="../../gradle/kotlin-dsl/" class="md-nav__link">
         
   
   
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gradle-monorepo-structure/" class="md-nav__link">
+      <a href="../../gradle/gradle-monorepo-structure/" class="md-nav__link">
         
   
   
@@ -574,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../jvms/" class="md-nav__link">
+      <a href="../../gradle/jvms/" class="md-nav__link">
         
   
   
@@ -597,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../registering-gradle-tasks/" class="md-nav__link">
+      <a href="../../gradle/registering-gradle-tasks/" class="md-nav__link">
         
   
   
@@ -617,32 +617,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Custom task types
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../gradle/custom-task-types/" class="md-nav__link">
         
   
   
@@ -653,113 +631,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-example-task-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      The example task class
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The example task class">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#it-is-abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      It is abstract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-a-constructor-annotated-with-inject" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has a constructor annotated with @Inject
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-extends-defaulttask" class="md-nav__link">
-    <span class="md-ellipsis">
-      It extends DefaultTask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-declares-its-default-cacheability" class="md-nav__link">
-    <span class="md-ellipsis">
-      It declares its default cacheability
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#its-fields-are-annotated-to-indicate-their-relevance-to-work-avoidance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Its fields are annotated to indicate their relevance to work avoidance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-configurable-inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has configurable inputs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-a-method-annotated-with-taskaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has a method annotated with @TaskAction
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Further notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -772,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-repositories/" class="md-nav__link">
+      <a href="../../gradle/custom-repositories/" class="md-nav__link">
         
   
   
@@ -795,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure-dependencies/" class="md-nav__link">
+      <a href="../../gradle/secure-dependencies/" class="md-nav__link">
         
   
   
@@ -818,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../downloading-files/" class="md-nav__link">
+      <a href="../../gradle/downloading-files/" class="md-nav__link">
         
   
   
@@ -846,20 +717,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -875,7 +746,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Software development
@@ -889,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/developer-experience/" class="md-nav__link">
+      <a href="../developer-experience/" class="md-nav__link">
         
   
   
@@ -912,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/reader-experience/" class="md-nav__link">
+      <a href="../reader-experience/" class="md-nav__link">
         
   
   
@@ -935,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/tests/" class="md-nav__link">
+      <a href="../tests/" class="md-nav__link">
         
   
   
@@ -958,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/chestertons-traffic-lights/" class="md-nav__link">
+      <a href="../chestertons-traffic-lights/" class="md-nav__link">
         
   
   
@@ -981,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/governance-is-not-a-quality-strategy/" class="md-nav__link">
+      <a href="../governance-is-not-a-quality-strategy/" class="md-nav__link">
         
   
   
@@ -1004,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software_development/thoughts-on-spring-dependency-injection/" class="md-nav__link">
+      <a href="../thoughts-on-spring-dependency-injection/" class="md-nav__link">
         
   
   
@@ -1024,10 +895,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../software_development/let-your-code-tell-the-truth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1038,6 +918,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1289,101 +1170,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-example-task-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      The example task class
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The example task class">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#it-is-abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      It is abstract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-a-constructor-annotated-with-inject" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has a constructor annotated with @Inject
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-extends-defaulttask" class="md-nav__link">
-    <span class="md-ellipsis">
-      It extends DefaultTask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-declares-its-default-cacheability" class="md-nav__link">
-    <span class="md-ellipsis">
-      It declares its default cacheability
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#its-fields-are-annotated-to-indicate-their-relevance-to-work-avoidance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Its fields are annotated to indicate their relevance to work avoidance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-configurable-inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has configurable inputs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#it-has-a-method-annotated-with-taskaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      It has a method annotated with @TaskAction
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Further notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1398,70 +1184,14 @@
 
 
 
-<h1 id="custom-task-types">Custom task types<a class="headerlink" href="#custom-task-types" title="Permanent link">&para;</a></h1>
-<p>This short article shows a custom task definition, and uses it to describe how in general to author a useful custom Gradle task, whose cacheability properties you understand.</p>
-<h2 id="the-example-task-class">The example task class<a class="headerlink" href="#the-example-task-class" title="Permanent link">&para;</a></h2>
-<p>Here's a custom task type definition:</p>
-<pre><code>@DisableCachingByDefault
-abstract class DockerBuild @Inject constructor(
-    objects: ObjectFactory,
-    private val execOps: ExecOperations,
-    private val layout: ProjectLayout
-) : DefaultTask() {
-
-    @get:InputFile
-    val dockerfile: RegularFileProperty = objects.fileProperty().convention(layout.projectDirectory.file(&quot;Dockerfile&quot;))
-
-    @get:InputFiles
-    abstract val resources: ConfigurableFileCollection
-
-    @get:Input
-    abstract val t: Property&lt;String&gt;
-
-    @TaskAction
-    fun build() {
-        val d = layout.buildDirectory.dir(name).get().asFile
-        d.mkdirs()
-        dockerfile.get().asFile.copyTo(d.resolve(&quot;Dockerfile&quot;), overwrite = true)
-        resources.forEach { it.copyRecursively(d.resolve(it.name), overwrite = true) }
-        execOps.exec {
-            commandLine(&quot;docker&quot;, &quot;build&quot;, d.absolutePath, &quot;-t&quot;, t.get())
-        }.assertNormalExitValue()
-    }
-}
-</code></pre>
-<p><strong>Take note of these several aspects this class.</strong></p>
-<h3 id="it-is-abstract">It is abstract<a class="headerlink" href="#it-is-abstract" title="Permanent link">&para;</a></h3>
-<p>This is because Gradle is resposible for instantiating task instances at runtime, when they are needed.</p>
-<h3 id="it-has-a-constructor-annotated-with-inject">It has a constructor annotated with <code>@Inject</code><a class="headerlink" href="#it-has-a-constructor-annotated-with-inject" title="Permanent link">&para;</a></h3>
-<p>Since Gradle is responsible for instantiating instances of the task class, it also provides a way to provide useful build-logic-related objects to its instances. For example, the above class uses <code>ExecOperations</code> for running arbitray shell commands, and it uses <code>ProjectLayout</code> to get a convenient reference for the build directory.</p>
-<p>There are many other types that can be injected into a custom task class definition. Here are a few of the most useful ones:</p>
-<ul>
-<li><code>ExecOperations</code>: For running shell commands.</li>
-<li><code>ProjectLayout</code>: For convenient access to the project directory (i.e. the directory containing the <code>build.gradle(.kts)</code> file)</li>
-<li><code>FileSystemOperations</code>: Provides access to some Gradle-defined file-related methods, like <code>copy</code>, <code>sync</code>, and <code>delete</code>.</li>
-<li><code>ObjectFactory</code>: Can be used to instantiate various Gradle-defined types, such as the various kinds of <code>Property&lt;T&gt;</code> (<code>ListProperty&lt;T&gt;</code>, <code>MapProperty&lt;K, V&gt;</code>, <code>SetProperty&lt;T&gt;</code>, <code>RegularFileProperty</code>, <code>DirectoryProperty</code>), <code>ConfigurableFileCollection</code>, and generally any Gradle-registered type. This should only be used for creating these Gradle-specific types. In general, creating objects should be done by invoking a constructor.</li>
-</ul>
-<h3 id="it-extends-defaulttask">It extends <code>DefaultTask</code><a class="headerlink" href="#it-extends-defaulttask" title="Permanent link">&para;</a></h3>
-<p>This is the only Gradle-defined task type that I have ever extended in a custom task type definition. That's not to say that using other Gradle-defined tasks as a base is a bad idea, but certainly it's not something I would expect to do often. <code>DefaultTask</code> is unopinionated and I like that.</p>
-<h3 id="it-declares-its-default-cacheability">It declares its default cacheability<a class="headerlink" href="#it-declares-its-default-cacheability" title="Permanent link">&para;</a></h3>
-<p>This task is not cacheable <em>by default</em>. A subclass of this task type could be cacheable, and I could even make a task of this type cacheable by explicitly setting it to be cachable using <code>cacheIf { ... }</code> when registering it.</p>
-<p>If I wanted to absolutely preclude caching for this task, I would mark it <code>@UntrackedTask</code>. If I wanted it say it is cacheable, I'd mark it <code>@Cacheable</code>.</p>
-<p>Note however that a task cannot be cacheable unless it declares at least one input and output. An input is required because without it you cannot compare an imminent execution to previous executions (well, you could, but Gradle doesn't). An output is required because without it, what would be taken from the cache? The notion of cacheability doesn't make sense without an output. Of course, you may want to skip work done by a task which doesn't have any outputs per se. In such a case, you can create an empty text file (or perhaps a text file summarising the work that was done) to use as your cacheable "output".</p>
-<h3 id="its-fields-are-annotated-to-indicate-their-relevance-to-work-avoidance">Its fields are annotated to indicate their relevance to work avoidance<a class="headerlink" href="#its-fields-are-annotated-to-indicate-their-relevance-to-work-avoidance" title="Permanent link">&para;</a></h3>
-<p>For tasks declared as cacheable, Gradle avoids work by taking a fingerprint (i.e. a hash) of a task's inputs and comparing it to a hash of inputs from previous task executions. If a match is found between the current input hash and a previous execution's hash, then the task is said to have found a cache hit, the execution is skipped, and the declared output artifacts corresponding to the identical task input hash are restored to the file system, for consumption either by you, or by other tasks.</p>
-<p>This mechanism of work avoidance requires tasks to declare their inputs and outputs explicitly. This can be done either when registering a tasks (using the inputs.file(...) / outputs.file(...) methods and their friends), or within the definition of the task type, which I think is often better because it encapsulates the work avoidance role of certain configurable properties of the task.</p>
-<p>If a property bears no relevance to caching, it should be annotated with <code>@Internal</code>. Otherwise, it should have an annotation such as <code>@InputProperty</code>, <code>@InputFile</code>, <code>@InputFiles</code>, <code>@InputDirectory</code>, <code>@OutputFile</code>, <code>@OutputDirectory</code>. Note that a property unfortunately cannot be an output. The way to get around this in Gradle if you need this capability, is to put the value in a file and mark that file as an <code>@OutputFile</code>.</p>
-<h3 id="it-has-configurable-inputs">It has configurable inputs<a class="headerlink" href="#it-has-configurable-inputs" title="Permanent link">&para;</a></h3>
-<p>The field <code>t</code>, corresponding to the docker build parameter <code>-t</code>, is configurable. It has a  type of <code>Property&lt;String&gt;</code>. This means that when registering the task, the build author will need to set its value by using <code>t.set(...)</code>, passing a <code>String</code>.</p>
-<p>Note that for the <code>dockerfile</code> input, it has been instantiated to a property value directory using the <code>ObjectFactory</code>. This has been done so that the task class definition can include the conventional value for this input - a file in the project directory called "Dockerfile". This use of <code>ObjectFactory</code> to provide conventional values for properties can be done for both inputs and outputs.</p>
-<h3 id="it-has-a-method-annotated-with-taskaction">It has a method annotated with <code>@TaskAction</code><a class="headerlink" href="#it-has-a-method-annotated-with-taskaction" title="Permanent link">&para;</a></h3>
-<p>There should exactly one method in a task class definition annotated with <code>@TaskAction</code>, and this is the method that Gradle will call to execute the task, if it needs to be executed. It needs to accept no arguments. It should have a meaningful name.</p>
-<h2 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
-<p>Custom task types should be declared within included-build plugins, as described in my longer article on <a href="/writing/gradle/gradle-monorepo-structure">structuring a Gradle build</a>.</p>
+<h1 id="let-your-code-tell-the-truth">Let your code tell the truth<a class="headerlink" href="#let-your-code-tell-the-truth" title="Permanent link">&para;</a></h1>
+<p>This page briefly describes the eponymous motto I use while refactoring code.
+I've used this motto for several years and my (unempirical) feeling is that every time I've decided to ignore it, I later end up realising that I'd have been better off sticking to it all along.</p>
+<p>Imagine yourself in the following, relatively common scenario: You've written some production code which all passes the tests you want to write for it. While looking back over it though, you decide that in its current state, it may bewilder future readers, because in some places it's a bit confusing and/or verbose. Some refactoring is in order. If all goes well, you'll produce something concise and elegant, and you'll be done. However, things don't always go well. In this case, you've found that you can't get the code into a satisfying shape. No matter what names you use or how you shuffle the code between methods, the code you've written just doesn't quite cohere. It is in this moment of frustrated introspection that my motto is helpful.</p>
+<p>Concretely, this motto is about resisting the temptation to shuffle code around, or to come up a concise name for a method that clearly has too many side effects. Instead, embrace that badness and let your code tell the truth about itself. You'll probably have better ideas tomorrow after sleeping on it, and leaving the code in its unadulterated form will likely make it more malleable when you return later. And if you never need to return, then all the better to have not spent any more time on it.</p>
+<p>So there it is. Happy hacking!</p>
 <hr />
-<p>Created on 2024-05-15</p>
-<p>Updated on 2024-08-30</p>
+<p>Created on 2025-12-13</p>
 
 
 
