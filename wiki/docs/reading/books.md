@@ -23,6 +23,7 @@ Books I've read, liked, and might recommend.
 - Nonviolent Communication (3rd edition) - Marshall Rosenberg
 - Agile conversations - Douglas Squirrel and Jeffrey Frederick
 - Bugs in writing: A Guide to Debugging your Prose - Lyn Dupre
+- Economical writing - Deirdre Nansen McCloskly
 
 ### Organisational
 
@@ -46,10 +47,11 @@ Books I've read, liked, and might recommend.
 
 ## Health
 
-- The body keeps the score - Bessel Van Der Kolk
-- When the body says no - Gabor Maté
 - Gut - Giulia Enders
 - Understanding cancer - Robin Hesketh
+- The body keeps the score - Bessel Van Der Kolk
+- When the body says no - Gabor Maté
+- Friends, lovers, and the big terrible thing - Matthew Perry
 
 ## Narrative non-fiction
 

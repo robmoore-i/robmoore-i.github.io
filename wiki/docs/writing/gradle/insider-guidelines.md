@@ -55,9 +55,13 @@ coupled references to the same thing are desirable.
 
 The version of Java used to invoke Gradle is not necessarily the same as the version of Java used to compile your Java code or run your tests. To control the version of Java used to compile your Java code, use Gradle's Java Toolchains feature. If you don't do this, Gradle will just use whatever JVM is being used to run itself when compiling and running Java code. Unless you have a good (and I imagine really quite interesting and unique) reason to preseve that behaviour, you should always be using Java Toolchains. I find the [official documentation](https://docs.gradle.org/current/userguide/toolchains.html) for this feature to be pretty useful and descriptive.
 
-### The info and debug log levels for Gradle are mostly not very useful and they probably won't help you, but --stacktrace is often helpful
+### The info and debug log levels for Gradle are mostly not very useful, and they probably won't help you, but `--stacktrace` is often helpful
 
-When Gradle fails, it suggests you may want to rerun using `--info` or `--debug`. In my experience this is mostly just useless noise. Using `--stacktrace` however is often quite helpful to isolate the line of build logic code that is the cause of a build failure. I use it quite often.
+When Gradle fails, it suggests you may want to rerun using `--info` or `--debug`. In my experience this is almost always just useless noise. Using `--stacktrace` however is often quite helpful to isolate the line of build logic code that causes the build failure. I use it quite often.
+
+### Print to console during the build using `logger.lifecycle(...)`
+
+You can write logs in Gradle that show up at the default log level by using `logger.lifecycle(...)`. Yes, the default log level is bizarrely called "lifecycle". I have never seen or heard of "lifecycle" as a log level in any context other than in the Gradle build tool.
 
 ### Make Intellij IDEA download the javadocs and sources for your third-party dependencies
 
@@ -81,7 +85,74 @@ idea {
 // other build logic
 ```
 
----
-Created on 2025-02-23
+### Register tasks using `by` syntax
 
-Updated on 2024-05-15
+Use Kotlin's `by` syntax to avoid duplicating a task name when registering it. You can use the `val` later on in various other method calls in other tasks, such as `dependsOn(...)` or `mustRunAfter(...)`. You can also use it when declaring which task an artifact is built by, or use it as the source of a task input using `taskName.map { ... }` to turn it into a `org.gradle.api.Provider`.
+
+Rather than writing:
+```
+val taskName = tasks.register<TaskType>("taskName") { ... }
+```
+
+Prefer to write:
+```
+val taskName by tasks.registering(TaskType::class) { ... }
+```
+
+### Don't always use the `tasks {}` block
+
+There's nothing inherently wrong with the `tasks {}` block, but it's just not always the right fit for a build script. It encourages you to colocate all tasks together, which may not be the best organisation of code for the project's build logic. It also encourages new tasks to be added to the `tasks {}` block, even if a different organisation of code would be better. In this sense it can act as a gravity well, like `*Utils` classes (I hate `*Utils` classes). Sandwiching back to my first point though, it's sometimes fine and good to use the `tasks {}` block. It isn't a thought crime, like 
+
+### Use the `jvm-test-suite` plugin for describing tests
+
+Use the `jvm-test-suite` \[[official docs](https://docs.gradle.org/current/userguide/jvm_test_suite_plugin.html)\] in Java projects for configuring your test task(s) and test dependencies. It makes it easy to colocate the build logic related to tests, and separate it from the build logic related to the application code. Some aspects of the plugin's configurability are a bit arcane (what's a "target"? It's probably described in the docs), but it nevertheless provides a better experience than using the provided-by-default configurations from the `java` plugin.
+
+Rather than writing:
+```
+dependencies {
+  implementation(...)
+  ...
+
+  testImplementation(...)
+  ...
+}
+
+tasks.test {
+  useJUnitJupiter()
+  systemProperty("test.property", "foo")
+}
+```
+
+Prefer to write:
+```
+plugins {
+  `jvm-test-suite`
+}
+
+dependencies {
+  implementation(...)
+}
+
+testing {
+  suites {
+    val test by getting(JvmTestSuite::class) { 
+      useJUnitJupiter()
+      dependencies {
+        implementation(...)
+      }
+      targets {
+        all {
+          testTask.configure {
+            systemProperty("test.property", "foo")
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+---
+Created on 2024-05-15
+
+Updated on 2025-12-13
