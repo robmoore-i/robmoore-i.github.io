@@ -35,6 +35,7 @@ nav:
       - writing/software_development/chestertons-traffic-lights.md
       - writing/software_development/governance-is-not-a-quality-strategy.md
       - writing/software_development/thoughts-on-spring-dependency-injection.md
+      - writing/software_development/let-your-code-tell-the-truth.md
     - Documentation:
       - writing/documentation/divio.md
       - writing/documentation/values.md
