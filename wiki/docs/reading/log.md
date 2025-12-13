@@ -4,7 +4,8 @@ The month in each entry refers to when I finished reading a book. I almost alway
 
 ## 2025
 
-- WIP: Friends, lovers, and the big terrible thing - Matthew Perry
+- WIP: Economical writing - Deirdre Nansen McCloskly
+- Dec: Friends, lovers, and the big terrible thing - Matthew Perry
 - Dec: Snow crash - Neal Stephenson
 - Nov: The clearing tide - John Curry
 - Sep: The Shetland bus - David Howarth 
