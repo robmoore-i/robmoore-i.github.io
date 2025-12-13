@@ -8,7 +8,7 @@ The month in each entry refers to when I finished reading a book. I almost alway
 - Dec: Friends, lovers, and the big terrible thing - Matthew Perry
 - Dec: Snow crash - Neal Stephenson
 - Nov: The clearing tide - John Curry
-- Sep: The Shetland bus - David Howarth 
+- Sep: The Shetland bus - David Howarth
 - Aug: The forever dog - Rodney Habib & Karen Shaw Becker
 - Jul: This is going to hurt - Adam Kay
 - Jul: Concussions and our kids - Robert Cantu
