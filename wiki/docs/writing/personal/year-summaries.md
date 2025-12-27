@@ -14,7 +14,7 @@ Grandma sadly passed away this year. She was so lovable. I wish I called her mor
 
 ### Travel
 
-Veera and I visited many countries. It was incredible, but tiring. Our week-long trip to the Gobi desert in Mongolia stands out as a truly unique experience. Driving through the wilderness, we often saw neither roads nor any other infrastructure. Just miles of shrubs in all directions, beyond the horizon. A few of our trips were physically taxing, none more so than hiking up Mount Kinabalu. The nausea from altitude sickness was terrible. Looking back, I'm glad we eventually climbed to the top, but I don't think we'll be summiting any tall mountains again for a little while. The constant in our trips that made them wonderful was to go with our friends. We are so lucky to have so many good friends.
+Veera and I visited many countries. It was incredible, but tiring. Our week-long trip to the Gobi desert in Mongolia stands out as a truly unique experience. Driving through the wilderness, we often saw neither roads nor any other infrastructure. Just miles of shrubs in all directions, beyond the horizon. A few of our trips were physically taxing, none more so than hiking up Mount Kinabalu. The nausea from altitude sickness was terrible. Looking back, I'm glad we eventually climbed to the top, but I don't think we'll be summiting any tall mountains again for a little while. Yet I loved that trip, because I spent so much quality time with my best friends and with Veera. The constant in our trips that made them wonderful was to go with our friends. We are so lucky to have so many good friends.
 
 ### Cooking
 
@@ -22,11 +22,11 @@ Veera and I became a skilled team in cooking and baking. We cooked a broad varie
 
 ### Work
 
-My old therapist once said to me that not all growth is visible (picture a tree deepening its roots). This year, much of my growth was not visible. Work was broadly fine, but I felt that I often lacked energy. When our team was in the spotlight though, I performed well. In our annual performance reviews, my team had only kind words for me, which speaks to their generosity, and our team spirit.
+My old therapist once said to me that not all growth is visible (picture a tree deepening its roots). This year, much of my growth was not visible. Work was broadly fine, but I felt that I often lacked energy. No particular achievement stands out. When our team was in the spotlight though, I performed well. In our annual performance reviews, my team had only kind words for me, which speaks to their generosity, and our team spirit.
 
 ### Project Euler
 
-I returned to solving Project Euler puzzles towards the end of the year. It gave me some much-needed energy, allowing me to perform better at work when it counted.
+I returned to solving Project Euler puzzles towards the end of the year. It has been a source of much-needed energy to excel at work when it counted. And I finally wrote a Sudoku solver.
 
 ### Bxg
 
