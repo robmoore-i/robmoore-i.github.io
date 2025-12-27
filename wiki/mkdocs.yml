@@ -43,3 +43,5 @@ nav:
       - writing/tutorials/migration-this-wiki-to-fly-io.md
       - writing/tutorials/ukkonens-algorithm-for-mortals.md
       - writing/tutorials/unit-testing-for-jenkins-pipeline-libraries.md
+    - Personal:
+      - writing/personal/year-summary-2025.md
