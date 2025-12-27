@@ -2,9 +2,12 @@
 
 The month in each entry refers to when I finished reading a book. I almost always start a new book right after finishing a previous one. I read only one book at a time.
 
-## 2025
+## 2026
 
 - WIP: Economical writing - Deirdre Nansen McCloskly
+
+## 2025
+
 - Dec: Friends, lovers, and the big terrible thing - Matthew Perry
 - Dec: Snow crash - Neal Stephenson
 - Nov: The clearing tide - John Curry
