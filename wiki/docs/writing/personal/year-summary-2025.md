@@ -1,6 +1,6 @@
 # Year summary: 2025
 
-Organised thematically, rather than chronologically.
+Organised thematically, and not at all chronologically.
 
 ## Grandma
 
@@ -18,7 +18,7 @@ Veera and I became a skilled team in cooking and baking. We cooked a broad varie
 
 ## Work
 
-My old therapist once said to me that not all growth is visible (picture a tree deepening its roots). This year, much of my growth was not visible. Work was fine, but I felt that I lacked energy much of the time. When our team was in the spotlight though, I performed well. In our annual performance reviews, my team had only kind words for me, which speaks to their generosity, and our team spirit.
+My old therapist once said to me that not all growth is visible (picture a tree deepening its roots). This year, much of my growth was not visible. Work was broadly fine, but I felt that I often lacked energy. When our team was in the spotlight though, I performed well. In our annual performance reviews, my team had only kind words for me, which speaks to their generosity, and our team spirit.
 
 ## Project Euler
 
@@ -26,7 +26,7 @@ I returned to solving Project Euler puzzles towards the end of the year. It gave
 
 ## Bxg
 
-My gym in Singapore, Bxg, closed down after running for 23 years. It was a wonderful place and we'll all miss it. My senior at the gym and the top fighter in Singapore in his weight class, Dejun, is opening a successor gym just down the road, so we'll go there in the new year when they open.
+My gym in Singapore, Bxg, closed down after running for 23 years. It was a wonderful place and we'll all miss it. The coaches, Joe and Joi, are retiring. A moving goodbye barbecue was held and attended by many people who called Bxg home over the years, some for decades. An exciting piece of good news is that my senior at the gym and the top fighter in Singapore in his weight class, Dejun, is opening a successor gym just down the road. It will also be called Bxg, with the blessing of Joe and Joi.
 
 ---
 Created on 2025-12-27
