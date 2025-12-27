@@ -27,3 +27,6 @@ I returned to solving Project Euler puzzles towards the end of the year. It gave
 ## Bxg
 
 My gym in Singapore, Bxg, closed down after running for 23 years. It was a wonderful place and we'll all miss it. My senior at the gym and the top fighter in Singapore in his weight class, Dejun, is opening a successor gym just down the road, so we'll go there in the new year when they open.
+
+---
+Created on 2025-12-27
