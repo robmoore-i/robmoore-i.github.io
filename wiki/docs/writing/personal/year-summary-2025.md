@@ -6,7 +6,7 @@ Organised thematically, rather than chronologically.
 
 Grandma sadly passed away this year. She was so lovable. I wish I called her more. Much more. Regrets aside, Grandma is now hanging out and no doubt having a fabulous time with her previously departed friends and family. In 40-70 years I'll join them too. It will be wonderful.
 
-![gaelic-blessing.png](/_assets/gaelic-blessing.png)
+![gaelic-blessing.png](https://raw.githubusercontent.com/robmoore-i/robmoore-i.github.io/refs/heads/publication/wiki/docs/_assets/gaelic-blessing.png)
 
 ## Travel
 
