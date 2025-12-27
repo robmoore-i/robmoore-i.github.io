@@ -30,7 +30,7 @@ I returned to solving Project Euler puzzles towards the end of the year. It has 
 
 ### Bxg
 
-My gym in Singapore, Bxg, closed down after running for 23 years. It was a wonderful place and we'll all miss it. The coaches, Joe and Joi, are retiring. A moving goodbye barbecue was held and attended by many people who called Bxg home over the years, some for decades. An exciting piece of good news is that my senior at the gym and the top fighter in Singapore in his weight class, Dejun, is opening a successor gym just down the road. It will also be called Bxg, with the blessing of Joe and Joi.
+The gym I've trained at for the past 5 years, Bxg, has closed down after running for 23 years. It was a wonderful place and we'll all miss it. The coaches, Joe and Joi, are retiring as coaches. A moving barbecue was held and attended by many people who called Bxg home over the years. Some have trained there for decades. The good news is that my senior at the gym and the top fighter in Singapore in his weight class, Dejun, is opening a successor gym just up the road. It will also be called Bxg, with the blessing of Joe and Joi.
 
 ---
 Created on 2025-12-27
