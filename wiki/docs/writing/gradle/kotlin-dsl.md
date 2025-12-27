@@ -20,7 +20,7 @@ repositories {
 
 If you try to do this inside a kotlin-dsl plugin (i.e. in buildSrc or in an included build plugin), you might get this incorrect, unhelpful suggestion from Intellij:
 
-![kotlin-dsl-accessors.png](/_assets/kotlin-dsl-accessors.png)
+![kotlin-dsl-accessors.png](https://raw.githubusercontent.com/robmoore-i/robmoore-i.github.io/refs/heads/publication/wiki/docs/_assets/kotlin-dsl-accessors.png)
 
 If you are offered an import of the form `gradle.kotlin.dsl.accessors._<some hash>` - don't take it. Instead what you need to do is use `the<T>()` or `extensions.getByName<T>(String extensionName)` to get the Gradle object you're looking for. The extension name is the same as the name that you would use in a project build script at the top level. For example if in a project build script you would write `dockerApplications { ... }`, then you are configuring an extension called "dockerApplications". To get the type, I use IDEA's quick documentation shortcut (ctrl-J).
 
