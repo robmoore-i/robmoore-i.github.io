@@ -4,10 +4,9 @@ The month in each entry refers to when I finished reading a book. I almost alway
 
 ## 2026
 
-- WIP: Economical writing - Deirdre Nansen McCloskly
-
 ## 2025
 
+- Dec: Economical writing - Deirdre Nansen McCloskly
 - Dec: Friends, lovers, and the big terrible thing - Matthew Perry
 - Dec: Snow crash - Neal Stephenson
 - Nov: The clearing tide - John Curry
