@@ -1,8 +1,11 @@
 # Log
 
-The month in each entry refers to when I finished reading a book. I almost always start a new book right after finishing a previous one. I read only one book at a time.
+The month in each entry refers to when I finished reading a book. I usually start a new book right after finishing a previous one. I read only one book at a time.
 
 ## 2026
+
+WIP: Harry Potter and the chamber of secrets - J. K. Rowling
+Jan: Harry Potter and the philospher's stone - J. K. Rowling
 
 ## 2025
 
