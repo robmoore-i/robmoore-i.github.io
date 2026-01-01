@@ -4,6 +4,12 @@ This page contains some quotations from books and other sources, which resonated
 
 ## Selection
 
+> What is written without effort is in general read without pleasure
+
+- Dr Samuel Johnson
+
+I encountered this while reading Deirdre McCloskey's brilliant book, Economical Writing. It's as pithy when applied to code as it is when applied to English.
+
 > Make the change easy, then make the easy change.
 
 - Kent Beck, in various places
@@ -30,7 +36,7 @@ When I read this it reminded me immediately of one of principles of Sydney Dekke
 > Safety differently:
 > - People are the solution
 > - We should ask them what they need
-> - We measure success by counting our positive capabilities (e.g. enumerating them)
+> - We measure success by the presence of positive capabilities (e.g. counting them)
 
 - Sydney Dekker, in a slide of a 'Safety Differently' lecture
 
@@ -42,7 +48,14 @@ This slide has significantly impacted my understanding of safety in software. In
 
 A truism worth remembering.
 
+> Though wars can still bring adventures which can stir the heart, their true nature is of innumerable personal tragedies, of grief, waste and sacrifice, wholly evil and not redeemed by glory.
+> To ascribe glory to the violent death of any young man loving life is only to add further folly to the failure of human wisdom which is the cause of war.
+
+- David Howarth in The Shetland Bus
+
+People who lived through WW2 know something about themselves and each other that we hopefully will never find out. I just hope that we can forever retain what they learned the hard way. ('Lest we forget' etc.)  
+
 ---
 Created on 2022-08-19
 
-Updated on 2025-12-02
+Updated on 2026-01-01
