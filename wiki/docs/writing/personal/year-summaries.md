@@ -14,7 +14,7 @@ Grandma sadly passed away this year. She was so lovable. I wish I called her mor
 
 ### Travel
 
-Veera and I visited many countries. It was incredible, but tiring. Our week-long trip to the Gobi desert in Mongolia stands out as a truly unique experience. Driving through the wilderness, we often saw neither roads nor any other infrastructure. Just miles of shrubs in all directions, beyond the horizon. A few of our trips were physically taxing, none more so than hiking up Mount Kinabalu. The nausea from altitude sickness was terrible. Looking back, I'm glad we eventually climbed to the top, but I don't think we'll be summiting any tall mountains again for a little while. Yet I loved that trip, because I spent so much quality time with my best friends and with Veera. The constant in our trips that made them wonderful was to go with our friends. We are so lucky to have so many good friends.
+Veera and I visited many countries. It was incredible, but tiring. Our week-long trip to the Gobi desert in Mongolia stands out as a unique experience. Driving through the wilderness, we often saw neither roads nor any other infrastructure. Just miles of shrubs in all directions, beyond the horizon. A few of our trips were physically taxing, none more so than hiking up Mount Kinabalu. The nausea from altitude sickness was terrible. Looking back, I'm glad we eventually climbed to the top, but I don't think we'll be summiting any tall mountains again for a little while. Yet I loved that trip, because I spent so much quality time with my best friends and with Veera. The constant in our trips that made them wonderful was to go with our friends. We are so lucky to have so many good friends.
 
 ### Cooking
 
