@@ -59,18 +59,16 @@ Books I've read, liked, and might recommend.
 - The boys in the boat - Daniel James Brown
 - Endurance - Alfred Lansing
 - The emperor of all maladies: A biography of cancer - Siddhartha Mukherjee
+- This is going to hurt, Adam Kay
 
 ## Fiction
 
 - The curious incident of the dog in the night time - Mark Haddon
 - The hitchhiker's guide to the galaxy - Douglas Adams
+- The 7 Harry Potter books - J. K. Rowling
 - The daughter of time - Josephine Tey
 - And then there were none - Agatha Christie
 - The garbage king - Elizabeth Laird
-
-## Just for fun
-
-- This is going to hurt, Adam Kay
 
 ---
 Created on 2022-05-28
