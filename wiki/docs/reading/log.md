@@ -4,8 +4,7 @@ The month in each entry refers to when I finished reading a book. I usually star
 
 ## 2026
 
-WIP: Harry Potter and the chamber of secrets - J. K. Rowling
-Jan: Harry Potter and the philospher's stone - J. K. Rowling
+Jan: The 7 Harry Potter books - J. K. Rowling
 
 ## 2025
 
