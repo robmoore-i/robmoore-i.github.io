@@ -4,6 +4,7 @@ The month in each entry refers to when I finished reading a book. I usually star
 
 ## 2026
 
+WIP: Self defense: A myth-busting guide to immune health - Daniel M. Davis
 Jan: The 7 Harry Potter books - J. K. Rowling
 
 ## 2025
