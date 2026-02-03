@@ -31,7 +31,6 @@ Why would you want to improve the lived experience of the developers who build t
     - Reducing toil removes cognitive encumbrances on your developers that enable them to focus on important problems more deeply, further boosting productivity.
     - Reducing toil exposes potential opportunities for product or technical innovation, by freeing up time and cognitive ability that is otherwise locked up in unproductive busywork. There is a great opportunity cost associated with leaving toil to build up, without prioritising its continuous removal. I haven't seen this aspect of toil reduction included in existing writings on the subject of DX.
 
-
 ### Intuition
 
 For ['99% Developers'](https://future.com/software-development-building-for-99-developers/), their lived experience in their workday is routinely dismissed out of hand, in the unending prioritisation battles that are being fought in their workplaces, such as banks, insurance companies, and the public sector. More on this later.
@@ -58,15 +57,15 @@ Team structuring and sizing is also important. You can't adjust them too frequen
 
 A great number of huge and highly profitable traditional businesses, know that building software products is essential for their continued success.
 
-Efforts have yielded mixed results. I have consulted at two banks, whose retail (i.e. consumer-facing) banking apps had ~2 star ratings at the time when I (temporarily) joined. Making products that are compelling, well-designed and free of bugs, is really hard. It's a lot harder when you have a raise a support ticket to download your IDE, or if you have to run and maintain an instance of Mattermost for your team's use because there are no approved internal communication tools aside from Skype messenger (a tool which does not persist messages across client sessions, and therefore is essentially useless for a team).
+Efforts have yielded mixed results. I have consulted at two banks, whose retail (i.e. consumer-facing) banking apps had ~2 star ratings at the time when I joined. Making products that are compelling, well-designed and free of bugs, is really hard. It's a lot harder when you have a raise a support ticket to download your IDE, or if you have to run and maintain an instance of Mattermost for your team's use because there are no approved internal communication tools aside from Skype messenger (a tool which does not persist messages across client sessions, and therefore is essentially useless for a team).
 
-Such businesses struggle to produce good software products, and it is really no surprise. There are a few characteristics of these engineering organisations which I consider "tell-tale signs" of a culture that does not care about the experience of developers. I claim here only correlation, and make no claim as to a cause:
+Such businesses struggle to produce good software products, and it is really no surprise. There are a few characteristics of these engineering organisations which I consider hallmarks of a culture that does not care about the experience of developers.
 
 - Reliant on external software vendors for development
 - Work is organised around [projects, and not products](https://www.madetech.com/blog/products-not-projects/)
-- Political game-playing and career-driven maneuvering is commonplace aka ['The Hot Potato program management methodology'](https://www.waterfall2006.com/kale.html)
+- Political game-playing and career-driven maneuvering is commonplace (e.g. ['The Hot Potato program management methodology'](https://www.waterfall2006.com/kale.html))
 - Highly regulated industry (although the regulations don't usually specify that the software must be awful)
-- Other people, who are not developers, also complain about being unhappy
+- Other people in the organisation, who are not developers, also complain about being unhappy
 
 ## Takeaways
 
@@ -74,7 +73,7 @@ Such businesses struggle to produce good software products, and it is really no 
 2. Every company that builds software products of any kind (including apps, websites, eCommerce things etc.) should be interested in fostering great experiences for their developers.
 3. It should be intuitively clear that DX is important for the success of a company that builds and depends on its software products for revenue, but if not, there is also compelling data.
 4. DX is not only about tools. Codebase habitability, abstraction and team structure are also important.
-5. In my experience, companies with the worst DX often have a few other curious traits in common.
+5. In my experience, companies with the worst DX often have a few curious traits in common.
 
 ---
 Created on 2022-08-28
