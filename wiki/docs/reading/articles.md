@@ -2,6 +2,8 @@
 
 Articles I've read and liked.
 
+### [The roadmap to Product/Market fit... maybe](https://longform.asmartbear.com/product-market-fit-formula/)
+
 ### [In  the economy of user effort, be a bargain, not a scam](https://lea.verou.me/blog/2025/user-effort/)
 
 ### [10,000 mistakes](http://www.thecodelesscode.com/case/100)
