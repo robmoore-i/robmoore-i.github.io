@@ -4,6 +4,10 @@ This page contains some quotations from books and other sources, which resonated
 
 ## Selection
 
+> Simplicity that ignores reality is reductive, but simplicity that arises from an exceptional summarization of having already processed the messy, complex world, is elegant.
+
+- Jason Cohen, in ['What makes a strategy great'](https://longform.asmartbear.com/great-strategy/)
+
 > What is written without effort is in general read without pleasure
 
 - Dr Samuel Johnson

@@ -49,6 +49,7 @@ Books I've read, liked, and might recommend.
 
 - Gut - Giulia Enders
 - Understanding cancer - Robin Hesketh
+- Self defense: A myth-busting guide to immune health - Daniel M. Davis
 - The body keeps the score - Bessel Van Der Kolk
 - When the body says no - Gabor Maté
 - Friends, lovers, and the big terrible thing - Matthew Perry
