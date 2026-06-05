@@ -27,13 +27,17 @@ abstract class Shell @Inject constructor(private val exec: ExecOperations) : Def
         if (outputFile.isPresent) {
             outputFile.get().asFile.delete()
         }
-        exec.exec {
-            commandLine(cmd.get())
-            if (outputFile.isPresent) {
-                outputFile.get().asFile.delete()
-                standardOutput = FileOutputStream(outputFile.get().asFile, false)
-            }
-        }.assertNormalExitValue()
+        try {
+            exec.exec {
+                commandLine(cmd.get())
+                if (outputFile.isPresent) {
+                    outputFile.get().asFile.delete()
+                    standardOutput = FileOutputStream(outputFile.get().asFile, false)
+                }
+            }.assertNormalExitValue()
+        } catch (e: Exception) {
+            throw RuntimeException("Shell command failed: '${cmd.get()}'", e)
+        }
     }
 
     open fun before() {
