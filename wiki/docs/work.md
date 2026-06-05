@@ -1,8 +1,8 @@
 # Work
 
-I work as a software engineer at Gradle where I am helping to build Develocity.
+I'm Rob, a technical founder based in Singapore, working on a variety of technology products, including mobile apps and web-based software services. I spend most of my time doing engineering, marketing, or meeting people.
 
 ---
 Created on 2022-02-16
 
-Updated on 2022-07-07
+Updated on 2026-06-05

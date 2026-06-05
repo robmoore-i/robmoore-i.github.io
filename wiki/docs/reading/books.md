@@ -35,6 +35,7 @@ Books I've read, liked, and might recommend.
 
 - Black wave - Kim Ghattas
 - From third world to first: The Singapore Story, 1965-2000 - Lee Kuan Yew
+- Henry V - Dan Jones
 - Truth-Telling - Henry Reynolds
 - India: A history - John Keay
 - Map of a nation: A biography of the Ordnance Survey - Rachel Hewitt
