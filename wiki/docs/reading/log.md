@@ -4,10 +4,14 @@ The month in each entry refers to when I finished reading a book. I usually star
 
 ## 2026
 
-WIP: A journey in Ladakh - Andrew Harvey
-Mar: In defense of dogs - John Bradshaw
-Feb: Self defense: A myth-busting guide to immune health - Daniel M. Davis
-Jan: The 7 Harry Potter books - J. K. Rowling
+- WIP: Incorruptible - Eric Ries
+- June: Henry V - Dan Jones
+- May: Odyssey - Stephen Fry
+- May: Lord of the flies - William Golding
+- May: How to tell a story - The Moth
+- Mar: In defense of dogs - John Bradshaw
+- Feb: Self defense: A myth-busting guide to immune health - Daniel M. Davis
+- Jan: The 7 Harry Potter books - J. K. Rowling
 
 ## 2025
 
