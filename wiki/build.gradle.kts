@@ -43,7 +43,7 @@ tasks {
 
     val gitCommitPublication by registering(UntrackedShell::class) {
         mustRunAfter(gitAddPublicationDirectory)
-        cmd.set(listOf("git", "commit", "-m", "Published at ${now()}"))
+        cmd.set(listOf("git", "commit", "--allow-empty", "-m", "Published at ${now()}"))
     }
 
     val gitPush by registering(UntrackedShell::class) {
