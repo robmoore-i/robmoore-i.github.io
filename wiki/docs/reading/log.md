@@ -4,7 +4,8 @@ The month in each entry refers to when I finished reading a book. I usually star
 
 ## 2026
 
-- WIP: Incorruptible - Eric Ries
+- WIP: The Lean Startup - Eric Ries
+- June: Incorruptible - Eric Ries
 - June: Henry V - Dan Jones
 - May: Odyssey - Stephen Fry
 - May: Lord of the flies - William Golding

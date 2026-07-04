@@ -4,10 +4,12 @@ This page contains some quotations from books and other sources, which resonated
 
 ## Selection
 
-> Many times he read his books, surrendered to hard work
+> Many times he read his books, surrendered to hard work.
 > The king was brave, an archer, all idleness he shirked.
 
 - The Versus Rhythmici of Henry V
+
+This is the epigraph for Dan Jones' book, Henry V.
 
 > Simplicity that ignores reality is reductive, but simplicity that arises from an exceptional summarization of having already processed the messy, complex world, is elegant.
 

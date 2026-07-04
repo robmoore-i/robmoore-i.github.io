@@ -6,6 +6,7 @@ Books I've read, liked, and might recommend.
 
 ### Strategy
 
+- Incorruptible - Eric Ries
 - The mom test - Rob Fitzpatrick
 - eXtreme Programming explained (2nd edition) - Kent Beck and Cynthia Andres
 - Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
