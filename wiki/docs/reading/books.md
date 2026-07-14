@@ -11,6 +11,7 @@ Books I've read, liked, and might recommend.
 - eXtreme Programming explained (2nd edition) - Kent Beck and Cynthia Andres
 - Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
 - Team Topologies - Matthew Skelton and Manuel Pais
+- The lean startup - Eric Ries
 
 ### Coding
 
