@@ -17,6 +17,9 @@ nav:
     - reading/selected-snippets.md
     - reading/videos.md
   - Writing:
+    - Products:
+      - Banyan:
+        - writing/products/banyan/thesis.md
     - Gradle:
       - writing/gradle/insider-guidelines.md
       - writing/gradle/intellij-idea.md
