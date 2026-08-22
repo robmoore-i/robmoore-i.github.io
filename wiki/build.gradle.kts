@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import docbuild.mkdocs.MkdocsBuild
 import docbuild.shell.GitCheckoutBranch
 import docbuild.shell.UntrackedShell
@@ -33,7 +35,7 @@ tasks {
     val syncMkdocsToPublicationDirectory by registering(Sync::class) {
         mustRunAfter(gitMergeMain)
         from(mkdocsBuild)
-        into(rootProject.layout.projectDirectory.dir(githubPagesPublicationDirectory))
+        into(isolated.rootProject.projectDirectory.dir(githubPagesPublicationDirectory))
     }
 
     val gitAddPublicationDirectory by registering(UntrackedShell::class) {
