@@ -16,9 +16,9 @@ Here are some items in the knowledge toolbox I use to solve this problem:
 
 #### Avoid using "api" dependencies in Gradle.
 
-These can be replaced with "implementation" dependencies, which lack the pitfalls and carry less risk of introducing wasteful, unused dependencies between projects, which slow down your build.
+These can be replaced with "implementation" dependencies, which lack the pitfalls and carry less risk of introducing wasteful, unused dependencies between projects, which slow down your build and IDE sync.
 
-#### Do not use the Intellij tooltip action "Add <dependency> to classpath"
+#### Don't use ever the Intellij tooltip action "Add <dependency> to classpath"
 
 This is nonsense, unless Intellij is going to edit your Gradle build files. When Intellij takes this option, what it is really doing is modifying its own module dependency representation and ignoring the one that it ordinarily recieves from Gradle. You should aim to update the Gradle build so that it supplies the desired dependency information to the IDE, rather than tricking the IDE into believing that the build is defining dependencies in the way you want, when in truth it isn't.
 
@@ -31,7 +31,24 @@ Once you have made a change to the build definition that you think might fix you
 
 I like the "Repair IDE" flow because it offers you escalations after each attempt. If you run it initially and it doesn't fix your problem, when you think it should, then it will offer to "Rescan Project Indexes" as a next step. As the next step after that, I think it asks you to restart IDEA. I rarely have to go further than the first step, which I think just reloads all build files and project files from disk, although I don't actually know.
 
+### Automatically download sources and javadoc for 3rd party dependencies
+
+This makes clicking through the code a much nicer experience because you can actually see what the authors of your 3rd party dependencies were thinking, which really helps with debugging and understanding code.
+
+```kotlin
+plugins {
+    idea
+}
+
+idea {
+    module {
+        isDownloadSources = true
+        isDownloadJavadoc = true
+    }
+}
+```
+
 ---
 Created on 2024-06-06
 
-Updated on 2025-09-27
+Updated on 2026-08-22
