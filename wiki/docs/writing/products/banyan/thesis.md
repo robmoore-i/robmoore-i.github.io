@@ -1,6 +1,6 @@
 # Thesis
 
-This page contains my business hypotheses for the language learning app I'm working on, [Banyan Flashcards](https://banyanflashcards.com).
+This page contains my business hypotheses for my language learning app, [Banyan Flashcards](https://banyanflashcards.com).
 
 > The sections come from those described in _The Four Steps to the Epiphany_ by Steve Blank.
 
