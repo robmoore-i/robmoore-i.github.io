@@ -31,7 +31,7 @@ This describes how I work, and have worked for a number of years now. It is a wo
 
 - Lee Kuan Yew, in his memoir, From Third World to First: The Singapore Story 1965 - 2000
 
-Consider the state of journalism, popular media and adult education in the UK in 2022 (the time of writing this), and how different our situation might be today if these things were not treated as vehicles for billionaires (e.g. Murdoch) and foreign criminals (e.g. Putin) to advance their personal and class interests.
+Reading this, I stopped to consider the state of journalism, popular media and adult education in the UK in 2022 (the time of writing this), and how different our situation might be today if the media was not treated as a vehicle for its wealthy owners to advance their personal and class interests. Western journalists love to jeer at Singapore on the topic of press freedom. Perhaps they understand the issues better than I do, but I don't agree that Singapore's way is necessarily less free - it just affords different freedoms.
 
 > Our culture emphasizes that as leaders we must be wiser, set direction, and articulate values, all of which predisposes us to tell, rather than ask.
 
@@ -69,4 +69,4 @@ People who lived through WW2 know something about themselves and each other that
 ---
 Created on 2022-08-19
 
-Updated on 2026-04-05
+Updated on 2026-09-29

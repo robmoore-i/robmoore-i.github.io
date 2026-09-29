@@ -4,6 +4,9 @@ The month in each entry refers to when I finished reading a book. I usually star
 
 ## 2026
 
+- WIP: Ultra-processed people - Chris van Tulleken
+- Sep: Slavery, capitalism, and the industrial revolution - Maxine Berg and Pat Hudson
+- Aug: The four steps to the epiphany - Steve Blank
 - July: The lean startup - Eric Ries
 - June: Incorruptible - Eric Ries
 - June: Henry V - Dan Jones
