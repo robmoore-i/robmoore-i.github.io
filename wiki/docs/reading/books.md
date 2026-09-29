@@ -12,6 +12,7 @@ Books I've read, liked, and might recommend.
 - Accelerate - Nicole Forsgren, Jez Humble, Gene Kim
 - Team Topologies - Matthew Skelton and Manuel Pais
 - The lean startup - Eric Ries
+- The four steps to the epiphany - Steve Blank
 
 ### Coding
 
@@ -35,8 +36,8 @@ Books I've read, liked, and might recommend.
 
 ### History
 
-- Black wave - Kim Ghattas
 - From third world to first: The Singapore Story, 1965-2000 - Lee Kuan Yew
+- Black wave - Kim Ghattas
 - Henry V - Dan Jones
 - Truth-Telling - Henry Reynolds
 - India: A history - John Keay

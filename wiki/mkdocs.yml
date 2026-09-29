@@ -20,6 +20,8 @@ nav:
     - Products:
       - Banyan:
         - writing/products/banyan/thesis.md
+      - Undercurrent:
+        - writing/products/undercurrent/thesis.md
     - Gradle:
       - writing/gradle/insider-guidelines.md
       - writing/gradle/intellij-idea.md
