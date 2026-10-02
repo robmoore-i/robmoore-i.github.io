@@ -2,11 +2,27 @@
 
 Articles I've read and liked.
 
+### [Kano surveys](https://www.votito.com/methods/kano-survey/)
+
 ### [The roadmap to Product/Market fit... maybe](https://longform.asmartbear.com/product-market-fit-formula/)
 
 ### [In  the economy of user effort, be a bargain, not a scam](https://lea.verou.me/blog/2025/user-effort/)
 
 ### [10,000 mistakes](http://www.thecodelesscode.com/case/100)
+
+> Ten Thousand Mistakes
+>
+> A novice asked master Banzen: “What separates the monk from the master?”
+> 
+> Banzen replied: “Ten thousand mistakes!”
+> 
+> The novice, not understanding, sought to avoid all error. An abbot observed and brought the novice to Banzen for correction.
+> 
+> Banzen explained: “I have made ten thousand mistakes; Suku has made ten thousand mistakes; the patriarchs of Open Source have each made ten thousand mistakes.”
+> 
+> Asked the novice: “What of the old monk who labors in the cubicle next to mine? Surely he has made ten thousand mistakes.”
+> 
+> Banzen shook his head sadly. “Ten mistakes, a thousand times each.”
 
 ### [Lockhart's Lament](https://worrydream.com/refs/Lockhart_2002_-_A_Mathematician's_Lament.pdf)
 
@@ -15,6 +31,8 @@ Articles I've read and liked.
 ### [Things you should never do, Part 1](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/)
 
 Rewriting from scratch is almost never a good idea.
+
+AI Update: Actually it can work now e.g. in the case of [Bun](https://bun.com/blog/bun-in-rust) 
 
 ### ["Founder mode" and the art of Mythmaking](https://charity.wtf/2024/12/17/founder-mode-and-the-art-of-mythmaking/)
 
@@ -32,23 +50,19 @@ Describes the failures of bad error messages, and also gives an opinionated view
 
 ### [Questioning vs Asking](https://candost.blog/questioning-vs-asking/)
 
-Asking questions from a place of genuine curiosity has been a game changer for my own learning, and for my work relationships. Sometimes, as you're about to ask a question (e.g. in an email or a message) it is as simple as tuning into your own thoughts and adjusting your intention, without even changing the words you're using. In doing so, we can tap into the part of our selves that is focused on learning, rather than winning.
+Asking questions from a place of genuine curiosity has been a game changer for my own learning, and for my work relationships. Sometimes, as you're about to ask a question (e.g. in an email or a message) it is as simple as tuning into your own thoughts and adjusting your intention, without even changing the words you're using. In doing so, we can tap into the part of ourselves that is focused on learning, rather than winning.
 
 ### [The Plan](https://web.mnstate.edu/alm/humor/ThePlan.htm)
 
 ### [Thinking about the complexity of the Kubernetes ecosystem](https://erkanerol.github.io/post/complexity-of-kubernetes/)
 
-I like this empathic treatment of Kubernetes from the perspective of new users, experienced users, and of the its creators. I think this empathy bears applicability to other domains as well, such as build tools.
+I like this empathic treatment of Kubernetes from the perspective of new users, experienced users, and its creators. I think this empathy bears applicability to other domains as well, such as build tools.
 
 ### [Using Gradle to download and run anything](https://jonnyzzz.com/blog/2016/03/06/gradle-all-maven-runner/)
 
 I like this little trick. I wish the official Gradle documentation had more things like this. I should add it as a [sample](https://docs.gradle.org/current/samples/index.html).
 
 ### [Project Loom and Thread Fairness](https://www.morling.dev/blog/loom-and-thread-fairness/)
-
-### [Thinking about the complexity of the kubernetes ecosystem](https://erkanerol.github.io/post/complexity-of-kubernetes/)
-
-I like this article for its balanced take on the kubernetes experience, and the project's role in the tooling ecosystem for deploying applications on cloud services.
 
 ### [CUPID - for joyful coding](https://dannorth.net/2022/02/10/cupid-for-joyful-coding/)
 
